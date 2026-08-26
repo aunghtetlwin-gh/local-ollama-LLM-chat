@@ -1,124 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <title>Local Qwen Chat</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <!-- Markdown -> HTML -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Local Ollama LLM Chat</title>
 
-    <!-- Sanitize generated HTML -->
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+    <!--
+        marked:
+        converts Markdown returned by the LLM into HTML
+    -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+    </script>
+
+
+    <!--
+        DOMPurify:
+        sanitizes generated HTML before displaying it
+    -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js">
+    </script>
+
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
+
             max-width: 800px;
+
             margin: 40px auto;
+
+            padding: 0 20px;
         }
+
 
         #chat {
             border: 1px solid #ccc;
+
             padding: 20px;
+
             min-height: 300px;
+
+            max-height: 650px;
+
+            overflow-y: auto;
+
             margin-bottom: 20px;
         }
 
+
         .user {
-            margin: 10px 0;
+            margin: 15px 0;
+
             font-weight: bold;
         }
 
+
         .assistant {
-            margin: 10px 0 20px 0;
+            margin: 15px 0 25px 0;
         }
 
+
         .assistant p {
-            margin: 6px 0;
+            margin: 8px 0;
         }
+
 
         .assistant pre {
             background: #f4f4f4;
-            padding: 10px;
+
+            padding: 12px;
+
             overflow-x: auto;
         }
 
+
         .assistant code {
             background: #f4f4f4;
+
             padding: 2px 4px;
         }
 
+
+        .loading {
+            margin: 15px 0;
+
+            font-style: italic;
+        }
+
+
         #input-area {
             display: flex;
+
             gap: 8px;
         }
 
+
         input {
             flex: 1;
-            padding: 10px;
+
+            padding: 12px;
+
+            font-size: 16px;
         }
 
+
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
+
             cursor: pointer;
         }
+
+
+        button:disabled {
+            cursor: not-allowed;
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<h1>Local Qwen Chat</h1>
 
-<div id="chat"></div>
+    <h1>
+        Local Ollama LLM Chat
+    </h1>
 
-<div id="input-area">
 
-    <input
-        id="message"
-        type="text"
-        placeholder="Ask Qwen something..."
-    >
+    <div id="chat"></div>
 
-    <button onclick="sendMessage()">
-        Send
-    </button>
 
-</div>
+    <div id="input-area">
+
+        <input
+            id="message"
+            type="text"
+            placeholder="Ask the local LLM something..."
+            autocomplete="off"
+        >
+
+        <button
+            id="send-button"
+            onclick="sendMessage()"
+        >
+            Send
+        </button>
+
+    </div>
+
 
 
 <script>
 
+
+/*
+    Conversation history.
+
+    Example:
+
+    [
+        {
+            role: "user",
+            content: "My name is Aung"
+        },
+
+        {
+            role: "assistant",
+            content: "Hello Aung!"
+        }
+    ]
+
+    This currently exists only in browser memory.
+
+    Refreshing the browser clears it.
+*/
 const messages = [];
+
+
+
+/*
+    Scroll chat window to newest message.
+*/
+function scrollToBottom() {
+
+    const chat = document.getElementById("chat");
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
 
 
 /*
     Display user's message.
 
-    We use textContent instead of innerHTML
-    because user input should be treated as plain text.
+    textContent is used because user input
+    should be treated as normal text,
+    not HTML.
 */
 function addUserMessage(message) {
 
     const chat = document.getElementById("chat");
 
+
     const div = document.createElement("div");
 
     div.className = "user";
 
-    div.textContent = "You: " + message;
+
+    div.textContent =
+        "You: " + message;
+
 
     chat.appendChild(div);
+
+
+    scrollToBottom();
 }
 
 
-/*
-    Display Qwen's answer.
 
-    Qwen often returns Markdown such as:
+/*
+    Display assistant response.
+
+    The model may return Markdown:
 
     ## Kubernetes
-    **Pods**
+
+    **Pod**
+
     - item 1
     - item 2
 
@@ -126,26 +247,70 @@ function addUserMessage(message) {
         Markdown -> HTML
 
     DOMPurify.sanitize()
-        clean the HTML before displaying it
+        HTML -> sanitized HTML
 */
 function addAssistantMessage(message) {
 
-    const chat = document.getElementById("chat");
+    const chat =
+        document.getElementById("chat");
 
-    const div = document.createElement("div");
+
+    const div =
+        document.createElement("div");
+
 
     div.className = "assistant";
 
 
-    const markdownHtml = marked.parse(message);
+    const markdownHtml =
+        marked.parse(message);
 
-    const safeHtml = DOMPurify.sanitize(markdownHtml);
+
+    const safeHtml =
+        DOMPurify.sanitize(markdownHtml);
 
 
     div.innerHTML = safeHtml;
 
+
     chat.appendChild(div);
+
+
+    scrollToBottom();
 }
+
+
+
+/*
+    Show temporary loading message while
+    FastAPI / Ollama / model are processing.
+*/
+function addLoadingMessage() {
+
+    const chat =
+        document.getElementById("chat");
+
+
+    const div =
+        document.createElement("div");
+
+
+    div.className = "loading";
+
+
+    div.textContent =
+        "Assistant is thinking...";
+
+
+    chat.appendChild(div);
+
+
+    scrollToBottom();
+
+
+    return div;
+}
+
 
 
 /*
@@ -153,9 +318,16 @@ function addAssistantMessage(message) {
 */
 async function sendMessage() {
 
-    const input = document.getElementById("message");
+    const input =
+        document.getElementById("message");
 
-    const message = input.value.trim();
+
+    const sendButton =
+        document.getElementById("send-button");
+
+
+    const message =
+        input.value.trim();
 
 
     if (!message) {
@@ -163,99 +335,207 @@ async function sendMessage() {
     }
 
 
+
     /*
-        Save user message into conversation history.
+        Add user message to conversation history.
     */
     messages.push({
+
         role: "user",
+
         content: message
+
     });
 
 
+
+    /*
+        Display the user's message.
+    */
     addUserMessage(message);
 
 
+
+    /*
+        Clear input box.
+    */
     input.value = "";
+
+
+
+    /*
+        Temporarily disable input/button
+        so the user does not submit several
+        requests at the same time.
+    */
+    input.disabled = true;
+
+    sendButton.disabled = true;
+
+
+
+    /*
+        Show:
+
+        Assistant is thinking...
+    */
+    const loadingDiv =
+        addLoadingMessage();
+
 
 
     try {
 
+
         /*
             Browser
-              ↓
+               ↓
+
             POST /chat
-              ↓
+               ↓
+
             FastAPI
         */
-        const response = await fetch("/chat", {
+        const response =
+            await fetch("/chat", {
 
-            method: "POST",
+                method: "POST",
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                headers: {
 
-            body: JSON.stringify({
-                messages: messages
-            })
-        });
+                    "Content-Type":
+                        "application/json"
+
+                },
+
+                body: JSON.stringify({
+
+                    messages: messages
+
+                })
+
+            });
 
 
+
+        /*
+            If FastAPI returns something
+            other than HTTP 2xx.
+        */
         if (!response.ok) {
+
             throw new Error(
-                "HTTP error: " + response.status
+                "HTTP error: "
+                + response.status
             );
+
         }
 
 
+
         /*
-            FastAPI JSON
-                ↓
+            FastAPI JSON response
+                    ↓
             JavaScript object
         */
-        const data = await response.json();
+        const data =
+            await response.json();
+
 
 
         /*
-            Save Qwen answer into conversation history.
+            Save assistant answer into
+            conversation history.
         */
         messages.push({
+
             role: "assistant",
+
             content: data.answer
+
         });
 
 
-        addAssistantMessage(data.answer);
+
+        /*
+            Display model answer.
+        */
+        addAssistantMessage(
+            data.answer
+        );
+
 
     }
 
     catch (error) {
 
+
         console.error(error);
+
 
         addAssistantMessage(
             "**Error:** Could not get a response from the server."
         );
+
+
     }
+
+    finally {
+
+
+        /*
+            Remove:
+
+            Assistant is thinking...
+        */
+        loadingDiv.remove();
+
+
+
+        /*
+            Allow another message.
+        */
+        input.disabled = false;
+
+        sendButton.disabled = false;
+
+
+
+        /*
+            Put cursor back into input.
+        */
+        input.focus();
+
+    }
+
 }
 
 
+
 /*
-    Press Enter to send message.
+    Press Enter to send.
 */
 document
     .getElementById("message")
-    .addEventListener("keydown", function(event) {
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Enter") {
+            if (event.key === "Enter") {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            sendMessage();
+                sendMessage();
+
+            }
+
         }
-    });
+    );
+
 
 </script>
 
+
 </body>
+
 </html>

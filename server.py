@@ -9,6 +9,13 @@ from pydantic import BaseModel
 my_api = FastAPI()
 
 
+# Current Ollama model.
+# Later we can change this to another model without changing the rest of the code.
+MODEL_NAME = "qwen3:1.7b"
+
+OLLAMA_CHAT_URL = "http://127.0.0.1:11434/api/chat"
+
+
 class ChatMessage(BaseModel):
     role: str
     content: str
@@ -26,31 +33,31 @@ def home():
 @my_api.get("/health")
 def health():
     return {
-        "message": "FastAPI is running on lai512"
+        "status": "ok",
+        "message": "FastAPI is running on lai512",
+        "model": MODEL_NAME,
     }
 
 
 @my_api.post("/chat")
 def chat(request: ChatRequest):
 
-    ollama_url = "http://127.0.0.1:11434/api/chat"
-
     messages = [
         {
             "role": message.role,
-            "content": message.content
+            "content": message.content,
         }
         for message in request.messages
     ]
 
     data = {
-        "model": "qwen3:1.7b",
+        "model": MODEL_NAME,
         "messages": messages,
-        "stream": False
+        "stream": False,
     }
 
     ollama_request = urllib.request.Request(
-        ollama_url,
+        OLLAMA_CHAT_URL,
         data=json.dumps(data).encode("utf-8"),
         headers={
             "Content-Type": "application/json"
