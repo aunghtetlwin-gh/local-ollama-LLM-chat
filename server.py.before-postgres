@@ -1,0 +1,168 @@
+import json
+import urllib.error
+import urllib.request
+from pathlib import Path
+from typing import Literal
+
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel
+
+
+my_api = FastAPI()
+
+
+BASE_DIR = Path(__file__).resolve().parent
+INDEX_FILE = BASE_DIR / "index.html"
+
+
+# Current Ollama model.
+# We will test larger models later.
+MODEL_NAME = "qwen3:1.7b"
+
+
+OLLAMA_CHAT_URL = "http://127.0.0.1:11434/api/chat"
+
+
+# Maximum amount of time to wait for Ollama.
+OLLAMA_TIMEOUT = 120
+
+
+class ChatMessage(BaseModel):
+    role: Literal["system", "user", "assistant"]
+    content: str
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage]
+
+
+@my_api.get("/")
+def home():
+    return FileResponse(INDEX_FILE)
+
+
+@my_api.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "message": "FastAPI is running on lai512",
+        "model": MODEL_NAME,
+        "streaming": True,
+    }
+
+
+@my_api.post("/chat")
+def chat(request: ChatRequest):
+
+    messages = [
+        {
+            "role": message.role,
+            "content": message.content,
+        }
+        for message in request.messages
+    ]
+
+
+    data = {
+        "model": MODEL_NAME,
+        "messages": messages,
+        "stream": True,
+    }
+
+
+    ollama_request = urllib.request.Request(
+        OLLAMA_CHAT_URL,
+        data=json.dumps(data).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+        },
+    )
+
+
+    # Open the Ollama connection before FastAPI starts
+    # streaming to the browser.
+    #
+    # This allows us to return a normal HTTP error if
+    # Ollama cannot be contacted.
+    try:
+
+        ollama_response = urllib.request.urlopen(
+            ollama_request,
+            timeout=OLLAMA_TIMEOUT,
+        )
+
+    except urllib.error.HTTPError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Ollama returned HTTP {error.code}",
+        )
+
+    except urllib.error.URLError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not connect to Ollama: {error.reason}",
+        )
+
+
+    def stream_ollama_response():
+
+        """
+        Ollama with stream=true returns multiple JSON lines.
+
+        Example:
+
+        {"message":{"content":"Hello"},"done":false}
+        {"message":{"content":" there"},"done":false}
+        {"message":{"content":"!"},"done":false}
+        {"done":true}
+
+        We read those JSON objects one at a time and send only
+        message.content to the browser.
+        """
+
+        with ollama_response as response:
+
+            for raw_line in response:
+
+                if not raw_line.strip():
+                    continue
+
+
+                try:
+
+                    chunk = json.loads(
+                        raw_line.decode("utf-8")
+                    )
+
+                except json.JSONDecodeError:
+                    continue
+
+
+                content = (
+                    chunk
+                    .get("message", {})
+                    .get("content", "")
+                )
+
+
+                if content:
+
+                    yield content
+
+
+                if chunk.get("done"):
+
+                    break
+
+
+    return StreamingResponse(
+        stream_ollama_response(),
+        media_type="text/plain; charset=utf-8",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Content-Type-Options": "nosniff",
+        },
+    )

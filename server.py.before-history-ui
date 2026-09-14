@@ -1,0 +1,467 @@
+import json
+import os
+import urllib.error
+import urllib.request
+from pathlib import Path
+from typing import Literal
+
+import psycopg
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel
+
+
+# --------------------------------------------------
+# Application setup
+# --------------------------------------------------
+
+my_api = FastAPI()
+
+BASE_DIR = Path(__file__).resolve().parent
+INDEX_FILE = BASE_DIR / "index.html"
+
+load_dotenv(BASE_DIR / ".env")
+
+
+# --------------------------------------------------
+# Ollama configuration
+# --------------------------------------------------
+
+MODEL_NAME = "qwen3:1.7b"
+
+OLLAMA_CHAT_URL = "http://127.0.0.1:11434/api/chat"
+
+OLLAMA_TIMEOUT = 120
+
+
+# --------------------------------------------------
+# PostgreSQL configuration
+# --------------------------------------------------
+
+DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
+DB_PORT = os.getenv("DB_PORT", "5432")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+
+
+# Browser cookie used to remember the current
+# conversation between /chat requests.
+CONVERSATION_COOKIE = "ollama_conversation_id"
+
+
+# --------------------------------------------------
+# Request models
+# --------------------------------------------------
+
+class ChatMessage(BaseModel):
+    role: Literal["system", "user", "assistant"]
+    content: str
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage]
+
+
+# --------------------------------------------------
+# Database helpers
+# --------------------------------------------------
+
+def get_db_connection():
+    """
+    Open a new PostgreSQL connection.
+
+    We create connections only when they are needed
+    instead of keeping one global connection open.
+    """
+
+    return psycopg.connect(
+        host=DB_HOST,
+        port=DB_PORT,
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD,
+    )
+
+
+def make_conversation_title(message: str) -> str:
+    """
+    Create a short title from the first user message.
+    """
+
+    cleaned = " ".join(message.split())
+
+    if not cleaned:
+        return "New Chat"
+
+    if len(cleaned) <= 60:
+        return cleaned
+
+    return cleaned[:57] + "..."
+
+
+def get_or_create_conversation(
+    cookie_value: str | None,
+    first_user_message: str,
+) -> int:
+    """
+    Use the conversation ID stored in the browser cookie
+    if it exists and is still valid.
+
+    Otherwise create a new conversation.
+    """
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            # Try to reuse the conversation stored
+            # in the browser cookie.
+            if cookie_value:
+
+                try:
+                    conversation_id = int(cookie_value)
+
+                except ValueError:
+                    conversation_id = None
+
+                if conversation_id is not None:
+
+                    cur.execute(
+                        """
+                        SELECT id
+                        FROM conversations
+                        WHERE id = %s;
+                        """,
+                        (conversation_id,),
+                    )
+
+                    row = cur.fetchone()
+
+                    if row:
+                        return row[0]
+
+            # No valid conversation exists,
+            # so create a new one.
+            title = make_conversation_title(
+                first_user_message
+            )
+
+            cur.execute(
+                """
+                INSERT INTO conversations (title)
+                VALUES (%s)
+                RETURNING id;
+                """,
+                (title,),
+            )
+
+            row = cur.fetchone()
+
+            return row[0]
+
+
+def save_message(
+    conversation_id: int,
+    role: str,
+    content: str,
+):
+    """
+    Save one message and update the conversation's
+    updated_at timestamp.
+    """
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            cur.execute(
+                """
+                INSERT INTO messages (
+                    conversation_id,
+                    role,
+                    content
+                )
+                VALUES (%s, %s, %s);
+                """,
+                (
+                    conversation_id,
+                    role,
+                    content,
+                ),
+            )
+
+            cur.execute(
+                """
+                UPDATE conversations
+                SET updated_at = NOW()
+                WHERE id = %s;
+                """,
+                (conversation_id,),
+            )
+
+
+# --------------------------------------------------
+# Routes
+# --------------------------------------------------
+
+@my_api.get("/")
+def home():
+    return FileResponse(INDEX_FILE)
+
+
+@my_api.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "message": "FastAPI is running on lai512",
+        "model": MODEL_NAME,
+        "streaming": True,
+        "database": DB_NAME,
+    }
+
+
+@my_api.post("/chat")
+def chat(
+    request_body: ChatRequest,
+    http_request: Request,
+):
+
+    messages = [
+        {
+            "role": message.role,
+            "content": message.content,
+        }
+        for message in request_body.messages
+    ]
+
+    if not messages:
+        raise HTTPException(
+            status_code=400,
+            detail="No messages were provided.",
+        )
+
+
+    # Find the latest user message.
+    #
+    # The browser sends the entire conversation history,
+    # but we only need to save the newest user message
+    # during this request.
+    latest_user_message = None
+
+    for message in reversed(messages):
+
+        if message["role"] == "user":
+            latest_user_message = message["content"]
+            break
+
+
+    if latest_user_message is None:
+        raise HTTPException(
+            status_code=400,
+            detail="No user message was provided.",
+        )
+
+
+    # --------------------------------------------------
+    # Find/create conversation and save USER message
+    # --------------------------------------------------
+
+    cookie_value = http_request.cookies.get(
+        CONVERSATION_COOKIE
+    )
+
+    try:
+
+        conversation_id = get_or_create_conversation(
+            cookie_value,
+            latest_user_message,
+        )
+
+        save_message(
+            conversation_id=conversation_id,
+            role="user",
+            content=latest_user_message,
+        )
+
+    except psycopg.Error as error:
+
+        print(
+            "PostgreSQL error while saving user message:",
+            error,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Could not save the message to PostgreSQL.",
+        )
+
+
+    # --------------------------------------------------
+    # Send conversation to Ollama
+    # --------------------------------------------------
+
+    data = {
+        "model": MODEL_NAME,
+        "messages": messages,
+        "stream": True,
+    }
+
+
+    ollama_request = urllib.request.Request(
+        OLLAMA_CHAT_URL,
+        data=json.dumps(data).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+        },
+    )
+
+
+    # Open the Ollama connection before FastAPI starts
+    # streaming to the browser.
+    #
+    # This lets us return a normal HTTP error if Ollama
+    # cannot be contacted.
+    try:
+
+        ollama_response = urllib.request.urlopen(
+            ollama_request,
+            timeout=OLLAMA_TIMEOUT,
+        )
+
+    except urllib.error.HTTPError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Ollama returned HTTP {error.code}",
+        )
+
+    except urllib.error.URLError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not connect to Ollama: {error.reason}",
+        )
+
+
+    # --------------------------------------------------
+    # Stream Ollama response
+    # --------------------------------------------------
+
+    def stream_ollama_response():
+
+        """
+        Ollama with stream=true returns multiple JSON lines.
+
+        Example:
+
+        {"message":{"content":"Hello"},"done":false}
+        {"message":{"content":" there"},"done":false}
+        {"message":{"content":"!"},"done":false}
+        {"done":true}
+
+        We send each text chunk immediately to the browser,
+        while also collecting the complete assistant response.
+
+        After Ollama reports done=true, the complete assistant
+        response is saved once in PostgreSQL.
+        """
+
+        assistant_parts = []
+        completed = False
+
+
+        with ollama_response as response:
+
+            for raw_line in response:
+
+                if not raw_line.strip():
+                    continue
+
+
+                try:
+
+                    chunk = json.loads(
+                        raw_line.decode("utf-8")
+                    )
+
+                except json.JSONDecodeError:
+                    continue
+
+
+                content = (
+                    chunk
+                    .get("message", {})
+                    .get("content", "")
+                )
+
+
+                if content:
+
+                    assistant_parts.append(content)
+
+                    # Immediately send this part
+                    # to the browser.
+                    yield content
+
+
+                if chunk.get("done"):
+
+                    completed = True
+                    break
+
+
+        # --------------------------------------------------
+        # Save complete ASSISTANT response
+        # --------------------------------------------------
+
+        assistant_content = "".join(
+            assistant_parts
+        ).strip()
+
+
+        if completed and assistant_content:
+
+            try:
+
+                save_message(
+                    conversation_id=conversation_id,
+                    role="assistant",
+                    content=assistant_content,
+                )
+
+            except psycopg.Error as error:
+
+                # At this point streaming may already have started,
+                # so we cannot safely change the HTTP status code.
+                #
+                # Log the database error on the server instead.
+                print(
+                    "PostgreSQL error while saving "
+                    "assistant message:",
+                    error,
+                )
+
+
+    response = StreamingResponse(
+        stream_ollama_response(),
+        media_type="text/plain; charset=utf-8",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Content-Type-Options": "nosniff",
+        },
+    )
+
+
+    # Store the conversation ID in the user's browser.
+    #
+    # On the next POST /chat request, the browser will
+    # automatically send this cookie back to FastAPI.
+    response.set_cookie(
+        key=CONVERSATION_COOKIE,
+        value=str(conversation_id),
+        httponly=True,
+        samesite="lax",
+    )
+
+
+    return response

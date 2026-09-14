@@ -1,0 +1,16 @@
+model,task_id,correctness,instruction_following,relevance,completeness,conciseness,total
+qwen3:1.7b,knowledge,4,5,5,4,4,22
+qwen3:1.7b,reasoning,5,2,4,5,2,18
+qwen3:1.7b,coding,5,5,5,5,5,25
+qwen3:1.7b,summarization,5,5,5,5,5,25
+qwen3:1.7b,instruction,5,5,5,5,5,25
+qwen3:8b,knowledge,5,5,5,5,5,25
+qwen3:8b,reasoning,5,5,5,5,5,25
+qwen3:8b,coding,5,5,5,5,5,25
+qwen3:8b,summarization,5,5,5,4,5,24
+qwen3:8b,instruction,5,5,5,5,5,25
+gemma4:12b,knowledge,5,5,5,5,5,25
+gemma4:12b,reasoning,5,4,5,5,4,23
+gemma4:12b,coding,5,5,5,5,5,25
+gemma4:12b,summarization,5,5,5,4,5,24
+gemma4:12b,instruction,5,5,5,5,5,25

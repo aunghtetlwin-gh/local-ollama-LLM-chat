@@ -1,0 +1,691 @@
+import json
+import os
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+import psycopg
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel
+
+
+# --------------------------------------------------
+# Application setup
+# --------------------------------------------------
+
+my_api = FastAPI()
+
+BASE_DIR = Path(__file__).resolve().parent
+INDEX_FILE = BASE_DIR / "index.html"
+
+load_dotenv(BASE_DIR / ".env")
+
+
+# --------------------------------------------------
+# Ollama configuration
+# --------------------------------------------------
+
+DEFAULT_MODEL_NAME = "qwen3:8b"
+
+AVAILABLE_MODELS = [
+    "qwen3:1.7b",
+    "qwen3:8b",
+]
+
+OLLAMA_CHAT_URL = "http://127.0.0.1:11434/api/chat"
+
+OLLAMA_TIMEOUT = 120
+
+
+# --------------------------------------------------
+# PostgreSQL configuration
+# --------------------------------------------------
+
+DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
+DB_PORT = os.getenv("DB_PORT", "5432")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+
+
+# --------------------------------------------------
+# Request models
+# --------------------------------------------------
+
+class ChatRequest(BaseModel):
+    conversation_id: int | None = None
+    message: str
+    model: str = DEFAULT_MODEL_NAME
+
+
+# --------------------------------------------------
+# Database helpers
+# --------------------------------------------------
+
+def get_db_connection():
+    """
+    Create a PostgreSQL connection.
+    """
+
+    return psycopg.connect(
+        host=DB_HOST,
+        port=DB_PORT,
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD,
+    )
+
+
+def make_conversation_title(message: str) -> str:
+    """
+    Use the first user message as the conversation title.
+    """
+
+    cleaned = " ".join(message.split())
+
+    if not cleaned:
+        return "New Chat"
+
+    if len(cleaned) <= 60:
+        return cleaned
+
+    return cleaned[:57] + "..."
+
+
+def create_conversation(first_message: str) -> int:
+    """
+    Create a new conversation and return its ID.
+    """
+
+    title = make_conversation_title(first_message)
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            cur.execute(
+                """
+                INSERT INTO conversations (title)
+                VALUES (%s)
+                RETURNING id;
+                """,
+                (title,),
+            )
+
+            row = cur.fetchone()
+
+            return row[0]
+
+
+def conversation_exists(conversation_id: int) -> bool:
+    """
+    Check that a conversation exists.
+    """
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            cur.execute(
+                """
+                SELECT id
+                FROM conversations
+                WHERE id = %s;
+                """,
+                (conversation_id,),
+            )
+
+            return cur.fetchone() is not None
+
+
+def save_message(
+    conversation_id: int,
+    role: str,
+    content: str,
+    model: str | None = None,
+):
+    """
+    Save one message and update the conversation timestamp.
+
+    User messages normally have model=NULL.
+    Assistant messages store the Ollama model that generated them.
+    """
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            cur.execute(
+                """
+                INSERT INTO messages (
+                    conversation_id,
+                    role,
+                    content,
+                    model
+                )
+                VALUES (%s, %s, %s, %s);
+                """,
+                (
+                    conversation_id,
+                    role,
+                    content,
+                    model,
+                ),
+            )
+
+            cur.execute(
+                """
+                UPDATE conversations
+                SET updated_at = NOW()
+                WHERE id = %s;
+                """,
+                (conversation_id,),
+            )
+
+
+def get_conversation_messages(
+    conversation_id: int,
+):
+    """
+    Load every message belonging to a conversation.
+
+    Model information is returned for the browser,
+    but Ollama itself only needs role + content.
+    """
+
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+
+            cur.execute(
+                """
+                SELECT
+                    id,
+                    role,
+                    content,
+                    created_at,
+                    model
+                FROM messages
+                WHERE conversation_id = %s
+                ORDER BY id;
+                """,
+                (conversation_id,),
+            )
+
+            rows = cur.fetchall()
+
+    return [
+        {
+            "id": row[0],
+            "role": row[1],
+            "content": row[2],
+            "created_at": row[3],
+            "model": row[4],
+        }
+        for row in rows
+    ]
+
+
+# --------------------------------------------------
+# Basic routes
+# --------------------------------------------------
+
+@my_api.get("/")
+def home():
+    return FileResponse(INDEX_FILE)
+
+
+@my_api.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "message": "FastAPI is running on lai512",
+        "default_model": DEFAULT_MODEL_NAME,
+        "available_models": AVAILABLE_MODELS,
+        "streaming": True,
+        "database": DB_NAME,
+        "persistence": True,
+        "model_tracking": True,
+    }
+
+
+@my_api.get("/models")
+def list_models():
+    """
+    Return selectable Ollama models.
+    """
+
+    return {
+        "default_model": DEFAULT_MODEL_NAME,
+        "models": AVAILABLE_MODELS,
+    }
+
+
+# --------------------------------------------------
+# Conversation API
+# --------------------------------------------------
+
+@my_api.get("/conversations")
+def list_conversations():
+    """
+    Return all conversations.
+
+    Most recently updated conversations appear first.
+    """
+
+    try:
+
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+
+                cur.execute(
+                    """
+                    SELECT
+                        id,
+                        title,
+                        created_at,
+                        updated_at
+                    FROM conversations
+                    ORDER BY updated_at DESC;
+                    """
+                )
+
+                rows = cur.fetchall()
+
+    except psycopg.Error as error:
+
+        print(
+            "PostgreSQL error while listing conversations:",
+            error,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Could not load conversations.",
+        )
+
+    conversations = [
+        {
+            "id": row[0],
+            "title": row[1],
+            "created_at": row[2],
+            "updated_at": row[3],
+        }
+        for row in rows
+    ]
+
+    return {
+        "conversations": conversations
+    }
+
+
+@my_api.get("/conversations/{conversation_id}")
+def get_conversation(conversation_id: int):
+    """
+    Return one conversation and all of its messages.
+    """
+
+    try:
+
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+
+                cur.execute(
+                    """
+                    SELECT
+                        id,
+                        title,
+                        created_at,
+                        updated_at
+                    FROM conversations
+                    WHERE id = %s;
+                    """,
+                    (conversation_id,),
+                )
+
+                conversation = cur.fetchone()
+
+                if conversation is None:
+
+                    raise HTTPException(
+                        status_code=404,
+                        detail="Conversation not found.",
+                    )
+
+                cur.execute(
+                    """
+                    SELECT
+                        id,
+                        role,
+                        content,
+                        created_at,
+                        model
+                    FROM messages
+                    WHERE conversation_id = %s
+                    ORDER BY id;
+                    """,
+                    (conversation_id,),
+                )
+
+                message_rows = cur.fetchall()
+
+    except HTTPException:
+        raise
+
+    except psycopg.Error as error:
+
+        print(
+            "PostgreSQL error while loading conversation:",
+            error,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Could not load conversation.",
+        )
+
+    messages = [
+        {
+            "id": row[0],
+            "role": row[1],
+            "content": row[2],
+            "created_at": row[3],
+            "model": row[4],
+        }
+        for row in message_rows
+    ]
+
+    return {
+        "conversation": {
+            "id": conversation[0],
+            "title": conversation[1],
+            "created_at": conversation[2],
+            "updated_at": conversation[3],
+        },
+        "messages": messages,
+    }
+
+
+@my_api.delete("/conversations/{conversation_id}")
+def delete_conversation(conversation_id: int):
+    """
+    Delete a conversation.
+
+    PostgreSQL ON DELETE CASCADE automatically
+    deletes all messages belonging to it.
+    """
+
+    try:
+
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+
+                cur.execute(
+                    """
+                    DELETE FROM conversations
+                    WHERE id = %s
+                    RETURNING id;
+                    """,
+                    (conversation_id,),
+                )
+
+                deleted = cur.fetchone()
+
+                if deleted is None:
+
+                    raise HTTPException(
+                        status_code=404,
+                        detail="Conversation not found.",
+                    )
+
+    except HTTPException:
+        raise
+
+    except psycopg.Error as error:
+
+        print(
+            "PostgreSQL error while deleting conversation:",
+            error,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Could not delete conversation.",
+        )
+
+    return {
+        "deleted": True,
+        "conversation_id": conversation_id,
+    }
+
+
+# --------------------------------------------------
+# Chat API
+# --------------------------------------------------
+
+@my_api.post("/chat")
+def chat(request: ChatRequest):
+
+    user_message = request.message.strip()
+    selected_model = request.model.strip()
+
+    if not user_message:
+
+        raise HTTPException(
+            status_code=400,
+            detail="Message cannot be empty.",
+        )
+
+    if selected_model not in AVAILABLE_MODELS:
+
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "message": "Unsupported model.",
+                "selected_model": selected_model,
+                "available_models": AVAILABLE_MODELS,
+            },
+        )
+
+
+    # --------------------------------------------------
+    # Determine conversation
+    # --------------------------------------------------
+
+    try:
+
+        if request.conversation_id is None:
+
+            conversation_id = create_conversation(
+                user_message
+            )
+
+        else:
+
+            conversation_id = request.conversation_id
+
+            if not conversation_exists(
+                conversation_id
+            ):
+
+                raise HTTPException(
+                    status_code=404,
+                    detail="Conversation not found.",
+                )
+
+
+        # User messages do not have a generating model.
+        save_message(
+            conversation_id=conversation_id,
+            role="user",
+            content=user_message,
+            model=None,
+        )
+
+
+        # Load complete persistent history.
+        database_messages = (
+            get_conversation_messages(
+                conversation_id
+            )
+        )
+
+    except HTTPException:
+        raise
+
+    except psycopg.Error as error:
+
+        print(
+            "PostgreSQL error before Ollama request:",
+            error,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Could not save or load conversation.",
+        )
+
+
+    # --------------------------------------------------
+    # Build Ollama conversation history
+    # --------------------------------------------------
+
+    ollama_messages = [
+        {
+            "role": message["role"],
+            "content": message["content"],
+        }
+        for message in database_messages
+    ]
+
+
+    data = {
+        "model": selected_model,
+        "messages": ollama_messages,
+        "stream": True,
+    }
+
+
+    ollama_request = urllib.request.Request(
+        OLLAMA_CHAT_URL,
+        data=json.dumps(data).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+        },
+    )
+
+
+    # --------------------------------------------------
+    # Connect to Ollama
+    # --------------------------------------------------
+
+    try:
+
+        ollama_response = urllib.request.urlopen(
+            ollama_request,
+            timeout=OLLAMA_TIMEOUT,
+        )
+
+    except urllib.error.HTTPError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Ollama returned HTTP {error.code}",
+        )
+
+    except urllib.error.URLError as error:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not connect to Ollama: {error.reason}",
+        )
+
+
+    # --------------------------------------------------
+    # Stream Ollama response
+    # --------------------------------------------------
+
+    def stream_ollama_response():
+
+        assistant_parts = []
+
+        completed = False
+
+
+        with ollama_response as response:
+
+            for raw_line in response:
+
+                if not raw_line.strip():
+                    continue
+
+                try:
+
+                    chunk = json.loads(
+                        raw_line.decode("utf-8")
+                    )
+
+                except json.JSONDecodeError:
+                    continue
+
+
+                content = (
+                    chunk
+                    .get("message", {})
+                    .get("content", "")
+                )
+
+
+                if content:
+
+                    assistant_parts.append(
+                        content
+                    )
+
+                    yield content
+
+
+                if chunk.get("done"):
+
+                    completed = True
+
+                    break
+
+
+        assistant_content = "".join(
+            assistant_parts
+        ).strip()
+
+
+        if completed and assistant_content:
+
+            try:
+
+                # Store exactly which model generated
+                # this assistant response.
+                save_message(
+                    conversation_id=conversation_id,
+                    role="assistant",
+                    content=assistant_content,
+                    model=selected_model,
+                )
+
+            except psycopg.Error as error:
+
+                print(
+                    "PostgreSQL error while saving "
+                    "assistant message:",
+                    error,
+                )
+
+
+    return StreamingResponse(
+        stream_ollama_response(),
+        media_type="text/plain; charset=utf-8",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Content-Type-Options": "nosniff",
+            "X-Conversation-ID": str(
+                conversation_id
+            ),
+            "X-Ollama-Model": selected_model,
+        },
+    )

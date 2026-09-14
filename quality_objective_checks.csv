@@ -1,0 +1,16 @@
+model,task_id,category,objective_pass,details
+qwen3:1.7b,knowledge,Knowledge / Explanation,True,four_bullets=True; identity=True; storage=True; scaling_update=True; use_case=True
+qwen3:1.7b,reasoning,Reasoning,False,correct_combination=True; nonempty_lines=11; within_four_lines=False
+qwen3:1.7b,coding,Coding,True,no_counter=True; no_markdown_fence=True; parses=True; function_exists=True; tests_pass=True
+qwen3:1.7b,summarization,Summarization,True,sentence_count=2; exactly_two=True
+qwen3:1.7b,instruction,Instruction Following,True,"lines=['COUNT=3', 'SUM=19', 'MAX=9']; exact_match=True"
+qwen3:8b,knowledge,Knowledge / Explanation,True,four_bullets=True; identity=True; storage=True; scaling_update=True; use_case=True
+qwen3:8b,reasoning,Reasoning,True,correct_combination=True; nonempty_lines=3; within_four_lines=True
+qwen3:8b,coding,Coding,True,no_counter=True; no_markdown_fence=True; parses=True; function_exists=True; tests_pass=True
+qwen3:8b,summarization,Summarization,True,sentence_count=2; exactly_two=True
+qwen3:8b,instruction,Instruction Following,True,"lines=['COUNT=3', 'SUM=19', 'MAX=9']; exact_match=True"
+gemma4:12b,knowledge,Knowledge / Explanation,True,four_bullets=True; identity=True; storage=True; scaling_update=True; use_case=True
+gemma4:12b,reasoning,Reasoning,False,correct_combination=True; nonempty_lines=5; within_four_lines=False
+gemma4:12b,coding,Coding,True,no_counter=True; no_markdown_fence=True; parses=True; function_exists=True; tests_pass=True
+gemma4:12b,summarization,Summarization,True,sentence_count=2; exactly_two=True
+gemma4:12b,instruction,Instruction Following,True,"lines=['COUNT=3', 'SUM=19', 'MAX=9']; exact_match=True"

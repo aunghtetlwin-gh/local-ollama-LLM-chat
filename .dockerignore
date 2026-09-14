@@ -1,0 +1,17 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+.git/
+.gitignore
+
+.env
+
+server.py.backup
+server.py.before-*
+index.html.before-*
+
+db_test.py
+ollama_api_test.py
