@@ -1,0 +1,27 @@
+{
+  "status": "SUCCESS",
+  "scope": "automated non-destructive post-deployment verification; authenticated browser acceptance remains pending",
+  "version": "portal-security-v1-b893d3a5f7c1",
+  "release_directory": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release",
+  "managed_pid": 1565020,
+  "port8001_operations": 16,
+  "fallback_pid": 2019096,
+  "port8002_operations": 16,
+  "checks_passed": 31,
+  "checks_failed": 0,
+  "pending_browser_or_operator_checks": [
+    "Owner performs normal login/session/logout through actual browser/SSH forward",
+    "Authenticated missing/invalid CSRF must return403 and preserve session",
+    "Researcher administrator access must return403; authorized administrator read access must work",
+    "Owner-scoped read/list behavior with explicitly designated authorized test resources; no job mutations"
+  ],
+  "started_epoch": 1793983500.2876565,
+  "finished_epoch": 1793983503.4243624,
+  "services_restarted_or_modified": false,
+  "accounts_or_database_modified_by_verification": false,
+  "real_login_or_tokens_used": false,
+  "job_actions_or_inference": false,
+  "evidence_directory": "/home/lailai/ollama-test/portal_deployment_verification/verification-20261106T164500Z-e0f8b1c9",
+  "verified_at_utc": "2026-11-06T16:45:03.424362+00:00",
+  "verified_at_local": "2026-11-06T23:45:03.424362+07:00"
+}

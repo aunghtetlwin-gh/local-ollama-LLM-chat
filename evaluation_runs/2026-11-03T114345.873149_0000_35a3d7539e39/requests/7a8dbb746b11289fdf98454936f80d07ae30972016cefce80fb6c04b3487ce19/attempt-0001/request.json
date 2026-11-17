@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "gsm8k-test-1055",
+  "repetition": 1,
+  "prompt_sha256": "2e23178e8602a771c0dc47c503a553abbbe49e3e457c27d3fd6146f233c50c85",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nJames has to buy insurance.  Since he had an accident it was 60% more than normal.  The normal cost is $120 a month.  How much does he pay a year?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "7a8dbb746b11289fdf98454936f80d07ae30972016cefce80fb6c04b3487ce19"
+}

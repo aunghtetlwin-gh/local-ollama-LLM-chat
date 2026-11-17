@@ -1,0 +1,4 @@
+reference_model,comparison_model,question_pairs_n,comparison_only_correct_n,reference_only_correct_n,both_correct_n,both_incorrect_n,accuracy_difference_percentage_points,paired_bootstrap95_low_percentage_points,paired_bootstrap95_high_percentage_points,bootstrap_resamples,bootstrap_seed,hypothesis_test_performed
+qwen3:1.7b,qwen3:8b,50,12,1,33,4,22.0,9.999999999999998,36.0,20000,42,False
+qwen3:1.7b,gemma4:12b,50,13,0,34,3,26.0,14.000000000000002,38.0,20000,42,False
+qwen3:8b,gemma4:12b,50,2,0,45,3,4.0,0.0,9.999999999999998,20000,42,False

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-11-09T04:33:11.711770+00:00",
+  "module": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release/job_output.py",
+  "module_sha256": "9a50e06b181ba40b8bc8eedc4beb5c6d8aa736938ec990a785e5b9f29b8b588b",
+  "passed": 6,
+  "checks": [
+    {
+      "name": "custom",
+      "passed": true,
+      "scope": "synthetic tempfile only"
+    },
+    {
+      "name": "empty",
+      "passed": true,
+      "scope": "synthetic tempfile only"
+    },
+    {
+      "name": "leaf_symlink_denied",
+      "passed": true
+    },
+    {
+      "name": "parent_symlink_denied",
+      "passed": true
+    },
+    {
+      "name": "outside_policy_denied_without_open",
+      "passed": true
+    },
+    {
+      "name": "legacy_path_resolution_without_open",
+      "passed": true
+    }
+  ],
+  "real_job_output_opened": false,
+  "production_environment_changed": false,
+  "note": "Policy environment changed only inside this short-lived test process; no production app import or DB initialization; endpoint ownership/UID/size cases use sealed 190-test evidence"
+}

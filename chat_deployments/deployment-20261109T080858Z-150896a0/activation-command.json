@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "docker",
+    "compose",
+    "-p",
+    "ollama-test",
+    "-f",
+    "/home/lailai/ollama-test/docker-compose.yml",
+    "-f",
+    "/home/lailai/ollama-test/chat_image_candidates/origin-20261109T060037Z-4f0fba1d/config/compose.security.yml",
+    "up",
+    "-d",
+    "--no-deps",
+    "--no-build",
+    "--pull",
+    "never",
+    "--force-recreate",
+    "app"
+  ],
+  "timestamp": "2026-11-09T08:11:34.140377+00:00"
+}

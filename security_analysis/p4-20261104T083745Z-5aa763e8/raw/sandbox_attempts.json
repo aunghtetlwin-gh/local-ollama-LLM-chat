@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "suite": "portal",
+      "command_record": "raw/portal-command.json",
+      "observed_wrapper_exit_code": 1,
+      "outcome": "subprocess.TimeoutExpired after 240 seconds",
+      "junit_produced": false,
+      "interpretation": "sandbox TestClient stall; not an application assertion failure",
+      "partial_child_stdout": "not retained by the initial wrapper; complete host rerun output is preserved"
+    },
+    {
+      "suite": "chat",
+      "command_record": "raw/chat-command.json",
+      "observed_wrapper_exit_code": 1,
+      "outcome": "subprocess.TimeoutExpired after 240 seconds",
+      "junit_produced": false,
+      "interpretation": "sandbox TestClient stall; not an application assertion failure",
+      "partial_child_stdout": "not retained by the initial wrapper; complete host rerun output is preserved"
+    }
+  ]
+}

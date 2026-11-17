@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "gsm8k-test-0152",
+  "repetition": 1,
+  "prompt_sha256": "77bfe6f8073d14b131b98d9e5c3480f90c57474df898708b773cb38e5dbdf06e",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nCarl buys ten packs of cookies. Each pack of cookies has six cookies inside. Each cookie cost $0.10. How much change does Carl receive if he pay with a $10 bill?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "0c96395ee1f48527c07f5692647767221727cca4b1f0a618c414ffe75cdcca27"
+}

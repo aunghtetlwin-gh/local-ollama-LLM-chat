@@ -1,0 +1,6 @@
+{
+  "all_original_files_unchanged": true,
+  "protected_files_n": 1584,
+  "changed": [],
+  "scope": "original portal/chat files and full prior MPS experiment; excludes dependency environments, Git internals, caches and this new security_analysis tree"
+}

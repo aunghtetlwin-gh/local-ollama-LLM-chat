@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "gsm8k-test-0746",
+  "repetition": 1,
+  "prompt_sha256": "1ce236895f5cbdd2da883c716ebd05e6a9c358e6060807513141d26943f755eb",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nJake's family wants to compare the cost of the two different amusement parks. The first amusement park has a $26 fee for each adult and a $12 fee for each child; while the second amusement park has a $14 fee for each adult and $10 for each child. If there are 2 adults and 2 children in their family, how much will they be able to save if they choose the second amusement park over the first?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "2997de6a05e42a3378092d7adc2a35b73fd37b3df4fd0c4c8889c2b05cea9bf9"
+}

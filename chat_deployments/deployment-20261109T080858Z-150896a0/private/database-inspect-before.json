@@ -1,0 +1,330 @@
+{
+  "Id": "3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd",
+  "Created": "2026-08-31T05:23:00.244655786Z",
+  "Path": "docker-entrypoint.sh",
+  "Args": [
+    "postgres"
+  ],
+  "State": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 2537,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-16T02:21:35.011146333Z",
+    "FinishedAt": "2026-09-14T10:05:14.97968445Z",
+    "Health": {
+      "Status": "healthy",
+      "FailingStreak": 0,
+      "Log": [
+        {
+          "Start": "2026-11-09T15:11:13.278266363+07:00",
+          "End": "2026-11-09T15:11:13.322934229+07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-11-09T15:11:18.324254476+07:00",
+          "End": "2026-11-09T15:11:18.369381626+07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-11-09T15:11:23.370516169+07:00",
+          "End": "2026-11-09T15:11:23.423214733+07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-11-09T15:11:28.424756693+07:00",
+          "End": "2026-11-09T15:11:28.453191293+07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-11-09T15:11:33.454027504+07:00",
+          "End": "2026-11-09T15:11:33.500291053+07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        }
+      ]
+    }
+  },
+  "Image": "sha256:156f0b253fd61366d5fc2107ad45955027d5612f695a8436ce20167f3fa79bff",
+  "ResolvConfPath": "/var/lib/docker/containers/3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd/resolv.conf",
+  "HostnamePath": "/var/lib/docker/containers/3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd/hostname",
+  "HostsPath": "/var/lib/docker/containers/3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd/hosts",
+  "LogPath": "/var/lib/docker/containers/3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd/3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd-json.log",
+  "Name": "/ollama-chat-db",
+  "RestartCount": 0,
+  "Driver": "overlayfs",
+  "Platform": "linux",
+  "MountLabel": "",
+  "ProcessLabel": "",
+  "AppArmorProfile": "docker-default",
+  "ExecIDs": null,
+  "HostConfig": {
+    "Binds": [
+      "ollama-test_postgres_data:/var/lib/postgresql/data:rw"
+    ],
+    "ContainerIDFile": "",
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {}
+    },
+    "NetworkMode": "ollama-test_default",
+    "PortBindings": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "5433"
+        }
+      ]
+    },
+    "RestartPolicy": {
+      "Name": "unless-stopped",
+      "MaximumRetryCount": 0
+    },
+    "AutoRemove": false,
+    "VolumeDriver": "",
+    "VolumesFrom": null,
+    "ConsoleSize": [
+      0,
+      0
+    ],
+    "CapAdd": null,
+    "CapDrop": null,
+    "CgroupnsMode": "private",
+    "Dns": [],
+    "DnsOptions": [],
+    "DnsSearch": [],
+    "ExtraHosts": [],
+    "GroupAdd": null,
+    "IpcMode": "private",
+    "Cgroup": "",
+    "Links": null,
+    "OomScoreAdj": 0,
+    "PidMode": "",
+    "Privileged": false,
+    "PublishAllPorts": false,
+    "ReadonlyRootfs": false,
+    "SecurityOpt": null,
+    "UTSMode": "",
+    "UsernsMode": "",
+    "ShmSize": 67108864,
+    "Runtime": "runc",
+    "Isolation": "",
+    "CpuShares": 0,
+    "Memory": 0,
+    "NanoCpus": 0,
+    "CgroupParent": "",
+    "BlkioWeight": 0,
+    "BlkioWeightDevice": null,
+    "BlkioDeviceReadBps": null,
+    "BlkioDeviceWriteBps": null,
+    "BlkioDeviceReadIOps": null,
+    "BlkioDeviceWriteIOps": null,
+    "CpuPeriod": 0,
+    "CpuQuota": 0,
+    "CpuRealtimePeriod": 0,
+    "CpuRealtimeRuntime": 0,
+    "CpusetCpus": "",
+    "CpusetMems": "",
+    "Devices": null,
+    "DeviceCgroupRules": null,
+    "DeviceRequests": null,
+    "MemoryReservation": 0,
+    "MemorySwap": 0,
+    "MemorySwappiness": null,
+    "OomKillDisable": null,
+    "PidsLimit": null,
+    "Ulimits": null,
+    "CpuCount": 0,
+    "CpuPercent": 0,
+    "IOMaximumIOps": 0,
+    "IOMaximumBandwidth": 0,
+    "MaskedPaths": [
+      "/proc/acpi",
+      "/proc/asound",
+      "/proc/interrupts",
+      "/proc/kcore",
+      "/proc/keys",
+      "/proc/latency_stats",
+      "/proc/sched_debug",
+      "/proc/scsi",
+      "/proc/timer_list",
+      "/proc/timer_stats",
+      "/sys/devices/virtual/powercap",
+      "/sys/firmware",
+      "/sys/devices/system/cpu/cpu0/thermal_throttle",
+      "/sys/devices/system/cpu/cpu1/thermal_throttle",
+      "/sys/devices/system/cpu/cpu2/thermal_throttle",
+      "/sys/devices/system/cpu/cpu3/thermal_throttle",
+      "/sys/devices/system/cpu/cpu4/thermal_throttle",
+      "/sys/devices/system/cpu/cpu5/thermal_throttle",
+      "/sys/devices/system/cpu/cpu6/thermal_throttle",
+      "/sys/devices/system/cpu/cpu7/thermal_throttle",
+      "/sys/devices/system/cpu/cpu8/thermal_throttle",
+      "/sys/devices/system/cpu/cpu9/thermal_throttle",
+      "/sys/devices/system/cpu/cpu10/thermal_throttle",
+      "/sys/devices/system/cpu/cpu11/thermal_throttle",
+      "/sys/devices/system/cpu/cpu12/thermal_throttle",
+      "/sys/devices/system/cpu/cpu13/thermal_throttle",
+      "/sys/devices/system/cpu/cpu14/thermal_throttle",
+      "/sys/devices/system/cpu/cpu15/thermal_throttle",
+      "/sys/devices/system/cpu/cpu16/thermal_throttle",
+      "/sys/devices/system/cpu/cpu17/thermal_throttle",
+      "/sys/devices/system/cpu/cpu18/thermal_throttle",
+      "/sys/devices/system/cpu/cpu19/thermal_throttle",
+      "/sys/devices/system/cpu/cpu20/thermal_throttle",
+      "/sys/devices/system/cpu/cpu21/thermal_throttle",
+      "/sys/devices/system/cpu/cpu22/thermal_throttle",
+      "/sys/devices/system/cpu/cpu23/thermal_throttle"
+    ],
+    "ReadonlyPaths": [
+      "/proc/bus",
+      "/proc/fs",
+      "/proc/irq",
+      "/proc/sys",
+      "/proc/sysrq-trigger"
+    ]
+  },
+  "Storage": {
+    "RootFS": {
+      "Snapshot": {
+        "Name": "overlayfs"
+      }
+    }
+  },
+  "Mounts": [
+    {
+      "Type": "volume",
+      "Name": "ollama-test_postgres_data",
+      "Source": "/var/lib/docker/volumes/ollama-test_postgres_data/_data",
+      "Destination": "/var/lib/postgresql/data",
+      "Driver": "local",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": ""
+    }
+  ],
+  "Config": {
+    "Hostname": "3568ff1916f8",
+    "Domainname": "",
+    "User": "",
+    "AttachStdin": false,
+    "AttachStdout": true,
+    "AttachStderr": true,
+    "ExposedPorts": {
+      "5432/tcp": {}
+    },
+    "Tty": false,
+    "OpenStdin": false,
+    "StdinOnce": false,
+    "Env": [
+      "POSTGRES_PASSWORD=admin",
+      "POSTGRES_DB=ollama_chat_db",
+      "POSTGRES_USER=ollama_user",
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/14/bin",
+      "GOSU_VERSION=1.19",
+      "LANG=en_US.utf8",
+      "PG_MAJOR=14",
+      "PG_VERSION=14.24-1.pgdg13+2",
+      "PGDATA=/var/lib/postgresql/data"
+    ],
+    "Cmd": [
+      "postgres"
+    ],
+    "Healthcheck": {
+      "Test": [
+        "CMD-SHELL",
+        "pg_isready -U ollama_user -d ollama_chat_db"
+      ],
+      "Interval": 5000000000,
+      "Timeout": 5000000000,
+      "Retries": 10
+    },
+    "Image": "postgres:14",
+    "Volumes": {
+      "/var/lib/postgresql/data": {}
+    },
+    "WorkingDir": "",
+    "Entrypoint": [
+      "docker-entrypoint.sh"
+    ],
+    "Labels": {
+      "com.docker.compose.config-hash": "d01e3410315e56412f1a8a1a21cdbea926acebfc4e2ceeb5b61201166f959271",
+      "com.docker.compose.container-number": "1",
+      "com.docker.compose.depends_on": "",
+      "com.docker.compose.image": "sha256:7e900619df8eca59f34c7fb280a0bcb46e51c75f1697e98bb99f31183f71b762",
+      "com.docker.compose.oneoff": "False",
+      "com.docker.compose.project": "ollama-test",
+      "com.docker.compose.project.config_files": "/home/lailai/ollama-test/docker-compose.yml",
+      "com.docker.compose.project.working_dir": "/home/lailai/ollama-test",
+      "com.docker.compose.service": "db",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "StopSignal": "SIGINT"
+  },
+  "NetworkSettings": {
+    "SandboxID": "cab50cbe0007ac60712a9f814c704760dfe0a59f99281ec0bbd788237a7ad3e0",
+    "SandboxKey": "/var/run/docker/netns/cab50cbe0007",
+    "Ports": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "5433"
+        }
+      ]
+    },
+    "Networks": {
+      "ollama-test_default": {
+        "IPAMConfig": null,
+        "Links": null,
+        "Aliases": [
+          "ollama-chat-db",
+          "db"
+        ],
+        "DriverOpts": null,
+        "GwPriority": 0,
+        "NetworkID": "1f652631f5ff0bdfa598a00c3e81f524b6cf9121833f056e73193e7b81c7767d",
+        "EndpointID": "3678b2534eb2fab6d89ac8bac9762c86016574ceafa7046df310a2fd8b1264ba",
+        "Gateway": "172.18.0.1",
+        "IPAddress": "172.18.0.2",
+        "MacAddress": "c2:c8:e4:f9:8a:e5",
+        "IPPrefixLen": 16,
+        "IPv6Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "DNSNames": [
+          "ollama-chat-db",
+          "db",
+          "3568ff1916f8"
+        ]
+      }
+    }
+  },
+  "ImageManifestDescriptor": {
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "digest": "sha256:7e900619df8eca59f34c7fb280a0bcb46e51c75f1697e98bb99f31183f71b762",
+    "size": 3627,
+    "annotations": {
+      "com.docker.official-images.bashbrew.arch": "amd64",
+      "org.opencontainers.image.base.digest": "sha256:abc9cb88a5587630d7f915f47b23b0668fe250fbfc6457aa4d52b534c1bbf73f",
+      "org.opencontainers.image.base.name": "debian:trixie-slim",
+      "org.opencontainers.image.created": "2026-08-25T00:42:25Z",
+      "org.opencontainers.image.revision": "cfa338619f694df7c72b8c15c3b52adc4392cfe9",
+      "org.opencontainers.image.source": "https://github.com/docker-library/postgres.git#cfa338619f694df7c72b8c15c3b52adc4392cfe9:14/trixie",
+      "org.opencontainers.image.url": "https://hub.docker.com/_/postgres",
+      "org.opencontainers.image.version": "14.24"
+    },
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    }
+  }
+}

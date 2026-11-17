@@ -1,0 +1,12 @@
+{
+  "analysis_manifest.json": "2b10a4a9d881f3a91905a55d664e8dff2558f8c366518c0624521b8fda6582fa",
+  "category_summary.csv": "27be5a01910fd38908042908810f5feeda64c1c9ff0c8f5719156309c5f2cddf",
+  "integrity_checks.json": "af4cd62ee9111c5edf649354f9e59d559a662168f5e983095ef7e31a58f25414",
+  "manual_review.csv": "244f6ac94c7009c1f2500e2716ec92b3e628e7f98419ed5cc31a0366bad1df6b",
+  "private_blind_mapping.json": "be98d3fe17ae96fe8fe3579b1687ce0050c2d1f986076fb94093ca3de30e829b",
+  "request_metrics.csv": "579247910fd47031822ab7b8b38642148b049e00198053dee6d4120a3be4291b",
+  "request_metrics.json": "6109a3c3eb07acd9936f43d6791a4a8c4fdea9d2d21cf51e32d681ca1fa48022",
+  "scores.csv": "02c2ff4d447d6350cf78e195bb7384294b328f771ba7a5f0a7eb0ea41c65d049",
+  "scores.json": "3442ce75458f9563702ea752161975a61de84b44948b1871eea6f973e3508531",
+  "summary.json": "e3219570bc4146ce9a507e7b22da0be49a74693abe1befcea7e1e2e9249885cf"
+}

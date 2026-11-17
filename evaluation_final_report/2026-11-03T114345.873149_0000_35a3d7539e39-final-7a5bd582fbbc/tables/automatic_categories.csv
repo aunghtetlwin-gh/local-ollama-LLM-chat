@@ -1,0 +1,10 @@
+model,category,correct_n,questions_n,automatic_accuracy_percent,format_compliant_n,format_percent
+qwen3:1.7b,reasoning,1,4,25.0,1,25.0
+qwen3:1.7b,instruction,0,4,0.0,1,25.0
+qwen3:1.7b,gsm8k,34,50,68.0,49,98.0
+qwen3:8b,reasoning,0,4,0.0,1,25.0
+qwen3:8b,instruction,3,4,75.0,3,75.0
+qwen3:8b,gsm8k,45,50,90.0,50,100.0
+gemma4:12b,reasoning,3,4,75.0,3,75.0
+gemma4:12b,instruction,3,4,75.0,3,75.0
+gemma4:12b,gsm8k,47,50,94.0,50,100.0

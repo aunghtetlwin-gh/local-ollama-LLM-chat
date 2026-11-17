@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "gsm8k-test-0694",
+  "repetition": 1,
+  "prompt_sha256": "6d21bbb15614899f81210096bb7a5de11381851980c9247ad80b69a719a083ed",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nTomorrow, 42 adults and 15 babies will be attending a function at Mia’s restaurant. The restaurant has 5 times as many regular chairs as high chairs. If there are 8 high chairs, how many more chairs does she have to get?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "49c9d47836f95a8a6b7e960dd221d764a97143e1dd6d30410536d59150a6a8ee"
+}

@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "gsm8k-test-0355",
+  "repetition": 1,
+  "prompt_sha256": "f5028b07f3c5c36850bb5389415b4f0b2cbd7393c5f89f525496c22c73f28acc",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nThere are three trees in Eddy's backyard. The shortest tree has a height of 6 feet, and the second tree has a height of 5 feet more than the shortest tree. The height of the tallest tree is twice the height of the two trees combined. How tall is the tallest tree?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "8233d99e6690fefeed0281626d67dded5053a6fea22469f8335046c2811a3bf3"
+}

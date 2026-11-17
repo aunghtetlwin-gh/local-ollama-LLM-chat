@@ -1,0 +1,24 @@
+{
+  "source": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/evidence/accounting-metadata-prior.json",
+  "provenance": "sealed saved read-only sacct metadata for 127/129, not a new live accounting query",
+  "exit_code": 0,
+  "results": [
+    {
+      "job_id": 127,
+      "resolved_path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.out",
+      "owner_in_saved_accounting": "lailai"
+    },
+    {
+      "job_id": 129,
+      "resolved_path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.out",
+      "owner_in_saved_accounting": "lailai"
+    }
+  ],
+  "real_output_opens": 0,
+  "argv": [
+    "/home/lailai/slurm-portal/.venv/bin/python",
+    "-B",
+    "-c",
+    "import importlib.util,json,os; from pathlib import Path; from unittest.mock import patch; spec=importlib.util.spec_from_file_location('checked_output','/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release/job_output.py'); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m); os.environ['PORTAL_OUTPUT_ROOTS']='[\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2\"]'; rows=[['127', 'lailai', 'nectec-r2-concurrent-job1', 'COMPLETED', '/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-%j.out', '/home/lailai/ollama-test'], ['129', 'lailai', 'nectec-r3-baseline-job1', 'COMPLETED', '/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-%j.out', '/home/lailai/ollama-test']]; answers=[]\nwith patch.object(m.os,'open',side_effect=AssertionError('No output opens')):\n for v in rows:\n  actual=m.resolve_stdout_path({'stdout':v[4],'working_directory':v[5]},int(v[0])); assert actual==v[4].replace('%j',v[0]); answers.append({'job_id':int(v[0]),'resolved_path':actual,'owner_in_saved_accounting':v[1]})\nprint(json.dumps(answers))"
+  ]
+}

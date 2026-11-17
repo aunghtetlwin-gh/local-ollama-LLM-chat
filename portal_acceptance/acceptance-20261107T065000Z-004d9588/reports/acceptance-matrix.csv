@@ -1,0 +1,9 @@
+control,status,evidence
+Current deployment/16 operations,PASS,Live read-only snapshot; matching release hashes
+Fallback 8002,PASS,OpenAPI healthy; same recorded PID; no changes made
+Prior automated live checks,PASS (prior),31/31 recorded
+Admin/researcher login and displays,PASS (operator reported),User browser observations
+Ownership/role/filesystem tests,PASS (isolated),35 existing cases
+Custom stdout mismatch,CONFIRMED LIMITATION,1 passing characterization; retained files at custom paths
+Live owner output success,NOT TESTED,Synthetic success only; production credentials not used
+Authenticated logout/CSRF/direct role browser checks,PENDING,Prior/isolated coverage; current browser checks incomplete

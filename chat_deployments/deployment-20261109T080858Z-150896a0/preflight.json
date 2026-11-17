@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-11-09T08:09:00.920551+00:00",
+  "candidate": "/home/lailai/ollama-test/chat_image_candidates/origin-20261109T060037Z-4f0fba1d",
+  "checks": {
+    "candidate_package_seal": true,
+    "production_app_id": true,
+    "production_app_base_image": true,
+    "app_running": true,
+    "database_identity": true,
+    "database_healthy": true,
+    "database_volume": true,
+    "candidate_image_id": true,
+    "rollback_image_id": true,
+    "patched_server_hash": true,
+    "compose_file_unchanged": true,
+    "app_environment_matches_compose": true,
+    "db_environment_matches_compose": true,
+    "override_only_expected_image": true,
+    "live_runtime_source_and_dependencies": true,
+    "production_filesystem_unmodified": true
+  },
+  "candidate_image_id": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "patched_server_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+  "rollback_image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "app": {
+    "id": "a6526b0cbd1401c78416747f93a1f4e174e5e790b319a38cf1bb1653113aead6",
+    "image": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+    "started": "2026-09-16T02:21:35.009136395Z",
+    "network_mode": "host",
+    "selected_environment": {
+      "DB_HOST": "127.0.0.1",
+      "DB_PORT": "5433",
+      "SESSION_COOKIE_SECURE": "false",
+      "SESSION_TTL_SECONDS": "86400"
+    }
+  },
+  "database": {
+    "id": "3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd",
+    "image": "sha256:156f0b253fd61366d5fc2107ad45955027d5612f695a8436ce20167f3fa79bff",
+    "started": "2026-09-16T02:21:35.011146333Z",
+    "mounts": [
+      {
+        "name": "ollama-test_postgres_data",
+        "destination": "/var/lib/postgresql/data"
+      }
+    ]
+  },
+  "activity_samples": [
+    {
+      "timestamp": "2026-11-09T08:08:58.876288+00:00",
+      "exit_code": 0,
+      "connections": []
+    },
+    {
+      "timestamp": "2026-11-09T08:08:59.891825+00:00",
+      "exit_code": 0,
+      "connections": []
+    },
+    {
+      "timestamp": "2026-11-09T08:09:00.902724+00:00",
+      "exit_code": 0,
+      "connections": []
+    }
+  ],
+  "recent_http_events": [],
+  "raw_logs_saved": false,
+  "activity_limit": "No Origin/Referer or principal recorded; socket/log samples cannot prove streaming completion or identify all headerless clients",
+  "maintenance_window": {
+    "start": "2026-11-09T15:00:00+07:00",
+    "end": "2026-11-09T15:30:00+07:00",
+    "authorization": "user explicitly confirmed users and automated clients finished work"
+  },
+  "services_modified": false,
+  "database_queries": false,
+  "inference": false
+}

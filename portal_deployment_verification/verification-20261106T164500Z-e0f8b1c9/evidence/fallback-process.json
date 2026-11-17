@@ -1,0 +1,14 @@
+{
+  "pid": 2019096,
+  "cwd": "/home/lailai/slurm-portal",
+  "argv": [
+    "/home/lailai/slurm-portal/.venv/bin/python3",
+    ".venv/bin/uvicorn",
+    "app:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8002"
+  ],
+  "start_ticks": "364346317"
+}

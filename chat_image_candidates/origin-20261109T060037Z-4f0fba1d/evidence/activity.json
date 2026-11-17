@@ -1,0 +1,49 @@
+{
+  "samples": [
+    {
+      "timestamp": "2026-11-09T06:08:29.254226+00:00",
+      "ss_exit": 0,
+      "chat_connections": [
+        "0      0         127.0.0.1:8000        127.0.0.1:56354",
+        "0      0         127.0.0.1:56354       127.0.0.1:8000 "
+      ]
+    },
+    {
+      "timestamp": "2026-11-09T06:08:30.263608+00:00",
+      "ss_exit": 0,
+      "chat_connections": [
+        "0      0         127.0.0.1:8000        127.0.0.1:56354",
+        "0      0         127.0.0.1:56354       127.0.0.1:8000 "
+      ]
+    },
+    {
+      "timestamp": "2026-11-09T06:08:31.276722+00:00",
+      "ss_exit": 0,
+      "chat_connections": [
+        "0      0         127.0.0.1:8000        127.0.0.1:56354",
+        "0      0         127.0.0.1:56354       127.0.0.1:8000 "
+      ]
+    }
+  ],
+  "recent_http_events": [
+    {
+      "method": "GET",
+      "path": "/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/session",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/auth/session",
+      "status": 200
+    }
+  ],
+  "logs_exit": 0,
+  "raw_logs_saved": false,
+  "headerless_client_detection": "Origin/Referer are not recorded in access logs; cannot prove no such clients",
+  "streaming_completion": "socket samples and access-log status do not prove no in-flight/idle clients; operator drain still required"
+}

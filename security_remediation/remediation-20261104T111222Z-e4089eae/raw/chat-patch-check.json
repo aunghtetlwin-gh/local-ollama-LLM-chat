@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "-C",
+    "/home/lailai/ollama-test",
+    "apply",
+    "--check",
+    "/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/patches/chat-application.patch"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "read_only": true
+}

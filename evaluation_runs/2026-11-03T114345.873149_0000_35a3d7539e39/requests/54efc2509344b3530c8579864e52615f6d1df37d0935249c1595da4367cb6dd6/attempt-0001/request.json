@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "gsm8k-test-1150",
+  "repetition": 1,
+  "prompt_sha256": "4afabac5b114652b1f59e19cea18607ad2eb417dd709ad78819b9343a3028f73",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nPatricia has 30 roses. She gave 24 roses to her mother. She bought 15 more roses.  How many roses did she have now?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "54efc2509344b3530c8579864e52615f6d1df37d0935249c1595da4367cb6dd6"
+}

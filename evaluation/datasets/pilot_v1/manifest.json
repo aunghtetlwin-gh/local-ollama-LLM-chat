@@ -1,0 +1,252 @@
+{
+  "version": "pilot_v1",
+  "captured_at": "2026-10-30T08:10:12.640626+00:00",
+  "git_head_at_capture": "f7bfe7e02989709371c75587564bdc74e32848ef",
+  "files": [
+    {
+      "path": "benchmark_baseline.csv",
+      "size_bytes": 1480,
+      "sha256": "819aba2dd96fcf7fd379f89a2a668bc518be2d99f617059b599d9e589edf3f53",
+      "row_count": 3,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T15:34:36.072024",
+      "recorded_timestamp_max": "2026-09-02T15:35:09.292283"
+    },
+    {
+      "path": "benchmark_controlled.csv",
+      "size_bytes": 8245,
+      "sha256": "309ec3b7ff5dff596aea31796e8e255b9c97e4cbd31602ba5b493313c792db7e",
+      "row_count": 18,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T15:42:42.259753",
+      "recorded_timestamp_max": "2026-09-02T15:45:27.897802"
+    },
+    {
+      "path": "benchmark_controlled.py",
+      "size_bytes": 10818,
+      "sha256": "74138567a9a62944109645d1f92387e1bfce215543aa62ed673db866b3efda98"
+    },
+    {
+      "path": "benchmark_controlled_seed42.csv",
+      "size_bytes": 8248,
+      "sha256": "3b82b2766fa1cccac474f4eb50b9c1ace5ca1ab4e5d545284682e34546760e61",
+      "row_count": 18,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T15:52:05.786832",
+      "recorded_timestamp_max": "2026-09-02T15:54:51.397770"
+    },
+    {
+      "path": "benchmark_gpu.csv",
+      "size_bytes": 4521,
+      "sha256": "3fe502665a522622602f1f3f9f1d7ad8a23f5d51d2ce4d710cd3f00d0f955c28",
+      "row_count": 9,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T16:05:41.311501",
+      "recorded_timestamp_max": "2026-09-02T16:07:19.368238"
+    },
+    {
+      "path": "benchmark_gpu.py",
+      "size_bytes": 13598,
+      "sha256": "4c861d592bc72eb2bf847b1ce06e13822771393ad4d3fb8dec4ce82ad812b617"
+    },
+    {
+      "path": "benchmark_gpu_long.csv",
+      "size_bytes": 6338,
+      "sha256": "ca7431033f9c7a4a5199dd9797effdd9d8d349b197f420a8848c18e46eb31cec",
+      "row_count": 9,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T16:12:45.529172",
+      "recorded_timestamp_max": "2026-09-02T16:15:27.344782"
+    },
+    {
+      "path": "benchmark_gpu_long.py",
+      "size_bytes": 13872,
+      "sha256": "3e1f1496a1e123e40c425f13cc623bc14dae1a1276d793639d5842e494df31e0"
+    },
+    {
+      "path": "benchmark_models.py",
+      "size_bytes": 5351,
+      "sha256": "a9b5f83e4841bbe3236118b3c8c6d9746298f35c1bcbf907f5c3d36b5affb926"
+    },
+    {
+      "path": "benchmark_multi_prompt.py",
+      "size_bytes": 15054,
+      "sha256": "93d4ad56ee96a06b31b41c43874a035f20a1360b6155b9597a66993f32ce4ae4"
+    },
+    {
+      "path": "benchmark_results.csv",
+      "size_bytes": 679,
+      "sha256": "96ab30f5845adc14d4e28d62fed4ffabcfe472c42b06e7d617e00b22e8815a3a",
+      "row_count": 1,
+      "models": [
+        "qwen3:1.7b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T15:25:52.004239",
+      "recorded_timestamp_max": "2026-09-02T15:25:52.004239"
+    },
+    {
+      "path": "benchmark_statistics.py",
+      "size_bytes": 11209,
+      "sha256": "f9b83a546709aa3dcb17cc73f676d0cbce4fd8ee724bf3409ff28f51386799d9"
+    },
+    {
+      "path": "charts/generation_speed.png",
+      "size_bytes": 50545,
+      "sha256": "56ef137483184f03f4c218a7b479aef8ecf3ca64ea69fd983d64731b8e0ca98e"
+    },
+    {
+      "path": "charts/gpu_utilization.png",
+      "size_bytes": 48943,
+      "sha256": "b002ab60a478b49de40b5a5515f0c9abe94a95b82029782b11ec3046b1819802"
+    },
+    {
+      "path": "charts/power_usage.png",
+      "size_bytes": 56986,
+      "sha256": "4ba290729881d3cef4b461090e62c6e4e71a64f555830178e7d5c12521edbcd6"
+    },
+    {
+      "path": "charts/quality_score.png",
+      "size_bytes": 46934,
+      "sha256": "c371bee6deaafce402b14861792cb12a648505f718b10110b60f4562e76f2880"
+    },
+    {
+      "path": "charts/vram_usage.png",
+      "size_bytes": 47653,
+      "sha256": "9128ddcd1c59c3ebf9b31b66150d8fdab747dbcebd653d0293d2daa3bb4614ba"
+    },
+    {
+      "path": "charts/warm_latency.png",
+      "size_bytes": 47457,
+      "sha256": "700bd577b348e1837521a8722b90c90ab931cb811deaf58a2a7859adb3c999f1"
+    },
+    {
+      "path": "final_model_summary.csv",
+      "size_bytes": 456,
+      "sha256": "5de88dc9e442c9d6e8feae0437cf5c8650d4ebfd0a69930df36d2eee21cf1dc0",
+      "row_count": 3,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ]
+    },
+    {
+      "path": "final_results_summary.md",
+      "size_bytes": 936,
+      "sha256": "25070654bda362123bc4f0674826927b1fee1622b354886deeb1c8212fefffce"
+    },
+    {
+      "path": "multi_prompt_responses.md",
+      "size_bytes": 12709,
+      "sha256": "107a2faf31084fb4306b74b6433ed15994ea63e1beed8e7ed56fed5b0b59fce5"
+    },
+    {
+      "path": "multi_prompt_results.csv",
+      "size_bytes": 11907,
+      "sha256": "735c646a47842aef3167cf8ca868972757f69370441764608fca415d73f4c0b7",
+      "row_count": 15,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ],
+      "recorded_timestamp_min": "2026-09-02T16:22:31.924067",
+      "recorded_timestamp_max": "2026-09-02T16:26:04.743738"
+    },
+    {
+      "path": "quality_evaluation.py",
+      "size_bytes": 10576,
+      "sha256": "82dc265dde8a4f8b1b640eda1af7d1e9c4281f3b81ac4a70b05132ff82c821a3"
+    },
+    {
+      "path": "quality_manual_scores.csv",
+      "size_bytes": 597,
+      "sha256": "f52bb3753b18e3e0c0e06d2de91870162f3d510fbd9b5ddaa0ff625ec5b61151",
+      "row_count": 15,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ]
+    },
+    {
+      "path": "quality_objective_checks.csv",
+      "size_bytes": 1689,
+      "sha256": "25777bfb451c412227d681c3831e4939b6e7e84531db57e92748e232b2ff28c7",
+      "row_count": 15,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ]
+    },
+    {
+      "path": "quality_objective_checks.md",
+      "size_bytes": 1620,
+      "sha256": "c51cb84d93672c0d5ca8dd04a22eba9d360d3138a3af5ef62db61fd300ac150b"
+    },
+    {
+      "path": "results_charts.py",
+      "size_bytes": 12506,
+      "sha256": "478279e445e00048bb05cc955790ba070c22d4b61e1508510b682fd8f1d2b147"
+    },
+    {
+      "path": "statistical_summary.csv",
+      "size_bytes": 5954,
+      "sha256": "051bba5f5d450eec0f5044aa1a4a7eca65a9c7aa4e20adfb324625e43534601e",
+      "row_count": 66,
+      "models": [
+        "gemma4:12b",
+        "qwen3:1.7b",
+        "qwen3:8b"
+      ]
+    },
+    {
+      "path": "statistical_summary.md",
+      "size_bytes": 1601,
+      "sha256": "e773b1dd1bfa10fb47e8e98100765f4e5eb634894ebff982aef2d4525963ff58"
+    }
+  ],
+  "pilot_response_count": 15,
+  "pilot_task_count": 5,
+  "prompts_sha256": "0a9b631a109f74dbcddfed4202a70f34b73d5fc4f14902cc7d29c4e0e71473f3",
+  "available_settings_from_current_script": {
+    "num_ctx": 4096,
+    "temperature": 0,
+    "seed": 42,
+    "keep_alive": "10m",
+    "stream": false
+  },
+  "settings_caveat": "Settings inferred from current script; historical request payloads and original source revision were not recorded.",
+  "missing_provenance": [
+    "historical model digests",
+    "historical quantization metadata",
+    "historical Ollama version",
+    "explicit thinking setting",
+    "explicit output limit",
+    "rater identity and anchored rubric",
+    "timezone for naive recorded timestamps"
+  ],
+  "legacy_notice": "Historical objective coding tests_pass fields predate static-only scoring. Preserve them as historical claims, not current proof. quality_evaluation.py hash captures the current secured implementation, not its September version.",
+  "immutability": "Content-addressed sidecar and read-only file permissions detect/deter accidental changes; not privileged-user tamper-proof storage."
+}

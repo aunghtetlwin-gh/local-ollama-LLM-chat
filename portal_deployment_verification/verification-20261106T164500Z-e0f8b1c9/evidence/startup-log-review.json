@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "journalctl",
+    "-u",
+    "slurm-portal.service",
+    "--since",
+    "Fri 2026-11-06 23:40:30 +07",
+    "--until",
+    "2026-11-06 23:45:00",
+    "--no-pager",
+    "-o",
+    "json"
+  ],
+  "exit_code": 0,
+  "raw_messages_saved": false,
+  "journal_stdout_sha256": "44773fa65df2a8ccbd79671835698d78dcb8cf84892c111051b8d59ede08a047",
+  "service_records": 13,
+  "current_pid_records": 4,
+  "startup_complete_observed": true,
+  "error_markers": [],
+  "synthetic_sentinel_present": false,
+  "log_permission_notice_present": false
+}

@@ -1,0 +1,23 @@
+{
+  "portal": {
+    "pytest": "9.2.0",
+    "pluggy": "1.7.0",
+    "iniconfig": "2.3.1",
+    "pygments": "2.21.0",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "packaging": "26.3",
+    "tomli": "2.5.0",
+    "python-dotenv": "1.2.4"
+  },
+  "chat": {
+    "pytest": "9.2.0",
+    "pluggy": "1.7.0",
+    "iniconfig": "2.3.1",
+    "pygments": "2.21.0",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "tomli": "2.5.0",
+    "certifi": "2020.6.20"
+  }
+}

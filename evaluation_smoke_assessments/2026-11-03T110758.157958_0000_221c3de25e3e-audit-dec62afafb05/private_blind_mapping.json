@@ -1,0 +1,32 @@
+[
+  {
+    "blind_id": "f9467e8e6cdbf22c013e",
+    "request_id": "bdadf701b46009747075da75ec23a3988ae067fc12a92b8f0586765413a8aa96",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "dd0a53c045bb44e5a687",
+    "request_id": "53972ad67f2e89f474df76388513e8e4e6acdf27e086756bf40f6491a323f898",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "6b6bb0f6f029f99b1581",
+    "request_id": "64d1d0226bd21e2aa61f0a1a61c9bc8d62143a97eb06fa5fabd1f63655071938",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "d75145fcd44474d8e3f1",
+    "request_id": "db2703a4486f3cb44ff1e59ea11eadf0617ebe165a8759464ba4b6ce0b382b8e",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "334b342adbff93d55078",
+    "request_id": "1e8fccc4d567bc84efebb57d71f57fa5f502b616a639960f06dd53646d055240",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "dac79262971803b64cb8",
+    "request_id": "7d05dca957ddee9bdcdfa1f14ca3c1a537493caa1b3d27d1268ccdba669f8f69",
+    "model": "gemma4:12b"
+  }
+]

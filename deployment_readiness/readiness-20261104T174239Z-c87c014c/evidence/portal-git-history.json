@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "git",
+    "-C",
+    "/home/lailai/slurm-portal",
+    "log",
+    "-4",
+    "--format=%h %ad %s",
+    "--date=iso"
+  ],
+  "exit_code": 0,
+  "stdout": "6d8565f 2026-10-21 15:34:35 +0700 Add portal authentication and initial RBAC protection\na700ed0 2026-10-21 13:51:00 +0700 Baseline: working Slurm portal before multi-user support\n"
+}

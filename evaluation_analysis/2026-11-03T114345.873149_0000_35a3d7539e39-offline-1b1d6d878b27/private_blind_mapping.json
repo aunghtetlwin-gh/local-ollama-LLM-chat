@@ -1,0 +1,302 @@
+[
+  {
+    "blind_id": "16bae0c4739ce91af9f3",
+    "request_id": "1c097382e588b218d1e511c5471cbfdf3b05d7d9cc1b46ad7763d385e7e74bc1",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "fc7e60ba5c180aeb9b4d",
+    "request_id": "ba8bfc785c2bfbd5d28c652cc6bd1a65ced7a2ee92d79968babe87af5725ab78",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "fb097575b8930c3ecf70",
+    "request_id": "49b7c6cc14e851c68c87321f53757027828a19eac05d9ec8b866d7157fea62e9",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "cf163244aec53d3b4f7c",
+    "request_id": "d2f9791a9e7e414a1eb01ca171f5f5d62a4a82625b95aaca8cb381884a53e6ad",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "9d77336e071bd8775683",
+    "request_id": "d20353029089e7d1ccf8058d8e0ec610868d70ae67de322a0826496bc45c5248",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "419504c4f8dd895153c6",
+    "request_id": "e3e09e2b9889a3a983ecfdee202d8a3bc2a2d03d42326fb8c2568b0fa39ccc9d",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "3b37eb81f6839bae183e",
+    "request_id": "84feb4a030a8432031cdc26b7b6d49aaeeb3fd833e9dfe17fcf92b567faf6ab7",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "d8a31ea7df37a469c9c4",
+    "request_id": "096f6a11531e6d96ff37fd4f0d6bc817fe7af36bbc905c41fef34ddcd9f3f66f",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "20b725636296dbfd1ec8",
+    "request_id": "bdadf701b46009747075da75ec23a3988ae067fc12a92b8f0586765413a8aa96",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "38bf17af1bbbf45cb56d",
+    "request_id": "d01ee2a9ccefd4cccc3f71bd2f0aa61286461c3314ad75421de4f62a52f6c2d5",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "cf23fd647621441a4d17",
+    "request_id": "866d4a02641f18cca19c02de68e5a6aa55c95662ba8497ab88d0f0f24947ff44",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "235496e1e097bcaeda8b",
+    "request_id": "254ea59a3ed50f488447ed19a73792f8441fba2f7d7f3f1ad0ef071bf39dcec2",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "89e929d1fcef76cc6062",
+    "request_id": "3020f574cc231a2e8cd9006d1112fdf93698302449cf0df6ab26e4bc2a338225",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "b1cedc5ac44fe574212b",
+    "request_id": "1f5d75e35186b64cf9878f632fd8fdc351eee82c828c696999c951240fbb836a",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "255204e891cd327aeb6a",
+    "request_id": "2180caa6567fb3ba96efff8cdbf392980a800f4200ab4861b065ab161dde9b69",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "7e44a975e50fd15ebac0",
+    "request_id": "39307ad16cb353683de1f566649da832c6edb9c623cc1b9c6a988db0849257d3",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "ffeff481cee261e5e82b",
+    "request_id": "53972ad67f2e89f474df76388513e8e4e6acdf27e086756bf40f6491a323f898",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "5766e215ecb3bb628694",
+    "request_id": "fe75afb31ba2072b0bb4b88762a808c4114cf548107fc3699fee3aea7ff2774d",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "c5684e986f612fb5df82",
+    "request_id": "93fd5ddced0b08c4e9c1074682940841777bc28597de09d22cb32a5fa6f0f51d",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "c1f9940107c3c4c11c30",
+    "request_id": "918ba74ba58a4597530ec6e8e2365b4203f8680100ae2a8034cc5a6b9a6439cb",
+    "model": "qwen3:1.7b"
+  },
+  {
+    "blind_id": "faa260c786ec05a6aba0",
+    "request_id": "efeb1877e68e7ec329277983a29319941979b067879ccad800282081bdea726e",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "f8e1f8551ba562cfef81",
+    "request_id": "aa4141d480153d91e35fb18fc9d0b3f3e3e40f736b053dc3ed2cba3e4fd2b41b",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "199b3f390f2fe83c2df1",
+    "request_id": "fc99b75cfd5b2d5e7755800c18a018a3119935be03aa542877aa9be18fb63584",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "b0ac28cd12e8805cbd79",
+    "request_id": "eedf2a38a9d361902ff65a77676dac11ba3bb5aa09bb1a4da0db457f52b6c05e",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "6d429144479ffecf3faa",
+    "request_id": "e197445eaf4b9cf82443667e5e6c608a1bd9ee0a7b5a2d599be6c6ee7051147c",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "75e2fea724f67b1b5bb7",
+    "request_id": "1439d79410472dac31340833b469ca765c80a2802e4ba9185f9145c8d12a2cbe",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "c76a62ae221486e2d60a",
+    "request_id": "95e61ad0ce68a2ca81e48c56816bbb82e19436b10488ebd833f03a1947b3f5f6",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "126e1dbeed7555361440",
+    "request_id": "c681c8fc7d813cbf2331a93d2fa9af98965088a349eda8355fbebb01a89a6cad",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "e59f316847a6fb56ea8b",
+    "request_id": "64d1d0226bd21e2aa61f0a1a61c9bc8d62143a97eb06fa5fabd1f63655071938",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "374f6f8f1f0640a960e3",
+    "request_id": "eb777c3f8de8251492340882289957e0f482f56d1eb88889ee3f5f8b1ae41c24",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "e6b3ccae03b7e3cf2367",
+    "request_id": "6993e40c376e5b0d2c947cbfde6e6a64d299861e6bf24b8c6511ecfd8d16f436",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "49d3c3e35ccc525ba7a1",
+    "request_id": "a1cd19830d8276bf04bef6215cd8860858607efe035e20bedcd59b409a762314",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "e09c511ecfb076e9f263",
+    "request_id": "3cbe7bcaa0427d9e0802ec36587b45a04aec233c88cb043033e00c4bb23df08a",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "14ba0df8ae24b0d16a27",
+    "request_id": "85a92b58abd441ef5ada7d36f0446d18f2874e8396664177cd3c2d36cd5fde3f",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "969f73b4f9e773e0e4a6",
+    "request_id": "1e82baa9719ac0ffbafbd660286d7aa5b1301c33b4540b175cf235b80fb9508f",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "28062435ef8d72fd9bc9",
+    "request_id": "d0678b1aa5dbd575119e7f4d4e342529a0bb44e2615132e532283caeb9b65e32",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "0ab7ab1a79dfe83a5e42",
+    "request_id": "db2703a4486f3cb44ff1e59ea11eadf0617ebe165a8759464ba4b6ce0b382b8e",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "9e38c12a8d9e67236c1a",
+    "request_id": "b9903555e9bf9639419ce1af3b900be120164d1e85016d28cd49d2c9063ce430",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "4d166a55368f94c7dbec",
+    "request_id": "dbd0c085042d3280f21971e7578d89d6db7533166b4fd3dbfcb49c1975b8a0a4",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "ab26a17f3fa64d53c72b",
+    "request_id": "d81ddc8d2fe3f8f1dfc4d9622637f3703cd975246c522db02dd025e771df5439",
+    "model": "qwen3:8b"
+  },
+  {
+    "blind_id": "09087f1b93bce3fdcf7f",
+    "request_id": "6a98d862186f4b8d7860413f63ffaccfc46de63c22da41e56c5b6f29b598f192",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "9d16627bee205c746943",
+    "request_id": "3dd04471a825244e7a55495cf9c8e18b818484eb3289520be7f826608d795c11",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "e716e13104f6c3e77a35",
+    "request_id": "9cc43acdc3b6216f99ca627cc32e064deb208be7fb033ab93fe4973a9c966134",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "2bda4df7f363303874fb",
+    "request_id": "e3af9e2ce101e9904b32ff3caffe4ad6cc20aed8dd94f3245309ff041d3507f2",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "bbe4eb96c06d59959019",
+    "request_id": "3254034850b31eb6445a3633ab7d015082bdecbe3daf8490111a9a4aaf608bd5",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "0073ef2f9e9323ad3e03",
+    "request_id": "726566d897355aee6dd9caa673b9641369e76a07d81de1cdd77d5383426d792f",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "2cfb77d3143b0c7beed2",
+    "request_id": "2bf500883b0d3500dd5ea4d1fa9c6200717d3684a51d33c92ac47480bdb4d588",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "fa880b49a73f7f4286e0",
+    "request_id": "e828dde7cdc798834c777422a7e6e3deefd98482d12ce098b7f3727d321c34cd",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "b9abfb1255cf0caa2f87",
+    "request_id": "1e8fccc4d567bc84efebb57d71f57fa5f502b616a639960f06dd53646d055240",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "c1ca9a852da46294f763",
+    "request_id": "430dd8a3b992c04fab609584554c4b1b484056ed2409d50be2e5a297d62486b7",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "9281bd3b204fce4c8af3",
+    "request_id": "a7bfc46027c34d27fa5e902adbe653d7877957f506cff039019eea0ad48f0fc7",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "3975458d5a6aa142525f",
+    "request_id": "eeed0628c2033311fb9fc653f3625266b2b910d888904ff035a3cc4b83b953c6",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "142926217d6084d4b3f0",
+    "request_id": "08a24a683e0a65f5ea6ec1428bbcff1734791b2b27427d85eda1eeb4527650fe",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "2e57754db42c4f9523ff",
+    "request_id": "7144f02a483d182b46640dd9292e2a9a623c3ccb1ccbe0f606a100c9e05343f6",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "55f5c4e791db066867d1",
+    "request_id": "ffd48d4763ef89ad07729dc80e603ba325717a5791626761bf315259a2ee55f9",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "441e40433284b167bc63",
+    "request_id": "3dc8c0470fe3d89833808d8a4afdce79abde2402acb8645b4e581b456a3b7694",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "1552a06da410bfd7f94b",
+    "request_id": "7d05dca957ddee9bdcdfa1f14ca3c1a537493caa1b3d27d1268ccdba669f8f69",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "e2da41d5fd12a9d4b293",
+    "request_id": "7f77178ea8db88708c4b7b7b221b4e2e779a76c8c90627b2fd24af2c3937b305",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "994c92f21ca49e4ac40e",
+    "request_id": "3e5c171f5c2dee2f3e76840d77795d51eb12003e5bc31e4a8d0a55b98c245714",
+    "model": "gemma4:12b"
+  },
+  {
+    "blind_id": "d838290678670f0a60a7",
+    "request_id": "6a5a842013a83eaaea0667701d0c8d73d42d4dc8ef216fc4d8616beda1f1293d",
+    "model": "gemma4:12b"
+  }
+]

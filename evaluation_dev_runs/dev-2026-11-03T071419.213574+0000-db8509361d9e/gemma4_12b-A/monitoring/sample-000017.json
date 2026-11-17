@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-03T07:15:50.720753+00:00",
+  "gpu": {
+    "csv": "0, NVIDIA GeForce RTX 5060 Ti, 16311, 9619, 6229, 580.178.04\n",
+    "columns": [
+      "index",
+      "name",
+      "total_mib",
+      "used_mib",
+      "free_mib",
+      "driver_version"
+    ]
+  },
+  "ollama_ps": {
+    "models": [
+      {
+        "name": "gemma4:12b",
+        "model": "gemma4:12b",
+        "size": 9044009942,
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gemma4",
+          "families": [
+            "gemma4"
+          ],
+          "parameter_size": "11.9B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-03T14:16:20.742265414+07:00",
+        "size_vram": 9044009942,
+        "context_length": 8192
+      }
+    ]
+  }
+}

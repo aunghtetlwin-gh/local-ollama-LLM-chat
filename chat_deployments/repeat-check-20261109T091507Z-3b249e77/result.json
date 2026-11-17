@@ -1,0 +1,22 @@
+{
+  "status": "SUCCESS",
+  "scope": "already-completed deployment identity confirmation; no repeated activation",
+  "timestamp": "2026-11-09T09:15:07.047058+00:00",
+  "maintenance_window_expired": true,
+  "time_observed_bangkok": "2026-11-09T16:14:42+07:00",
+  "previous_activation_bangkok": "2026-11-09T15:11:34+07:00",
+  "app_id": "dbbb685f46aa0161f63023409b390421e50137d4cfa8292c7b4904528e6b8bd1",
+  "app_image": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "app_state": "running",
+  "app_started": "2026-11-09T08:11:34.893927508Z",
+  "database_id": "3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd",
+  "database_state": "running",
+  "database_started": "2026-09-16T02:21:35.011146333Z",
+  "rollback_image": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "prior_report": "/home/lailai/ollama-test/chat_deployments/deployment-20261109T080858Z-150896a0/REPORT.md",
+  "source": "read-only docker inspect and docker image inspect tool results this turn",
+  "services_modified": false,
+  "new_smoke_suite_run": false,
+  "full_preflight_repeated": false,
+  "reason": "candidate is already active and maintenance window expired; no further activation actions permitted"
+}

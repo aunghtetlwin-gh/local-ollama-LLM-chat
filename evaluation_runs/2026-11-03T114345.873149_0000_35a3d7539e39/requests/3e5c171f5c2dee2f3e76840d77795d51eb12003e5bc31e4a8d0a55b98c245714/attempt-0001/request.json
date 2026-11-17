@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "K02",
+  "repetition": 1,
+  "prompt_sha256": "a45511a7e95aa432da184c38238ff9c91bf05b9ca24315a3e67868aff42fe42e",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "In exactly three bullet lines beginning with \"- \", explain how parameterized SQL handles values, why it helps prevent SQL injection, and why it does not by itself prevent one authenticated user reading another user's records."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3e5c171f5c2dee2f3e76840d77795d51eb12003e5bc31e4a8d0a55b98c245714"
+}

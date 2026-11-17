@@ -1,0 +1,161 @@
+{
+  "captured_epoch": 1793781797.0515416,
+  "commands": {
+    "hostname": {
+      "exit_code": 0,
+      "stdout": "lai512\n",
+      "stderr": ""
+    },
+    "date -Is": {
+      "exit_code": 0,
+      "stdout": "2026-11-04T15:43:17+07:00\n",
+      "stderr": ""
+    },
+    "ss -ltnp": {
+      "exit_code": 0,
+      "stdout": "State  Recv-Q Send-Q                          Local Address:Port  Peer Address:PortProcess                                     \nLISTEN 0      10                                    0.0.0.0:7070       0.0.0.0:*                                               \nLISTEN 0      4096                                127.0.0.1:6820       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:39555      0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6817       0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6818       0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6819       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:39677      0.0.0.0:*    users:((\"code-645f29cc31\",pid=9630,fd=11)) \nLISTEN 0      511                                 127.0.0.1:39083      0.0.0.0:*    users:((\"MainThread\",pid=471122,fd=31))    \nLISTEN 0      2048                                127.0.0.1:8002       0.0.0.0:*    users:((\"uvicorn\",pid=2019096,fd=6))       \nLISTEN 0      2048                                127.0.0.1:8001       0.0.0.0:*    users:((\"uvicorn\",pid=3148336,fd=6))       \nLISTEN 0      2048                                127.0.0.1:8000       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:38551      0.0.0.0:*    users:((\"code-07f806f999\",pid=542200,fd=9))\nLISTEN 0      4096                                127.0.0.1:5433       0.0.0.0:*                                               \nLISTEN 0      244                                 127.0.0.1:5432       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:35021      0.0.0.0:*    users:((\"code-07f806f999\",pid=533394,fd=9))\nLISTEN 0      4096                                127.0.0.1:20241      0.0.0.0:*                                               \nLISTEN 0      80                                  127.0.0.1:3306       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:631        0.0.0.0:*                                               \nLISTEN 0      511                                 127.0.0.1:33059      0.0.0.0:*    users:((\"code\",pid=3573433,fd=48))         \nLISTEN 0      128                                   0.0.0.0:22         0.0.0.0:*                                               \nLISTEN 0      4096                            127.0.0.53%lo:53         0.0.0.0:*                                               \nLISTEN 0      4096                 100.84.215.55%tailscale0:43433      0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:44615      0.0.0.0:*    users:((\"codex\",pid=500092,fd=39))         \nLISTEN 0      4096                                127.0.0.1:11434      0.0.0.0:*                                               \nLISTEN 0      10                                       [::]:7070          [::]:*                                               \nLISTEN 0      128                                     [::1]:631           [::]:*                                               \nLISTEN 0      128                                      [::]:22            [::]:*                                               \nLISTEN 0      4096   [fd7a:115c:a1e0::7935:d738]%tailscale0:38191         [::]:*                                               \n",
+      "stderr": ""
+    },
+    "loginctl list-sessions --no-legend": {
+      "exit_code": 0,
+      "stdout": "1230 1001 mangkud       \n   2 1000 lailai  seat0 tty2\n   8 1000 lailai        \n8174 1000 lailai        \n9158 1000 lailai        \n9582 1000 lailai        \n9614 1000 lailai        \n9616 1000 lailai        \n",
+      "stderr": ""
+    }
+  },
+  "permissions": [
+    {
+      "path": "/home/lailai",
+      "mode": "0o750",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "directory"
+    },
+    {
+      "path": "/home/lailai/slurm-portal",
+      "mode": "0o775",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "directory"
+    },
+    {
+      "path": "/home/lailai/slurm-portal/portal_users.db",
+      "mode": "0o600",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "file"
+    },
+    {
+      "path": "/tmp",
+      "mode": "0o1777",
+      "uid": 0,
+      "gid": 0,
+      "type": "directory"
+    },
+    {
+      "path": "/tmp/slurm-103.out",
+      "mode": "0o644",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "file"
+    },
+    {
+      "path": "/tmp/slurm-104.out",
+      "mode": "0o644",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "file"
+    },
+    {
+      "path": "/tmp/slurm-107.out",
+      "mode": "0o644",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "file"
+    },
+    {
+      "path": "/tmp/slurm-108.out",
+      "mode": "0o644",
+      "uid": 1001,
+      "gid": 1001,
+      "type": "file"
+    },
+    {
+      "path": "/tmp/nvidia-mps",
+      "mode": "0o777",
+      "uid": 1000,
+      "gid": 1000,
+      "type": "directory"
+    },
+    {
+      "path": "/tmp/nvidia-mps/control",
+      "mode": "0o666",
+      "uid": 0,
+      "gid": 0,
+      "type": "socket"
+    },
+    {
+      "path": "/tmp/nvidia-mps/control_privileged",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "type": "socket"
+    },
+    {
+      "path": "/dev/nvidia0",
+      "mode": "0o666",
+      "uid": 0,
+      "gid": 0,
+      "type": "device"
+    },
+    {
+      "path": "/dev/nvidiactl",
+      "mode": "0o666",
+      "uid": 0,
+      "gid": 0,
+      "type": "device"
+    },
+    {
+      "path": "/dev/nvidia-uvm",
+      "mode": "0o666",
+      "uid": 0,
+      "gid": 0,
+      "type": "device"
+    }
+  ],
+  "runtime_cookie_environment": [
+    {
+      "pid": 2536,
+      "comm": "uvicorn",
+      "selected_environment": {
+        "inspection": "permission denied"
+      }
+    },
+    {
+      "pid": 2019096,
+      "comm": "uvicorn",
+      "selected_environment": {}
+    },
+    {
+      "pid": 3148336,
+      "comm": "uvicorn",
+      "selected_environment": {}
+    }
+  ],
+  "/etc/slurm/cgroup.conf": {
+    "sha256": "162c9a157ba118cddb83b84b8619d476d197c38706895855aef29cb61986c41e",
+    "text": "CgroupPlugin=autodetect\n\nConstrainCores=yes\nConstrainRAMSpace=yes\nConstrainSwapSpace=yes\n"
+  },
+  "/etc/slurm/gres.conf": {
+    "sha256": "c32219c2fc139a06b0bef2b28c34df7006e7b636b9113456e4fce3a07b0bf3da",
+    "text": "Name=gpu File=/dev/nvidia0\nName=mps Count=100 File=/dev/nvidia0\n"
+  },
+  "slurm_configuration_relevant_lines": [
+    "GresTypes=gpu,mps",
+    "Prolog=/etc/slurm/mps-prolog.sh",
+    "ProctrackType=proctrack/cgroup",
+    "TaskPlugin=task/cgroup,task/affinity",
+    "SelectType=select/cons_tres",
+    "SelectTypeParameters=CR_CPU_Memory",
+    "AccountingStorageTRES=gres/gpu,gres/mps"
+  ]
+}

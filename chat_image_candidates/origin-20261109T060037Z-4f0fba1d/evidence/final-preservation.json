@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-11-09T06:10:40.027021+00:00",
+  "production_app_identity_image_start_unchanged": true,
+  "database_identity_image_start_and_volume_unchanged": true,
+  "database_health": "healthy",
+  "production_http_health": 200,
+  "original_image_tag_still_base": true,
+  "rollback_tag_still_base": true,
+  "candidate_tag_matches_recorded_id": true,
+  "compose_overrides": {
+    "compose.security.yml": {
+      "only_app_image_and_pull_policy_change": true,
+      "database_service_unchanged": true,
+      "volumes_unchanged": true
+    },
+    "compose.rollback.yml": {
+      "only_app_image_and_pull_policy_change": true,
+      "database_service_unchanged": true,
+      "volumes_unchanged": true
+    }
+  },
+  "test_containers_remaining": 0,
+  "production_changes": false,
+  "database_contents_queried": false
+}

@@ -1,0 +1,5 @@
+suite,passed,failed,errors,skipped,exit_code,environment,runtime_versions_match,python_patch_matches,evidence
+portal,108,0,0,0,0,copied portal packages and exact host Python,True,True,raw/portal-1.xml
+chat,77,0,0,0,0,"new networkless/read-only container from deployed image, exact Python3.10.21",True,True,raw/chat-1.xml
+postgres,11,0,0,0,0,"host Python 3.10.12 with copied deployed chat client packages, disposable PostgreSQL14",True,False,raw/postgres-1.xml
+chat-forwarding,2,0,0,0,0,"new networkless/read-only container from deployed image, exact Python3.10.21",True,True,raw/chat-forwarding-1.xml

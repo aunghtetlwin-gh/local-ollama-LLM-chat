@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "R01",
+  "repetition": 1,
+  "prompt_sha256": "c0d2a7746e0047f95a5cc1f3c39af5b20d9ae51820c94e18bbf9511eb85dc6d8",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "A device has capacity 18 units. Instance A uses 4 units, B uses 6, and C uses 9. Choose exactly three instances, allowing repetition, maximizing usage without exceeding capacity. Return only a JSON object with exactly the keys A, B, C for their counts and total for total usage. All values must be integers."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3dc8c0470fe3d89833808d8a4afdce79abde2402acb8645b4e581b456a3b7694"
+}

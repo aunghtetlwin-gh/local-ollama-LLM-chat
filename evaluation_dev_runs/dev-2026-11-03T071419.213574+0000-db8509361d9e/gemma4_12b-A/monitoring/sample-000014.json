@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-03T07:15:49.146264+00:00",
+  "gpu": {
+    "csv": "0, NVIDIA GeForce RTX 5060 Ti, 16311, 7451, 8397, 580.178.04\n",
+    "columns": [
+      "index",
+      "name",
+      "total_mib",
+      "used_mib",
+      "free_mib",
+      "driver_version"
+    ]
+  },
+  "ollama_ps": {
+    "models": []
+  }
+}

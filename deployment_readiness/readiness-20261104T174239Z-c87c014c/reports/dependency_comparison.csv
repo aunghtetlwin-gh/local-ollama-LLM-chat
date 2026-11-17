@@ -1,0 +1,9 @@
+package,prior_remediation_tests,portal_installed,chat_deployed_image,current_portal_stage,current_chat_stage
+fastapi,0.162.0,0.141.1,0.141.1,0.141.1,0.141.1
+starlette,1.7.0,1.7.0,1.6.0,1.7.0,1.6.0
+pydantic,2.14.2,2.13.5,2.13.5,2.13.5,2.13.5
+uvicorn,not recorded in prior summary,0.54.0,0.53.0,0.54.0,0.53.0
+argon2-cffi,25.1.0,25.1.0,25.1.0,25.1.0,25.1.0
+psycopg,3.3.6,not installed,3.3.5,not installed,3.3.5
+python-dotenv,not recorded in prior summary,not installed,1.2.3,1.2.4,1.2.3
+anyio,not recorded in prior summary,4.15.1,4.15.1,4.15.1,4.15.1

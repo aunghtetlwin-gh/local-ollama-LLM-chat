@@ -1,0 +1,16 @@
+{
+  "version": "internal_v2",
+  "count": 20,
+  "categories": {
+    "knowledge": 4,
+    "reasoning": 4,
+    "coding": 4,
+    "summarization": 4,
+    "instruction": 4
+  },
+  "questions_sha256": "a571e1e5d5feafeb62e2f9b15bb96bb69a15c49746726582be0c7a4e18ad3c7d",
+  "references_sha256": "c1141a95943bae86c224d864a16018c5e9953a290b209b74988d4d7ac3d5088a",
+  "provenance": "New locally authored synthetic questions; not the five historical pilot prompts.",
+  "difficulty": "Author-assigned, not empirically calibrated.",
+  "rubric": "../../rubrics/manual_v2.md"
+}

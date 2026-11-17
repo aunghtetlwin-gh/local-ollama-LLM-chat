@@ -1,0 +1,85 @@
+{
+  "name": "ollama-test",
+  "networks": {
+    "default": {
+      "name": "ollama-test_default",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "app": {
+      "build": {
+        "context": "/home/lailai/ollama-test",
+        "dockerfile": "Dockerfile"
+      },
+      "command": null,
+      "container_name": "local-ollama-chat",
+      "depends_on": {
+        "db": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "environment": {
+        "DB_HOST": "127.0.0.1",
+        "DB_NAME": "ollama_chat_db",
+        "DB_PASSWORD": "admin",
+        "DB_PORT": "5433",
+        "DB_USER": "ollama_user",
+        "SESSION_COOKIE_SECURE": "false",
+        "SESSION_TTL_SECONDS": "86400"
+      },
+      "image": "local-ollama-chat:origin-20261109T060037Z-4f0fba1d",
+      "network_mode": "host",
+      "pull_policy": "never",
+      "restart": "unless-stopped"
+    },
+    "db": {
+      "command": null,
+      "container_name": "ollama-chat-db",
+      "entrypoint": null,
+      "environment": {
+        "POSTGRES_DB": "ollama_chat_db",
+        "POSTGRES_PASSWORD": "admin",
+        "POSTGRES_USER": "ollama_user"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -U ollama_user -d ollama_chat_db"
+        ],
+        "timeout": "5s",
+        "interval": "5s",
+        "retries": 10
+      },
+      "image": "postgres:14",
+      "networks": {
+        "default": null
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 5432,
+          "published": "5433",
+          "protocol": "tcp"
+        }
+      ],
+      "restart": "unless-stopped",
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "postgres_data",
+          "target": "/var/lib/postgresql/data",
+          "volume": {}
+        }
+      ]
+    }
+  },
+  "volumes": {
+    "postgres_data": {
+      "name": "ollama-test_postgres_data"
+    }
+  }
+}

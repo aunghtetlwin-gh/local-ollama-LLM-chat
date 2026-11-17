@@ -1,0 +1,14 @@
+{
+  "all_passed": true,
+  "completed_suites": 5,
+  "passed_cases": 146,
+  "failed_cases": 0,
+  "error_cases": 0,
+  "skipped_cases": 0,
+  "source_snapshots_n": 37,
+  "protected_original_files_n": 1584,
+  "all_original_files_unchanged": true,
+  "sandbox_timeouts": 2,
+  "limitations_characterization_cases": 5,
+  "note": "four dedicated characterization cases plus one reproduced onboarding/allowlist mismatch in portal suite; passing cases do not establish overall security"
+}

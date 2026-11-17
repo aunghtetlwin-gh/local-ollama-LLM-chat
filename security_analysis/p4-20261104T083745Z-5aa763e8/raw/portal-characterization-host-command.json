@@ -1,0 +1,23 @@
+{
+  "suite": "portal-characterization",
+  "cwd": "/home/lailai/ollama-test",
+  "argv": [
+    "/tmp/conversation-isolation-tools/bin/python",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-vv",
+    "--tb=short",
+    "/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/tests/test_portal_characterization.py",
+    "--junitxml=/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/raw/portal-characterization-host.xml"
+  ],
+  "shell_command": "/tmp/conversation-isolation-tools/bin/python -m pytest -p no:cacheprovider -vv --tb=short /home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/tests/test_portal_characterization.py --junitxml=/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/raw/portal-characterization-host.xml",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "started_epoch": 1793787802.7889757,
+  "exit_code": 0,
+  "ended_epoch": 1793787803.3789432
+}

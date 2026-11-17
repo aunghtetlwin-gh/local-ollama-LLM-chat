@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "S03",
+  "repetition": 1,
+  "prompt_sha256": "3d49d2b813d183ad38940448cba4bfd9438b32c6f28242a84021e57ead5af3dc",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Summarize this synthetic status note in exactly three bullet lines beginning with \"- \", one each for completed, ongoing, and planned work.\n\nThe team completed the database schema review. Documentation drafting is still in progress. A load test is planned for next week, but no load-test results exist yet."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "6a5a842013a83eaaea0667701d0c8d73d42d4dc8ef216fc4d8616beda1f1293d"
+}

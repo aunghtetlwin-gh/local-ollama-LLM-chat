@@ -1,0 +1,4 @@
+model,automatic_correct,automatic_n,automatic_accuracy_percent,gsm8k_correct,gsm8k_n,gsm8k_accuracy_percent,gsm8k_wilson95_low_percent,gsm8k_wilson95_high_percent,human_reviewed_n,human_correct,human_partly_correct,human_incorrect,human_uncertain,human_fully_correct_percent,human_correctness_mean_1_to_5,format_compliant_n,format_n,format_compliant_percent
+qwen3:1.7b,35,58,60.3448275862069,34,50,68,54.18970269185592,79.24178373934316,12,7,2,3,0,58.333333333333336,4,63,70,90.0
+qwen3:8b,48,58,82.75862068965517,45,50,90,78.63976856252035,95.65242350681096,12,9,3,0,0,75.0,4.75,66,70,94.28571428571429
+gemma4:12b,53,58,91.37931034482759,47,50,94,83.78290831116182,97.9385029651026,12,10,2,0,0,83.33333333333333,4.833333333333333,68,70,97.14285714285714

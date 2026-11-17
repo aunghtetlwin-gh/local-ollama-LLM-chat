@@ -1,0 +1,30 @@
+[
+  {
+    "job_id": "127",
+    "experiment_label": "r2-concurrent-job1",
+    "saved_stdout": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.out",
+    "exists": true,
+    "regular_file": true,
+    "uid": 1000,
+    "size_bytes": 0,
+    "mode": "0o664",
+    "service_user_readable": true,
+    "portal_assumed_path": "/tmp/slurm-127.out",
+    "portal_assumed_path_exists": false,
+    "content_read": false
+  },
+  {
+    "job_id": "129",
+    "experiment_label": "r3-baseline-job1",
+    "saved_stdout": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.out",
+    "exists": true,
+    "regular_file": true,
+    "uid": 1000,
+    "size_bytes": 0,
+    "mode": "0o664",
+    "service_user_readable": true,
+    "portal_assumed_path": "/tmp/slurm-129.out",
+    "portal_assumed_path_exists": false,
+    "content_read": false
+  }
+]

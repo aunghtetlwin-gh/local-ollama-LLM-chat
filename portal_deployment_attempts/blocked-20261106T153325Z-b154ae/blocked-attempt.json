@@ -1,0 +1,35 @@
+{
+  "status": "BLOCKED",
+  "sudo_probe": {
+    "observed_at": "2026-11-06T22:26:20.890086+07:00",
+    "argv": [
+      "sudo",
+      "-n",
+      "/usr/bin/true"
+    ],
+    "exit_code": 1,
+    "stderr": "sudo: a password is required"
+  },
+  "deployment_actions_attempted": false,
+  "release_directory": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16",
+  "prepared_version": "portal-security-v1-b893d3a5f7c1",
+  "deployed_version": "not deployed",
+  "release_hashes_match": true,
+  "base_hashes_match": true,
+  "dropin_exists": false,
+  "ports": {
+    "8001": {
+      "http_status": 200,
+      "operations": 10
+    },
+    "8002": {
+      "http_status": 200,
+      "operations": 16
+    }
+  },
+  "systemd": "MainPID=3148336\nActiveState=active\nSubState=running\nDropInPaths=\nNeedDaemonReload=no\n",
+  "fallback_pid_alive": true,
+  "security_acceptance": "not run: candidate not deployed",
+  "authenticated_browser_acceptance": "pending",
+  "recorded_at": "2026-11-06T22:33:25.330783+07:00"
+}

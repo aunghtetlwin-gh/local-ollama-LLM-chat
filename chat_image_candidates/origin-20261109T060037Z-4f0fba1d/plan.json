@@ -1,0 +1,12 @@
+{
+  "candidate_tag": "local-ollama-chat:origin-20261109T060037Z-4f0fba1d",
+  "rollback_tag": "local-ollama-chat:pre-origin-20261109T060037Z-4f0fba1d",
+  "base_image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "production_container_id": "a6526b0cbd1401c78416747f93a1f4e174e5e790b319a38cf1bb1653113aead6",
+  "database_container_id": "3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd",
+  "database_image_id": "sha256:156f0b253fd61366d5fc2107ad45955027d5612f695a8436ce20167f3fa79bff",
+  "database_volume": "ollama-test_postgres_data",
+  "patched_server_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+  "browser_url": "http://127.0.0.1:18000",
+  "readiness": "/home/lailai/ollama-test/chat_deployment_readiness/readiness-20261109T045659Z-428e9d56"
+}

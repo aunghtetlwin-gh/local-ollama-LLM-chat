@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "gsm8k-test-0209",
+  "repetition": 1,
+  "prompt_sha256": "7f948553b8c7eeea5e586d3b73c3e8c63ffc84bb766b68d68c952c1aecfe9e32",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nTwenty dozen cups cost $1200 less than the total cost of half a dozen plates sold at $6000 each. Calculate the total cost of buying each cup."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3edf5fa05defcd5cd6d9b07d92ba1126042d4201de6b0fc4f2a46ee20f282d18"
+}

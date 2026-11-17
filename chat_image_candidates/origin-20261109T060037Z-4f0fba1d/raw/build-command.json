@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "docker",
+    "build",
+    "--pull=false",
+    "--network=none",
+    "-t",
+    "local-ollama-chat:origin-20261109T060037Z-4f0fba1d",
+    "/home/lailai/ollama-test/chat_image_candidates/origin-20261109T060037Z-4f0fba1d/context"
+  ],
+  "exit_code": 0,
+  "started": "2026-11-09T06:08:31.358844+00:00",
+  "ended": "2026-11-09T06:08:32.220087+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-11-03T07:15:52.881794+00:00",
+  "finished_at": "2026-11-03T07:15:53.035257+00:00",
+  "wall_time_s": 0.15346289006993175,
+  "status": "truncated",
+  "thinking": null,
+  "done": true,
+  "done_reason": "length",
+  "statistics": {
+    "total_duration": 105563573,
+    "load_duration": 671008,
+    "prompt_eval_count": 53,
+    "prompt_eval_duration": 69308000,
+    "eval_count": 1,
+    "eval_duration": 1000
+  }
+}

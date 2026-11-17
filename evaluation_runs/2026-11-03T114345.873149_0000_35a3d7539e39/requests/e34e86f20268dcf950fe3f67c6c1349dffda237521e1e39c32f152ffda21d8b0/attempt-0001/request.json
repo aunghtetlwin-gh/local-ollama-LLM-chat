@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "gsm8k-test-0587",
+  "repetition": 1,
+  "prompt_sha256": "c28041981e722f1869eabb61105d58cb07273422f8eaf5abeb5f4fa35fd755b8",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Solve the following problem. You may explain your calculation. End with exactly one line in the form FINAL_ANSWER: <number>. Use a signed integer or decimal number, with optional correctly grouped thousands commas; no units, fractions, or scientific notation after the marker.\n\nAt the Burger Palace restaurant, there is an enormous jar containing red, blue and green jelly beans.  On the outside of the jar is a note that reads, \"This jar contains 1% fewer red jelly beans than blue jelly beans and 1% more green jelly beans than blue jelly beans.\"  If the jar contains a total of 4500 jelly beans, how many more green jelly beans does it contain than red jelly beans?"
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "e34e86f20268dcf950fe3f67c6c1349dffda237521e1e39c32f152ffda21d8b0"
+}

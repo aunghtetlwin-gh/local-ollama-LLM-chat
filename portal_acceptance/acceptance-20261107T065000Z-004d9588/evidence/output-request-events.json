@@ -1,0 +1,35 @@
+{
+  "command": [
+    "journalctl",
+    "-u",
+    "slurm-portal.service",
+    "--since",
+    "2026-11-06 23:40:00",
+    "--grep",
+    "GET /jobs/[0-9]+/output",
+    "-n",
+    "100",
+    "--no-pager",
+    "-o",
+    "json"
+  ],
+  "exit_code": 0,
+  "events": [
+    {
+      "job_id": 129,
+      "status": 404,
+      "journal_timestamp_us": "1794028618251871",
+      "pid": "1565020",
+      "identity_attributed": false
+    },
+    {
+      "job_id": 127,
+      "status": 404,
+      "journal_timestamp_us": "1794028619292749",
+      "pid": "1565020",
+      "identity_attributed": false
+    }
+  ],
+  "raw_messages_saved": false,
+  "limitation": "HTTP logs do not identify the authenticated account"
+}

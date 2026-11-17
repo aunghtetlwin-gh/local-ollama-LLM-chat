@@ -1,0 +1,30 @@
+{
+  "status": "BLOCKED",
+  "reason": "sudo -n true failed: a password is required",
+  "maintenance_window": "current coordinated window not explicitly confirmed in this attempt",
+  "preflight_timestamp": "2026-11-09T03:40:34.863512+00:00",
+  "recorded_at": "2026-11-09T03:41:31.162073+00:00",
+  "current_version": "portal-security-v1-b893d3a5f7c1",
+  "current_release": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release",
+  "ports": {
+    "8001": {
+      "status": 200,
+      "operations": 16
+    },
+    "8002": {
+      "status": 200,
+      "operations": 16
+    }
+  },
+  "candidate_and_base_checks_passed": true,
+  "candidate_tests_verified": 190,
+  "changes_applied": false,
+  "backups_created": false,
+  "release_installed": false,
+  "systemd_reloaded": false,
+  "service_restarted": false,
+  "production_data_changed": false,
+  "new_live_unauthenticated_denial_tests": "not performed after stop condition",
+  "authenticated_browser_checks": "pending after separately completed deployment",
+  "rollback": "known previous release intact; private pre-deployment backups still must be created by the reviewed procedure"
+}

@@ -1,0 +1,587 @@
+{
+  "epoch": 1793814263.2069407,
+  "hostname": "lai512",
+  "date": "2026-11-05T00:44:23+07:00",
+  "services": {
+    "slurm-portal.service": {
+      "argv": [
+        "systemctl",
+        "show",
+        "slurm-portal.service",
+        "--property=MainPID,User,Group,WorkingDirectory,FragmentPath,ActiveState,SubState,Restart,ExecMainStartTimestamp"
+      ],
+      "exit_code": 0,
+      "stdout": "Restart=on-failure\nMainPID=3148336\nExecMainStartTimestamp=Thu 2026-10-08 10:38:49 +07\nWorkingDirectory=/home/lailai/slurm-portal\nUser=lailai\nGroup=lailai\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/slurm-portal.service\n",
+      "stderr": ""
+    },
+    "cloudflared.service": {
+      "argv": [
+        "systemctl",
+        "show",
+        "cloudflared.service",
+        "--property=MainPID,User,Group,WorkingDirectory,FragmentPath,ActiveState,SubState,Restart,ExecMainStartTimestamp"
+      ],
+      "exit_code": 0,
+      "stdout": "Restart=on-failure\nMainPID=2775674\nExecMainStartTimestamp=Fri 2026-10-30 14:14:59 +07\nWorkingDirectory=\nUser=\nGroup=\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/cloudflared.service\n",
+      "stderr": ""
+    },
+    "ollama.service": {
+      "argv": [
+        "systemctl",
+        "show",
+        "ollama.service",
+        "--property=MainPID,User,Group,WorkingDirectory,FragmentPath,ActiveState,SubState,Restart,ExecMainStartTimestamp"
+      ],
+      "exit_code": 0,
+      "stdout": "Restart=always\nMainPID=3069384\nExecMainStartTimestamp=Mon 2026-09-21 16:28:49 +07\nWorkingDirectory=\nUser=ollama\nGroup=ollama\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/ollama.service\n",
+      "stderr": ""
+    }
+  },
+  "processes": [
+    {
+      "pid": 2536,
+      "comm": "uvicorn",
+      "argv": [
+        "/usr/local/bin/python3.10",
+        "/usr/local/bin/uvicorn",
+        "server:my_api",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "cwd": "PermissionError",
+      "exe": "PermissionError"
+    },
+    {
+      "pid": 2019096,
+      "comm": "uvicorn",
+      "argv": [
+        "/home/lailai/slurm-portal/.venv/bin/python3",
+        ".venv/bin/uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8002"
+      ],
+      "cwd": "/home/lailai/slurm-portal",
+      "exe": "/usr/bin/python3.10"
+    },
+    {
+      "pid": 2775674,
+      "comm": "cloudflared",
+      "launch_flags_present": {
+        "--token-file": true,
+        "--token": false,
+        "--config": false,
+        "run": true,
+        "--url": false
+      },
+      "safe_options": {
+        "--token-file": "/etc/cloudflared/token"
+      },
+      "cwd": "PermissionError",
+      "exe": "PermissionError"
+    },
+    {
+      "pid": 3148336,
+      "comm": "uvicorn",
+      "argv": [
+        "/home/lailai/slurm-portal/.venv/bin/python3",
+        "/home/lailai/slurm-portal/.venv/bin/uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8001"
+      ],
+      "cwd": "/home/lailai/slurm-portal",
+      "exe": "/usr/bin/python3.10"
+    }
+  ],
+  "ports": {
+    "8000": {
+      "info": {
+        "title": "FastAPI",
+        "version": "0.1.0"
+      },
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/register",
+          "operation_id": "register_page_register_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/register",
+          "operation_id": "register_register_post",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/login",
+          "operation_id": "login_page_login_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "operation_id": "login_login_post",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/logout",
+          "operation_id": "logout_logout_post",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/auth/session",
+          "operation_id": "session_status_auth_session_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/",
+          "operation_id": "home__get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "operation_id": "health_health_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/models",
+          "operation_id": "list_models_models_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/conversations",
+          "operation_id": "list_conversations_conversations_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/conversations/{conversation_id}",
+          "operation_id": "get_conversation_conversations__conversation_id__get",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "conversation_id",
+              "required": true
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "DELETE",
+          "path": "/conversations/{conversation_id}",
+          "operation_id": "delete_conversation_conversations__conversation_id__delete",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "conversation_id",
+              "required": true
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/chat",
+          "operation_id": "chat_chat_post",
+          "parameters": [],
+          "security": []
+        }
+      ]
+    },
+    "8001": {
+      "info": {
+        "title": "Slurm Portal API",
+        "description": "FastAPI gateway for Slurm using slurmrestd",
+        "version": "0.2.0"
+      },
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/",
+          "operation_id": "root__get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs",
+          "operation_id": "submit_job_jobs_post",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/active",
+          "operation_id": "get_active_jobs_jobs_active_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/history",
+          "operation_id": "get_job_history_jobs_history_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/ui",
+          "operation_id": "web_ui_ui_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/cluster/node",
+          "operation_id": "get_cluster_node_cluster_node_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}",
+          "operation_id": "get_job_jobs__job_id__get",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/cancel",
+          "operation_id": "cancel_job_jobs__job_id__cancel_post",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/requeue",
+          "operation_id": "requeue_job_jobs__job_id__requeue_post",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}/output",
+          "operation_id": "get_job_output_jobs__job_id__output_get",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            }
+          ],
+          "security": []
+        }
+      ]
+    },
+    "8002": {
+      "info": {
+        "title": "Slurm Portal API",
+        "description": "FastAPI gateway for Slurm using slurmrestd",
+        "version": "0.2.0"
+      },
+      "operations": [
+        {
+          "method": "POST",
+          "path": "/auth/login",
+          "operation_id": "login_auth_login_post",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/auth/me",
+          "operation_id": "me_auth_me_get",
+          "parameters": [
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/auth/logout",
+          "operation_id": "logout_auth_logout_post",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/admin/users",
+          "operation_id": "get_portal_users_admin_users_get",
+          "parameters": [
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users",
+          "operation_id": "register_researcher_admin_users_post",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "PATCH",
+          "path": "/admin/users/{username}/status",
+          "operation_id": "update_researcher_status_admin_users__username__status_patch",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "username",
+              "required": true
+            },
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/",
+          "operation_id": "root__get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs",
+          "operation_id": "submit_job_jobs_post",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/active",
+          "operation_id": "get_active_jobs_jobs_active_get",
+          "parameters": [
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/history",
+          "operation_id": "get_job_history_jobs_history_get",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "days",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/ui",
+          "operation_id": "web_ui_ui_get",
+          "parameters": [],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/cluster/node",
+          "operation_id": "get_cluster_node_cluster_node_get",
+          "parameters": [
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}",
+          "operation_id": "get_job_jobs__job_id__get",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/cancel",
+          "operation_id": "cancel_job_jobs__job_id__cancel_post",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            },
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/requeue",
+          "operation_id": "requeue_job_jobs__job_id__requeue_post",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            },
+            {
+              "in": "header",
+              "name": "x-portal-csrf",
+              "required": false
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}/output",
+          "operation_id": "get_job_output_jobs__job_id__output_get",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "job_id",
+              "required": true
+            },
+            {
+              "in": "cookie",
+              "name": "portal_session",
+              "required": false
+            }
+          ],
+          "security": []
+        }
+      ]
+    }
+  },
+  "listeners": {
+    "argv": [
+      "ss",
+      "-ltnp"
+    ],
+    "exit_code": 0,
+    "stdout": "State  Recv-Q Send-Q                          Local Address:Port  Peer Address:PortProcess                                     \nLISTEN 0      10                                    0.0.0.0:7070       0.0.0.0:*                                               \nLISTEN 0      4096                                127.0.0.1:6820       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:39555      0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6817       0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6818       0.0.0.0:*                                               \nLISTEN 0      4096                                  0.0.0.0:6819       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:39677      0.0.0.0:*    users:((\"code-645f29cc31\",pid=9630,fd=11)) \nLISTEN 0      511                                 127.0.0.1:39083      0.0.0.0:*    users:((\"MainThread\",pid=471122,fd=31))    \nLISTEN 0      2048                                127.0.0.1:8002       0.0.0.0:*    users:((\"uvicorn\",pid=2019096,fd=6))       \nLISTEN 0      2048                                127.0.0.1:8001       0.0.0.0:*    users:((\"uvicorn\",pid=3148336,fd=6))       \nLISTEN 0      2048                                127.0.0.1:8000       0.0.0.0:*                                               \nLISTEN 0      4096                                127.0.0.1:5433       0.0.0.0:*                                               \nLISTEN 0      244                                 127.0.0.1:5432       0.0.0.0:*                                               \nLISTEN 0      4096                                127.0.0.1:20241      0.0.0.0:*                                               \nLISTEN 0      80                                  127.0.0.1:3306       0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:35937      0.0.0.0:*    users:((\"code-07f806f999\",pid=785241,fd=9))\nLISTEN 0      128                                 127.0.0.1:631        0.0.0.0:*                                               \nLISTEN 0      511                                 127.0.0.1:33059      0.0.0.0:*    users:((\"code\",pid=3573433,fd=48))         \nLISTEN 0      128                                   0.0.0.0:22         0.0.0.0:*                                               \nLISTEN 0      4096                            127.0.0.53%lo:53         0.0.0.0:*                                               \nLISTEN 0      4096                 100.84.215.55%tailscale0:43433      0.0.0.0:*                                               \nLISTEN 0      128                                 127.0.0.1:44615      0.0.0.0:*    users:((\"codex\",pid=500092,fd=39))         \nLISTEN 0      4096                                127.0.0.1:11434      0.0.0.0:*                                               \nLISTEN 0      10                                       [::]:7070          [::]:*                                               \nLISTEN 0      128                                     [::1]:631           [::]:*                                               \nLISTEN 0      128                                      [::]:22            [::]:*                                               \nLISTEN 0      4096   [fd7a:115c:a1e0::7935:d738]%tailscale0:38191         [::]:*                                               \n",
+    "stderr": ""
+  }
+}

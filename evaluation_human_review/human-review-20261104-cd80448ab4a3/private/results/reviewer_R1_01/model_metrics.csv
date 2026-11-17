@@ -1,0 +1,4 @@
+model,automatic_correct,automatic_n,automatic_accuracy,human_reviewed,human_correct,human_partly_correct,human_incorrect,human_uncertain,human_decided,human_fully_correct_fraction_all_reviewed,human_fully_correct_fraction_decided_only,correctness_n,correctness_mean_1_to_5,instruction_following_n,instruction_following_mean_1_to_5,relevance_n,relevance_mean_1_to_5,completeness_n,completeness_mean_1_to_5,conciseness_n,conciseness_mean_1_to_5
+gemma4:12b,53,58,0.9137931034482759,12,10,2,0,0,12,0.8333333333333334,0.8333333333333334,12,4.833333333333333,0,,0,,0,,0,
+qwen3:1.7b,35,58,0.603448275862069,12,7,2,3,0,12,0.5833333333333334,0.5833333333333334,12,4,0,,0,,0,,0,
+qwen3:8b,48,58,0.8275862068965517,12,9,3,0,0,12,0.75,0.75,12,4.75,0,,0,,0,,0,

@@ -1,0 +1,39 @@
+model,question_id,assessment_source,recorded_verdict,rationale_or_diagnostic,response_excerpt_exact,response_sha256
+qwen3:1.7b,C01,researcher R1 (AI-assisted),incorrect,Removes only adjacent duplicates rather than all repeated strings.,"def stable_unique(items):
+    result = []
+    for item in items:
+        if not result or result[-1] != item:
+            result.append(item)
+    return result",389aea539920f6a6d8fad74c9a94a0800b227897bec7afbece031fbac11e4fbd
+qwen3:1.7b,C03,researcher R1 (AI-assisted),incorrect,Returns an empty list instead of raising ValueError for nonpositive size.,"def chunks(items, size):
+    if size <= 0:
+        return []
+    result = []
+    for i in range(0, len(items), size):
+        result.append(items[i:i+size])
+    return result",77fec8548204e222a2b6f28f6f2772f70793dc6a0370da381a119b8fc4c1ba8f
+qwen3:1.7b,K03,researcher R1 (AI-assisted),incorrect,Contradicts itself by saying the first update rolls back but also that the debit and credit occur.,"The transaction must debit account A and credit account B in one operation, but since the second update failed, the database must roll back the first update to maintain consistency. The transaction outcome is that account A is debited and a",060b325d4a14d0f6b4fb9ac65143ba58600d4abb4b943c730a6cee2b29eca0e7
+qwen3:8b,I02,original automatic scorer,False,Malformed output or unsupported representation; no repair performed,"```json
+[8, 4, 2]
+```",73e55470231b3d2f746ce1a563e55cbb13011e0508ab3dcd927aaa79a676e8b4
+gemma4:12b,I03,original automatic scorer,False,Malformed output or unsupported representation; no repair performed,"```json
+{
+  ""name"": ""Mali"",
+  ""team"": ""Research"",
+  ""office"": null
+}
+```",d671c5d3041eed58db0ae2c40e0ab16e9f7cd108c088ee4a7c1d4d7e3293f9a0
+gemma4:12b,R01,original automatic scorer,False,Malformed output or unsupported representation; no repair performed,"```json
+{
+  ""A"": 0,
+  ""B"": 0,
+  ""C"": 2,
+  ""total"": 18
+}
+```
+
+*Wait, the prompt requires exactly three instances.* Let me re-calculate to ensure exactly three are chosen.
+
+If I choose:
+A (4) + B (6) + C (9) = 19 (Too high)
+A (4) + B (6) + B ",b3a03c2788141fa76cdd01bee0fe0fe3ff2e82ef0e61015c55e051cb1e20d122

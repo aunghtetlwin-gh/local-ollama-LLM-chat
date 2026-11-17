@@ -1,0 +1,20 @@
+{
+  "all_passed": true,
+  "checks_n": 14,
+  "checks": {
+    "portal_tests_and_environment": true,
+    "chat_tests_and_environment": true,
+    "postgres_tests_and_environment": true,
+    "chat-forwarding_tests_and_environment": true,
+    "198_test_inventory": true,
+    "four_reviewed_fixes_match_and_originals_unchanged": true,
+    "1727_byte_identical_and_one_preserved_log_prefix": true,
+    "evaluation_final_report_prior_seal": true,
+    "slurm_contention_runs_prior_seal": true,
+    "security_analysis_prior_seal": true,
+    "security_remediation_prior_seal": true,
+    "loaded_connector_ssh_only": true,
+    "portal_route_difference": true,
+    "production_container_unchanged_and_test_containers_removed": true
+  }
+}

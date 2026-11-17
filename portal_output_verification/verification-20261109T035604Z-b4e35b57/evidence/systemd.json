@@ -1,0 +1,14 @@
+{
+  "MainPID": "1565020",
+  "Result": "success",
+  "NRestarts": "0",
+  "ExecMainStartTimestamp": "Fri 2026-11-06 23:40:30 +07",
+  "ExecMainStatus": "0",
+  "WorkingDirectory": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release",
+  "User": "lailai",
+  "Group": "lailai",
+  "ActiveState": "active",
+  "SubState": "running",
+  "DropInPaths": "/etc/systemd/system/slurm-portal.service.d/90-nectec-security-30beac16.conf",
+  "NeedDaemonReload": "no"
+}

@@ -1,0 +1,4 @@
+suite,passed,failed,errors,skipped,exit_code,raw_prefix
+portal,108,0,0,0,0,raw/portal-2
+chat,77,0,0,0,0,raw/chat-1
+postgres,11,0,0,0,0,raw/postgres-1

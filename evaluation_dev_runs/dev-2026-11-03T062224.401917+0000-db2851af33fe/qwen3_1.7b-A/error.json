@@ -1,0 +1,7 @@
+{
+  "type": "JSONDecodeError",
+  "message": "Extra data: line 1 column 4 (char 3)",
+  "finished_at": "2026-11-03T06:22:27.285390+00:00",
+  "wall_time_s": 2.8646823507733643,
+  "server_completion_unconfirmed": true
+}

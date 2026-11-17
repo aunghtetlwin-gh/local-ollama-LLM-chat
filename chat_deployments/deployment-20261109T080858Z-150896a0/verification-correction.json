@@ -1,0 +1,7 @@
+{
+  "issue": "Verifier converted case-insensitive HTTPMessage headers to a plain case-sensitive dict and checked Cache-Control; actual header keys are lowercase",
+  "initial_statuses": "All HTTP status assertions matched expected values; failed combined assertions included the incorrect cache header lookup",
+  "fix": "Normalize header names to lowercase in verification only",
+  "production_changes_for_correction": false,
+  "initial_results_retained": "verification-attempt-1/"
+}

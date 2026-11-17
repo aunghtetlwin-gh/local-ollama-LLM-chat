@@ -1,0 +1,106 @@
+.SH "FILENAME PATTERN"
+.PP
+\fBsbatch\fR allows for a filename pattern to contain one or more replacement
+symbols, which are a percent sign "%" followed by a letter (e.g. %j).
+
+.TP
+\fB\\\\\fR
+Do not process any of the replacement symbols.
+.IP
+
+.TP
+\fB%%\fR
+The character "%".
+.IP
+
+.TP
+\fB%A\fR
+Job array's master job allocation number.
+.IP
+
+.TP
+\fB%a\fR
+Job array ID (index) number.
+.IP
+
+.TP
+\fB%b\fR
+Job array ID (index) number modulo 10.
+.IP
+
+.TP
+\fB%J\fR
+jobid.stepid of the running job (e.g. "128.0"). The stepid is only expanded for
+regular steps, not for special steps like "batch" or "extern".
+.IP
+
+.TP
+\fB%j\fR
+jobid of the running job.
+.IP
+
+.TP
+\fB%N\fR
+short hostname. This will create a separate IO file per node.
+.IP
+
+.TP
+\fB%n\fR
+Node identifier relative to current job (e.g. "0" is the first node of
+the running job) This will create a separate IO file per node.
+.IP
+
+.TP
+\fB%r\fR
+Restart count of the running job.
+.IP
+
+.TP
+\fB%S\fR
+SLUID of the running job.
+.IP
+
+.TP
+\fB%s\fR
+stepid of the running job.
+.IP
+
+.TP
+\fB%t\fR
+task identifier (rank) relative to current job. This will create a
+separate IO file per task.
+.IP
+
+.TP
+\fB%u\fR
+User name.
+.IP
+
+.TP
+\fB%x\fR
+Job name.
+.IP
+
+.PP
+A number placed between the percent character and format specifier may be
+used to zero\-pad the result in the IO filename to at minimum of specified
+numbers. This number is ignored if the format specifier corresponds to
+non\-numeric data (%N for example). The maximal number is 10, if a value greater
+than 10 is used the result is padding up to 10 characters.
+Some examples of how the format string may be used for a 4 task job step with a
+JobID of 128 and step id of 0 are included below:
+
+.TP 15
+job%J.out
+job128.0.out
+.IP
+
+.TP
+job%4j.out
+job0128.out
+.IP
+
+.TP
+job%2j\-%2t.out
+job128\-00.out, job128\-01.out, ...
+.IP

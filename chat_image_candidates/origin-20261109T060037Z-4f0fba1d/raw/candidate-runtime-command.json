@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--entrypoint",
+    "python",
+    "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+    "-B",
+    "-c",
+    "import sys,json,hashlib,importlib.metadata; from pathlib import Path; names=['server.py', 'auth.py', 'database.py', 'migrate.py', 'index.html', 'login.html', 'register.html', 'requirements.txt', 'migrations/001_users_sessions.sql', 'migrations/002_conversation_ownership.sql']; print(json.dumps({'python':sys.version,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()},'files_sha256':{n:hashlib.sha256((Path('/app')/n).read_bytes()).hexdigest() for n in names}}))"
+  ],
+  "exit_code": 0,
+  "started_or_recorded": "2026-11-09T06:08:32.557122+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "checks_n": 14,
+  "checks": {
+    "portal-host": true,
+    "chat-host": true,
+    "postgres-host": true,
+    "portal-characterization-host": true,
+    "chat-characterization-host": true,
+    "146_passed_junit_cases": true,
+    "case_csv_matches_junit": true,
+    "27_controls_have_evidence_and_limits": true,
+    "37_source_snapshots_match_originals": true,
+    "1584_original_files_unchanged": true,
+    "runtime_environment_filtered": true,
+    "evaluation_final_report_seal": true,
+    "slurm_contention_runs_seal": true,
+    "no_production_source_modification": true
+  },
+  "note": "Validation of evidence consistency, not additional application or host-security test coverage"
+}

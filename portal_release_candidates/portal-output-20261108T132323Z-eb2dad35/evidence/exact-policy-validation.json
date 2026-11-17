@@ -1,0 +1,92 @@
+{
+  "positive_resolution": [
+    {
+      "job_id": 123,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-123.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 124,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-124.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 125,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-125.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 126,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-126.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 127,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 128,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-128.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 129,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 130,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-130.out",
+      "metadata_size": 0,
+      "content_read": false
+    },
+    {
+      "job_id": 131,
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-131.out",
+      "metadata_size": 0,
+      "content_read": false
+    }
+  ],
+  "outside_roots_denied": [
+    {
+      "path": "/home/lailai/.ssh/id_rsa",
+      "status": 404
+    },
+    {
+      "path": "/etc/passwd",
+      "status": 404
+    },
+    {
+      "path": "/tmp/other-private.out",
+      "status": 404
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/unapproved.out",
+      "status": 404
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/new-job/slurm-127.out",
+      "status": 404
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1-evil/slurm-127.out",
+      "status": 404
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/../slurm-127.out",
+      "status": 404
+    }
+  ],
+  "legacy_fixed_path_allowed": true,
+  "filesystem_output_opens": 0,
+  "live_endpoint_requests": 0,
+  "passed": true
+}

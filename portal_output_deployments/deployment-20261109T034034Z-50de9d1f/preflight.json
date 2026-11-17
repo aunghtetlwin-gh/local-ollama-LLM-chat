@@ -1,0 +1,827 @@
+{
+  "timestamp": "2026-11-09T03:40:34.863512+00:00",
+  "candidate": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35",
+  "checks": {
+    "candidate_seal": true,
+    "base_hashes": true,
+    "dropin_hash": true,
+    "directory_and_file_metadata_unchanged": true,
+    "groups_unchanged": true,
+    "current_release_active": true,
+    "db_path": true,
+    "both_portal_openapi_healthy": true,
+    "fallback_identity": true,
+    "sudo_noninteractive_available": false
+  },
+  "metadata": [
+    {
+      "path": "/",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "type": "directory",
+      "nlink": 20,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::r-x\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "type": "directory",
+      "nlink": 5,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::r-x\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o750",
+      "type": "directory",
+      "nlink": 50,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::r-x\nother::---\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 3,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 7,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 11,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 109,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1427,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-123.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-123.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1428,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-124.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-124.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 624,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1428,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-125.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-125.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 108,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1424,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-126.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-126.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1426,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1429,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-128.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-128.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 108,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1425,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1425,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-130.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-130.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o775",
+      "type": "directory",
+      "nlink": 2,
+      "size": 4096,
+      "acl": "user::rwx\ngroup::rwx\nother::r-x\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 111,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/ready.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 625,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/result.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 1429,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-131.err",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    },
+    {
+      "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-131.out",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "type": "regular",
+      "nlink": 1,
+      "size": 0,
+      "acl": "user::rw-\ngroup::rw-\nother::r--\n\n",
+      "acl_exit": 0,
+      "matches": true
+    }
+  ],
+  "groups": {
+    "0": {
+      "name": "root",
+      "supplementary_members": [],
+      "primary_members": [
+        "root"
+      ]
+    },
+    "1000": {
+      "name": "lailai",
+      "supplementary_members": [],
+      "primary_members": [
+        "lailai"
+      ]
+    }
+  },
+  "service": {
+    "argv": [
+      "systemctl",
+      "show",
+      "slurm-portal.service",
+      "--property=ActiveState,SubState,MainPID,WorkingDirectory,User,Group,Result,NRestarts,DropInPaths"
+    ],
+    "exit_code": 0,
+    "stdout": "MainPID=1565020\nResult=success\nNRestarts=0\nWorkingDirectory=/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release\nUser=lailai\nGroup=lailai\nActiveState=active\nSubState=running\nDropInPaths=/etc/systemd/system/slurm-portal.service.d/90-nectec-security-30beac16.conf\n",
+    "stderr": ""
+  },
+  "selected_portal_environment": {
+    "PORTAL_AUTH_DB": "/home/lailai/slurm-portal/portal_users.db"
+  },
+  "ports": {
+    "8001": {
+      "status": 200,
+      "operations": 16
+    },
+    "8002": {
+      "status": 200,
+      "operations": 16
+    }
+  },
+  "fallback": {
+    "pid": 2019096,
+    "present": true,
+    "start_ticks": "364346317"
+  },
+  "sessions": [
+    {
+      "user": "lailai",
+      "tty": ":1",
+      "login_date": "2026-09-16",
+      "login_time": "09:23"
+    }
+  ],
+  "who_exit": 0,
+  "slurm_queue": {
+    "argv": [
+      "squeue",
+      "-h",
+      "-o",
+      "%i|%u|%T|%j"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "relevant_established_connections": [],
+  "ss_exit": 0,
+  "recent_http_events": [
+    {
+      "timestamp_us": "1794195634838668",
+      "method": "GET",
+      "path": "/openapi.json",
+      "status": 200
+    }
+  ],
+  "journal_exit": 0,
+  "sudo_check": {
+    "argv": [
+      "sudo",
+      "-n",
+      "true"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "sudo: a password is required\n"
+  },
+  "maintenance_window": "awaiting explicit current-window information",
+  "services_changed": false,
+  "real_job_output_contents_read": false
+}

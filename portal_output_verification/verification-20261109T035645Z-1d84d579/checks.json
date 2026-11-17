@@ -1,0 +1,148 @@
+[
+  {
+    "name": "candidate_seal",
+    "passed": true
+  },
+  {
+    "name": "managed_service_healthy",
+    "passed": true
+  },
+  {
+    "name": "reviewed_release_directory",
+    "passed": false
+  },
+  {
+    "name": "daemon_reload_complete",
+    "passed": true
+  },
+  {
+    "name": "localhost8001_no_reload",
+    "passed": true
+  },
+  {
+    "name": "original_db_path",
+    "passed": true
+  },
+  {
+    "name": "all_deployed_sources_match",
+    "passed": false
+  },
+  {
+    "name": "dropin_matches_reviewed_bytes",
+    "passed": false
+  },
+  {
+    "name": "exact_nine_directory_policy",
+    "passed": false
+  },
+  {
+    "name": "exact16_expected_operations",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:post/jobs",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:post/jobs/{job_id}/cancel",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:post/jobs/{job_id}/requeue",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:post/auth/logout",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:post/admin/users",
+    "passed": true
+  },
+  {
+    "name": "session_csrf_metadata:patch/admin/users/{username}/status",
+    "passed": true
+  },
+  {
+    "name": "anonymous_denial:/auth/me",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/admin/users",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/jobs/active",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/jobs/history",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/jobs/127",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/jobs/127/output",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denial:/cluster/node",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "invalid_session_denied",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "password_redaction:missing_username",
+    "passed": true,
+    "status": 422
+  },
+  {
+    "name": "password_redaction:wrong_type",
+    "passed": true,
+    "status": 422
+  },
+  {
+    "name": "previous_release_and_fallback_sources_intact",
+    "passed": true
+  },
+  {
+    "name": "fallback_identical_process",
+    "passed": true
+  },
+  {
+    "name": "fallback_healthy_unchanged_api",
+    "passed": true
+  },
+  {
+    "name": "deployed_resolver_metadata_only_9_paths_4_denials",
+    "passed": false
+  },
+  {
+    "name": "sealed190_fixture_results",
+    "passed": true
+  },
+  {
+    "name": "startup_complete_no_errors",
+    "passed": true
+  },
+  {
+    "name": "sentinel_not_in_reviewed_logs",
+    "passed": true
+  },
+  {
+    "name": "pid_stable",
+    "passed": true
+  }
+]

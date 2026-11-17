@@ -1,0 +1,10 @@
+model,category,human_reviewed,human_correct,human_partly_correct,human_incorrect,human_uncertain,human_decided,human_fully_correct_fraction_all_reviewed,human_fully_correct_fraction_decided_only,correctness_n,correctness_mean_1_to_5,instruction_following_n,instruction_following_mean_1_to_5,relevance_n,relevance_mean_1_to_5,completeness_n,completeness_mean_1_to_5,conciseness_n,conciseness_mean_1_to_5
+gemma4:12b,coding,4,4,0,0,0,4,1.0,1.0,4,5,0,,0,,0,,0,
+gemma4:12b,knowledge,4,4,0,0,0,4,1.0,1.0,4,5,0,,0,,0,,0,
+gemma4:12b,summarization,4,2,2,0,0,4,0.5,0.5,4,4.5,0,,0,,0,,0,
+qwen3:1.7b,coding,4,2,0,2,0,4,0.5,0.5,4,3.5,0,,0,,0,,0,
+qwen3:1.7b,knowledge,4,2,1,1,0,4,0.5,0.5,4,3.75,0,,0,,0,,0,
+qwen3:1.7b,summarization,4,3,1,0,0,4,0.75,0.75,4,4.75,0,,0,,0,,0,
+qwen3:8b,coding,4,4,0,0,0,4,1.0,1.0,4,5,0,,0,,0,,0,
+qwen3:8b,knowledge,4,2,2,0,0,4,0.5,0.5,4,4.5,0,,0,,0,,0,
+qwen3:8b,summarization,4,3,1,0,0,4,0.75,0.75,4,4.75,0,,0,,0,,0,

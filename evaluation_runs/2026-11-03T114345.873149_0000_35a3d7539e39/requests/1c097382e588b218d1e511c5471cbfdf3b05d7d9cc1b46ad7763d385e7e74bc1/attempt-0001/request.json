@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "R02",
+  "repetition": 1,
+  "prompt_sha256": "7d81b81c11a1e0b1ecd7e7ddb1cec3453d4657810af6c6c07fd44e7496306ac9",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "There are 120 independent jobs. Each takes exactly 3 seconds. Four identical workers start together; each handles one job at a time. Assume perfect distribution and no overhead. How many seconds until all jobs finish? Return only the integer, without units."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "1c097382e588b218d1e511c5471cbfdf3b05d7d9cc1b46ad7763d385e7e74bc1"
+}

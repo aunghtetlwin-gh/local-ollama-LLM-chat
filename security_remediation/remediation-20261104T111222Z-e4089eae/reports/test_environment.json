@@ -1,0 +1,10 @@
+{
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "pytest": "9.2.0",
+  "fastapi": "0.162.0",
+  "starlette": "1.7.0",
+  "pydantic": "2.14.2",
+  "argon2-cffi": "25.1.0",
+  "httpx": "0.28.1",
+  "psycopg": "3.3.6"
+}

@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "C01",
+  "repetition": 1,
+  "prompt_sha256": "9e467255dc3c18ac68465bae868fe87706087ddb9ec1981b08462d1cfaaa85be",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Write a Python function stable_unique(items). Input is a list of strings. Return a new list with duplicate strings removed, preserving first-occurrence order. An empty input returns []. Do not mutate the input. Do not import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "fe75afb31ba2072b0bb4b88762a808c4114cf548107fc3699fee3aea7ff2774d"
+}

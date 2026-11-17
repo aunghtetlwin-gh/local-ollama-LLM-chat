@@ -1,0 +1,30 @@
+[
+  {
+    "application": "portal",
+    "original_path": "/home/lailai/slurm-portal/app.py",
+    "isolated_path": "portal/app.py",
+    "original_sha256": "3d2ff18c2fd38aea30e648a901858e58a72bf2def8e877499ee6d88ff61d0105",
+    "remediated_sha256": "2ae0f5197826872fd87f3fca922ba2354489855e78fe89b7ba05d780c3a58af1"
+  },
+  {
+    "application": "portal",
+    "original_path": "/home/lailai/slurm-portal/auth.py",
+    "isolated_path": "portal/auth.py",
+    "original_sha256": "ccdc0c0282334a8e92bc5b37d5fab80520ae83268a7188c5b88ad44b4026f86f",
+    "remediated_sha256": "cae1cf4875fe66d7f2bb23d75ddf61613954d56157e69c0e11bd6f12dfc945d4"
+  },
+  {
+    "application": "portal",
+    "original_path": "/home/lailai/slurm-portal/slurm_identity.py",
+    "isolated_path": "portal/slurm_identity.py",
+    "original_sha256": "57b2c7a69a66c1da8e208de3ab320ca06004fb999ecb58640f391cd1d74717c1",
+    "remediated_sha256": "37f24fc6d04162493bb6caa7e8d639c614dfc1b1c0519a937bb7ab2125870744"
+  },
+  {
+    "application": "chat",
+    "original_path": "/home/lailai/ollama-test/server.py",
+    "isolated_path": "chat/server.py",
+    "original_sha256": "19f4c324aeea22333412dc3c58b4d158881e70859dfca159498ad3777a203967",
+    "remediated_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc"
+  }
+]

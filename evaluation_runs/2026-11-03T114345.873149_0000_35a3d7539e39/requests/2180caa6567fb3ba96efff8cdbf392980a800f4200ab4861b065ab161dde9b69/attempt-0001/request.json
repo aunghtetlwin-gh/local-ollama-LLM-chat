@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "I03",
+  "repetition": 1,
+  "prompt_sha256": "8c68c26d46c9881c69cd3597e6e5920022d88250e76908627fe282bfb9de61f4",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Extract name, team, and office from this synthetic record. Return only a JSON object with exactly those keys. Missing fields must be JSON null, not a string. Record: name=Mali; team=Research."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "2180caa6567fb3ba96efff8cdbf392980a800f4200ab4861b065ab161dde9b69"
+}

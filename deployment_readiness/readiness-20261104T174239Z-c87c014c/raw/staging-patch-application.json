@@ -1,0 +1,34 @@
+[
+  {
+    "argv": [
+      "patch",
+      "--batch",
+      "--forward",
+      "-p1",
+      "-d",
+      "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/staging/portal",
+      "-i",
+      "/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/patches/portal-application.patch"
+    ],
+    "exit_code": 0,
+    "stdout": "patching file app.py\npatching file auth.py\npatching file slurm_identity.py\n",
+    "stderr": "",
+    "patch_sha256": "3b61e2d585bacddc15fe96e5cb1fec5144ce7efe5358ac7088bcd860de3b129f"
+  },
+  {
+    "argv": [
+      "patch",
+      "--batch",
+      "--forward",
+      "-p1",
+      "-d",
+      "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/staging/chat",
+      "-i",
+      "/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/patches/chat-application.patch"
+    ],
+    "exit_code": 0,
+    "stdout": "patching file server.py\n",
+    "stderr": "",
+    "patch_sha256": "873acdc08f1788476a58060b53d0b0327c21c9b4254efcf5f44c6420e5bc7b0f"
+  }
+]

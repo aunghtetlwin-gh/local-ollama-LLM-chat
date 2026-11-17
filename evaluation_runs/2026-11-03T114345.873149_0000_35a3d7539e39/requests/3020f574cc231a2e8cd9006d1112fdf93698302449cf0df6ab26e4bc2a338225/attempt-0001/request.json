@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "S04",
+  "repetition": 1,
+  "prompt_sha256": "dafc482eebde8fede916d631e98a0cce4679b6132f61f23c03cc2ff64baf840a",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Summarize this synthetic investigation in exactly two sentences. Preserve the conflicting observations and uncertainty.\n\nOne monitor recorded increased response times during the evening. A second monitor showed no change during the same period. Engineers have not determined whether the difference came from monitoring configuration or service behavior. No cause has been confirmed."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3020f574cc231a2e8cd9006d1112fdf93698302449cf0df6ab26e4bc2a338225"
+}

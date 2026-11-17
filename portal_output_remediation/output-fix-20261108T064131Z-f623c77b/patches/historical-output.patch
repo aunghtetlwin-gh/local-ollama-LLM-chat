@@ -1,0 +1,200 @@
+--- a/app.py
++++ b/app.py
+@@ -21,6 +21,8 @@
+     is_allowed_slurm_user,
+ )
+ 
++from job_output import resolve_stdout_path, open_stdout_file
++
+ from auth import (
+     router as auth_router,
+     init_db,
+@@ -1389,7 +1391,7 @@
+     }
+     
+ 
+-def verify_output_owner(job_id: int, username: str) -> None:
++def verify_output_owner(job_id: int, username: str) -> dict:
+     """
+     Verify ownership through Slurm's scheduler, or through
+     SlurmDBD accounting after a job leaves the controller.
+@@ -1423,10 +1425,10 @@
+                     status_code=404,
+                     detail="Job not found",
+                 )
+-            return
++            return job
+ 
+     # Completed jobs may disappear from slurmctld.
+-    # Use the existing seven-day accounting window.
++    # Preserve the existing 90-day accounting window.
+     start_time = int(time.time()) - 90 * 24 * 60 * 60
+ 
+     data = call_slurm(
+@@ -1444,7 +1446,7 @@
+         if str(job.get("job_id")) == str(job_id):
+             if job.get("user") != username:
+                 break
+-            return
++            return job
+ 
+     raise HTTPException(
+         status_code=404,
+@@ -1463,7 +1465,7 @@
+     username = identity["username"]
+ 
+     # 1. Verify Slurm ownership.
+-    verify_output_owner(job_id, username)
++    job = verify_output_owner(job_id, username)
+ 
+     # 2. Resolve the expected Linux UID.
+     try:
+@@ -1474,15 +1476,12 @@
+             detail="Job output not found",
+         )
+ 
+-    # 3. Use a server-generated path, never a browser path.
+-    path = f"/tmp/slurm-{job_id}.out"
++    # 3. Only the ownership-checked record may select an approved path.
++    path = resolve_stdout_path(job, job_id)
+ 
+     # 4. Safely open the file without following symlinks.
+     try:
+-        fd = os.open(
+-            path,
+-            os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK,
+-        )
++        fd = open_stdout_file(path)
+ 
+     except OSError:
+         raise HTTPException(
+@@ -1501,7 +1500,7 @@
+             )
+ 
+         # The file must belong to the authenticated job owner.
+-        if info.st_uid != expected_uid:
++        if info.st_uid != expected_uid or info.st_nlink != 1:
+             raise HTTPException(
+                 status_code=404,
+                 detail="Job output not found",
+--- /dev/null
++++ b/job_output.py
+@@ -0,0 +1,118 @@
++"""Conservative local stdout resolution; no network, shell or filesystem discovery.
++
++Custom roots are operator-approved *output-only* directories, not user homes.
++All filesystem traversal uses directory FDs and rejects symlinks at every level.
++"""
++import json
++import os
++import re
++from fastapi import HTTPException
++
++
++def unavailable():
++    return HTTPException(status_code=404, detail="Job output not found")
++
++
++def clean_absolute(path):
++    """Validate lexically without normalizing away traversal or touching disk."""
++    if (not isinstance(path, str) or not path.startswith("/") or len(path) > 4096
++            or "\\" in path or any(ord(c) < 32 or ord(c) == 127 for c in path)
++            or any(p in ("", ".", "..") for p in path.split("/")[1:])):
++        raise unavailable()
++    return path
++
++
++def configured_roots():
++    """Fail closed on a malformed operator policy; no implicit home access."""
++    try:
++        roots = json.loads(os.environ.get("PORTAL_OUTPUT_ROOTS", "[]"))
++        if not isinstance(roots, list) or any(not isinstance(p, str) for p in roots):
++            raise ValueError()
++        for root in roots:
++            clean_absolute(root)
++            parts = root.split("/")[1:]
++            if (len(parts) < 2 or parts[0] in {"etc", "proc", "sys", "dev", "run", "boot"}
++                    or (parts[0] == "home" and len(parts) < 3)):
++                raise ValueError()
++        return tuple(roots)
++    except (ValueError, TypeError, HTTPException):
++        raise HTTPException(status_code=503, detail="Job output policy unavailable") from None
++
++
++def expand_pattern(pattern, job_id):
++    """Subset of sbatch patterns: %% and %j / %1j..%10j only.
++
++    Never guess array, step, node, job-name or user substitutions. Backslash
++    disable-expansion syntax is deliberately unsupported. Expansion is one pass.
++    """
++    if not isinstance(pattern, str) or not pattern or len(pattern) > 4096 or "\\" in pattern:
++        raise unavailable()
++    result = []
++    pos = 0
++    token = re.compile(r"%(?:%|([1-9]|10)?j)")
++    while pos < len(pattern):
++        if pattern[pos] != "%":
++            result.append(pattern[pos]); pos += 1
++            continue
++        match = token.match(pattern, pos)
++        if not match:
++            raise unavailable()
++        if match.group(0) == "%%":
++            result.append("%")
++        else:
++            result.append(str(job_id).zfill(int(match.group(1) or 0)))
++        pos = match.end()
++    return "".join(result)
++
++
++def resolve_stdout_path(job, job_id):
++    """Only call after exact job identity AND ownership have been checked.
++
++    Prefer raw accounting stdout (expand supported tokens exactly once).
++    Scheduler/accounting stdout_expanded is already literal, never re-expanded.
++    No fallback is allowed when explicit metadata is invalid or out of policy.
++    """
++    legacy = f"/tmp/slurm-{job_id}.out"
++    raw = job.get("stdout")
++    expanded = job.get("stdout_expanded")
++    if raw is not None and not isinstance(raw, str):
++        raise unavailable()
++    if expanded is not None and not isinstance(expanded, str):
++        raise unavailable()
++    if raw:
++        path = expand_pattern(raw, job_id)
++    elif expanded:
++        path = expanded
++    else:
++        # Only old records lacking output metadata use the old fixed path.
++        path = legacy
++    if not path.startswith("/"):
++        work = job.get("working_directory", job.get("current_working_directory"))
++        clean_absolute(work)
++        path = work + "/" + path
++    clean_absolute(path)
++    roots = configured_roots()
++    if path != legacy and not any(path.startswith(root + "/") for root in roots):
++        raise unavailable()
++    return path
++
++
++def open_stdout_file(path):
++    """Open every component relative to an anchored FD, never following links.
++
++    Final fstat/UID/nlink/size checks and bounded read stay in the endpoint.
++    O_NONBLOCK avoids blocking if a malicious filename names a FIFO.
++    """
++    clean_absolute(path)
++    directory_flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC
++    current = os.open("/", directory_flags)
++    try:
++        parts = path.split("/")[1:]
++        for component in parts[:-1]:
++            next_fd = os.open(component, directory_flags, dir_fd=current)
++            os.close(current)
++            current = next_fd
++        return os.open(parts[-1], os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC,
++                       dir_fd=current)
++    finally:
++        os.close(current)

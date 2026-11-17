@@ -1,0 +1,1 @@
+{"model": "qwen3:1.7b", "created_at": "2026-11-03T11:44:11.992859194Z", "message": {"role": "assistant", "content": "{\"name\": \"Mali\", \"team\": \"Research.\", \"office\": null}"}, "done": true, "done_reason": "stop", "total_duration": 86129814, "load_duration": 1158536, "prompt_eval_count": 81, "prompt_eval_duration": 9531000, "eval_count": 19, "eval_duration": 69471000}

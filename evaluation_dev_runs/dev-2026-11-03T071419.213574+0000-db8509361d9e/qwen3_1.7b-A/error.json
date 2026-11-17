@@ -1,0 +1,10 @@
+{
+  "type": "ResponseValidationError",
+  "message": "Final content must be one JSON object with no surrounding prose; Extra data at line 1, column 4 (character 3)",
+  "finished_at": "2026-11-03T07:14:21.080807+00:00",
+  "wall_time_s": 1.8498055189847946,
+  "phase": "response_validation",
+  "code": "invalid_final_json",
+  "response_received": true,
+  "server_completion_unconfirmed": false
+}

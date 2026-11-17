@@ -1,0 +1,19 @@
+{
+  "observed_order_is_valid_submit_time_descending": true,
+  "expected_jobid_order": [
+    131,
+    130,
+    129,
+    128,
+    127,
+    126,
+    125,
+    124,
+    123
+  ],
+  "active_release_hashes_match": true,
+  "frontend_hash_matches": true,
+  "original_and_previous_sources_unchanged": true,
+  "fallback_start_identity_unchanged": true,
+  "no_real_job_output_read": true
+}

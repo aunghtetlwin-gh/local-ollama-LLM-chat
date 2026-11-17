@@ -1,0 +1,11 @@
+{
+  "README.md": "1f2ef9f88be50129ecc33a4e9ae9a94f78bdae112f3806ab6fde2b7889a5ec93",
+  "READINESS_REPORT.md": "5883ba05a7f7748a78c44dbff9d2756592d6956fb3386935e442d6d57dce5b59",
+  "result.json": "fd7f941444981859fb6f0bcf1932978da17edcb0229eec023730494e9979d875",
+  "inventory.json": "f65bd55b83b7ee5e0d8f395c2cc1e6f80bc7ffc596b9ec9aa4e282991e8fbabd",
+  "DEPLOYMENT_ROLLBACK.md": "4b7da2c1e24a49bfc89463a152bff62a21f1d27848ce726017608e3e38ed2d03",
+  "compare_compose_readonly.py": "fc10023f94322810eebd757ef50c5091ba755c70bcf0be7ee734bf6ebd5214a2",
+  "patch-test-validation.json": "0a2c8e1aad736d00965e681cec247049bf7c3c52651129626ba1b89b0d659c1c",
+  "compose-runtime-comparison.json": "00c7c530f63f1c436fb4e7bfb08f78ab95a8aacce77bbf1e7c096a882244599a",
+  "inspect_readonly.py": "4c755d65deba974b96dc68a526f372579eccf11e0d877365c97d9d017a0b8a56"
+}

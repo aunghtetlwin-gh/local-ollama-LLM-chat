@@ -1,0 +1,48 @@
+{
+  "source_change": {
+    "application": "chat",
+    "original_path": "/home/lailai/ollama-test/server.py",
+    "isolated_path": "chat/server.py",
+    "original_sha256": "19f4c324aeea22333412dc3c58b4d158881e70859dfca159498ad3777a203967",
+    "remediated_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc"
+  },
+  "junit_validation": {
+    "chat": {
+      "cases": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/raw/chat-1.xml"
+    },
+    "forwarding": {
+      "cases": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/raw/chat-forwarding-1.xml"
+    },
+    "postgres": {
+      "cases": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/raw/postgres-1.xml"
+    }
+  },
+  "patch_check": {
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/patches/chat-application.patch"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "new_tests_run": false,
+  "inference_or_database_queries": false
+}

@@ -1,0 +1,6 @@
+[Service]
+WorkingDirectory=/home/lailai/nectec-changes/output-fix-20261108T064131Z-f623c77b/portal-release
+Environment="PORTAL_AUTH_DB=/home/lailai/slurm-portal/portal_users.db"
+Environment='PORTAL_OUTPUT_ROOTS=["/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs"]'
+ExecStart=
+ExecStart=/home/lailai/slurm-portal/.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8001

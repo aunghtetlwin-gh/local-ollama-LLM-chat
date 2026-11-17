@@ -1,0 +1,17 @@
+{
+  "original_source_and_sealed_evidence_unchanged": true,
+  "protected_files_n": 1728,
+  "byte_identical_files_n": 1727,
+  "append_only_runtime_logs": [
+    {
+      "path": "/home/lailai/slurm-portal/logs/uvicorn-8002.log",
+      "original_prefix_sha256": "17fc441583d25bd90cfab20f994d893fb1083e8ecd848fe0ac477cb5791fe058",
+      "original_prefix_bytes": 189670,
+      "new_bytes": 64,
+      "new_lines": 1,
+      "reason": "normal access logging of read-only OpenAPI metadata request"
+    }
+  ],
+  "unexpected_changes": [],
+  "scope": "Original project/source, databases as byte-hash preservation only, prior sealed LLM/MPS/security/remediation evidence; no production SQL queries; dependency environments/Git/caches excluded"
+}

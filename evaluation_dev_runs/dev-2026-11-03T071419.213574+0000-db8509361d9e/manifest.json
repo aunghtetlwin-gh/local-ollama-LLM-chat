@@ -1,0 +1,35 @@
+{
+  "purpose": "development only; not capacity certification",
+  "created_at": "2026-11-03T07:14:19.213634+00:00",
+  "config": {
+    "protocol_version": "quality_v2",
+    "protocol_status": "draft",
+    "models": [
+      "qwen3:1.7b",
+      "qwen3:8b",
+      "gemma4:12b"
+    ],
+    "system_message": "Follow the user's task and output requirements. Do not use tools or external resources.",
+    "stream": false,
+    "keep_alive": "10m",
+    "think": null,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    },
+    "repetitions": 3,
+    "question_order_seed": "nectec-quality-v2-order42",
+    "timeout_seconds": 600,
+    "notes": "Candidate common settings. Thinking support, option support, and memory/context feasibility must be verified before freeze. No inference authorized by this file."
+  },
+  "config_sha256": "1f695063dffc178b9e364ef8c05e054199c8d554f6ef581161e332bfe9d62e67",
+  "keep_alive": "30s",
+  "maximum_requests": 9,
+  "resume_supported": false
+}

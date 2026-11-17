@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/tmp/conversation-isolation-tools/bin/python",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-vv",
+    "--tb=short",
+    "/home/lailai/ollama-test/portal_acceptance/acceptance-20261107T065000Z-004d9588/fixtures/tests/test_portal_security.py",
+    "/home/lailai/ollama-test/portal_acceptance/acceptance-20261107T065000Z-004d9588/fixtures/tests/test_custom_stdout.py",
+    "-k",
+    "output or listing_and_history_filter_owners or job_metadata_ownership or job_mutation_owner_only_even_admin or researcher_cannot_administer",
+    "--junitxml=/home/lailai/ollama-test/portal_acceptance/acceptance-20261107T065000Z-004d9588/raw/output-ownership.xml"
+  ],
+  "cwd": "/home/lailai/ollama-test/portal_acceptance/acceptance-20261107T065000Z-004d9588/fixtures/portal",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "started_epoch": 1794034303.2633471,
+  "scope": "disposable SQLite users, synthetic files, mocked scheduler; no live Slurm or real output content",
+  "exit_code": 0,
+  "finished_epoch": 1794034309.4508722
+}

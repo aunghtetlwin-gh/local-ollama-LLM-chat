@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/envs/portal/bin/python",
+    "-c",
+    "import sys,json,importlib.metadata; current={d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}; expected={'h11': '0.16.0', 'pydantic-core': '2.46.5', 'typing-inspection': '0.4.4', 'argon2-cffi': '25.1.0', 'exceptiongroup': '1.3.1', 'requests': '2.34.2', 'starlette': '1.7.0', 'fastapi': '0.141.1', 'annotated-types': '0.8.0', 'urllib3': '2.8.0', 'idna': '3.20', 'argon2-cffi-bindings': '26.1.0', 'certifi': '2026.7.22', 'pip': '22.0.2', 'pycparser': '3.11', 'setuptools': '59.6.0', 'charset-normalizer': '3.5.1', 'uvicorn': '0.54.0', 'anyio': '4.15.1', 'typing-extensions': '4.16.0', 'click': '8.5.0', 'pydantic': '2.13.5', 'annotated-doc': '0.0.5', 'cffi': '2.1.1'}; assert all(current.get(k)==v for k,v in expected.items()),'runtime package mismatch'; assert sys.version=='3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]'; print('ENVIRONMENT='+json.dumps({'python':sys.version,'packages':current}),flush=True); import pytest; raise SystemExit(pytest.main(['-p', 'no:cacheprovider', '-vv', '--tb=short', '/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/tests', '--junitxml=/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/raw/rerun-20261108T132602Z-c17eab/portal-tests.xml']))"
+  ],
+  "cwd": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/portal-release",
+  "started": "2026-11-08T13:26:02.995215+00:00",
+  "scope": "disposable SQLite, synthetic files, mocked scheduler; deployed-version dependency assertions",
+  "candidate_source": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/portal-release",
+  "candidate_output_roots": [
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1",
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2"
+  ],
+  "exit_code": 0,
+  "finished": "2026-11-08T13:26:34.307193+00:00"
+}

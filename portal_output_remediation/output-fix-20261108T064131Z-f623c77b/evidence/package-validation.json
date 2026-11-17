@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-08T13:17:00.435964+00:00",
+  "python_sources_parse": true,
+  "patch_applies_to_captured_base": true,
+  "patched_hashes_match": true,
+  "original_and_deployed_sources_unchanged": true,
+  "passed": 190,
+  "failed": 0,
+  "skipped": 0,
+  "production_deployment_performed": false,
+  "production_db_or_real_outputs_read": false
+}

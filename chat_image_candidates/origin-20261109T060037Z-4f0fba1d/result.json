@@ -1,0 +1,24 @@
+{
+  "status": "CONDITIONAL GO",
+  "scope": "candidate image built and tested; no production deployment",
+  "timestamp": "2026-11-09T06:12:23.571898+00:00",
+  "candidate_tag": "local-ollama-chat:origin-20261109T060037Z-4f0fba1d",
+  "candidate_image_id": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "rollback_tag": "local-ollama-chat:pre-origin-20261109T060037Z-4f0fba1d",
+  "rollback_image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "server_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+  "tests_passed": 79,
+  "regression": 77,
+  "forwarding": 2,
+  "failed": 0,
+  "skipped": 0,
+  "production_unchanged": true,
+  "no_inference": true,
+  "no_production_db_access": true,
+  "pending": [
+    "separate deployment approval",
+    "coordinate observed connected browser/session polling and drain streams",
+    "review/notify headerless clients (README curl example affected)",
+    "controlled post-deployment browser/session acceptance"
+  ]
+}

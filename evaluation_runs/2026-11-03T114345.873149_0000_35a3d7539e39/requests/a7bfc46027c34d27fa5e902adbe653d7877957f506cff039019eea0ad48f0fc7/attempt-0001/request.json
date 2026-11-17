@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "S02",
+  "repetition": 1,
+  "prompt_sha256": "2a298919a982b660f2fe0d4f3b28396f457d9255c7a028229dbc167608bccc32",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Summarize this synthetic experiment in exactly two sentences. Preserve both latency values and their units, the sample size, and the limitation.\n\nOn one workstation, configuration A had mean latency 800 milliseconds and configuration B had mean latency 600 milliseconds. Each configuration processed ten requests. Output quality was not measured, so these results alone cannot identify the better overall configuration."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "a7bfc46027c34d27fa5e902adbe653d7877957f506cff039019eea0ad48f0fc7"
+}

@@ -1,0 +1,28 @@
+{
+  "8001_operations": 10,
+  "8002_operations": 16,
+  "new_operations_8002": [
+    "GET /admin/users",
+    "GET /auth/me",
+    "PATCH /admin/users/{username}/status",
+    "POST /admin/users",
+    "POST /auth/login",
+    "POST /auth/logout"
+  ],
+  "common_operations_changed_parameter_metadata": [
+    "GET /cluster/node",
+    "GET /jobs/active",
+    "GET /jobs/history",
+    "GET /jobs/{job_id}",
+    "GET /jobs/{job_id}/output",
+    "POST /jobs",
+    "POST /jobs/{job_id}/cancel",
+    "POST /jobs/{job_id}/requeue"
+  ],
+  "schema_changes": [
+    "CreateResearcherRequest",
+    "LoginRequest",
+    "UpdateResearcherStatusRequest"
+  ],
+  "exact_loaded_legacy_source_revision": "not recoverable from nonintrusive metadata; do not label a Git commit as verified runtime code"
+}

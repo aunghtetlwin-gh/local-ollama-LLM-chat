@@ -1,0 +1,18 @@
+{
+  "result.json": "154f0554f640559fed39062a2cf76c4aea1172e78a31c3d070be5a8bfe10611d",
+  "checks.json": "c922a013a04a66bd5c5f33d4c8872bfda0e203849eb38da3c3021a5fde42e638",
+  "REPORT.md": "831e5292922885b87a28955d6f4c51207cad1f19c59766b977624617a654ae67",
+  "verify_readonly.py": "6f7dd5fea42f204a0ecef49743a4cd0fa8c68008b59836e94db7b6f861018ba7",
+  "evidence/deployed-hashes.json": "2e62d3d63b3965f40127777f9fa1e0fc7afb1b65f8ce69bf3a0c3e48a0fb7cd5",
+  "evidence/rollback-backup.json": "9620f5c9a59d2c8eafb9b96cb094dc6c0225a3a965e1ddefa29f1c355df7a384",
+  "evidence/running-process.json": "38b542dea3fbc9b9602a5b7b07cbeb32390f6af1ffcfcb64e8b9127ca80a7f9f",
+  "evidence/rollback-source-checks.json": "bdfb737a2bfa0a7f69c8649f703504bdc5ed2150931a4d1f9e9bcd8f20609f1e",
+  "evidence/fallback.json": "280508aacae212451a39289429e882cbd07a09c167774714645e2cf797b16702",
+  "evidence/startup-log-review.json": "913ce18b39ea73dcc2eb74c25dad4bde11acf0ab161e9d8bec4d3a588459b19e",
+  "evidence/historical-file-metadata.json": "cfa8ccc1eea9ff05cfc357f355a9034394768f7af0a3bc857614caab32beaa4e",
+  "evidence/openapi8001.json": "5a1bf337cddf0f27b38ce65777377c623687bc620e9c0b5812d6fcc617e5d47e",
+  "evidence/systemd.json": "761f46919d233ef82145470f413373ccd7290de81b60e3d41281c7b23c9d7eff",
+  "evidence/policy-hashes.json": "3eb82e2f64ee22a783ac4a6ab6a2c3fb2734d85fe4348bdc3d617e614549f71d",
+  "evidence/deployed-path-resolution.json": "3ae7835ba242cc7a04daf48480e9b978d187b15e51bfb95fedccf4cb11089d73",
+  "evidence/fixture-provenance.json": "f072d8a4696bfb69df0e60da26d153f7a0c503cddff684ea0e9990fe3b302e27"
+}

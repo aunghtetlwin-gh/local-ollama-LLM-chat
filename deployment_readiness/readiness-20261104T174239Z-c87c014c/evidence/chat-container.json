@@ -1,0 +1,39 @@
+{
+  "id": "a6526b0cbd1401c78416747f93a1f4e174e5e790b319a38cf1bb1653113aead6",
+  "image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "started": "2026-09-16T02:21:35.009136395Z",
+  "working_dir": "/app",
+  "cmd": [
+    "uvicorn",
+    "server:my_api",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8000"
+  ],
+  "entrypoint": null,
+  "mounts": [],
+  "network_mode": "host",
+  "compose": {
+    "com.docker.compose.project": "ollama-test",
+    "com.docker.compose.project.config_files": "/home/lailai/ollama-test/docker-compose.yml",
+    "com.docker.compose.project.working_dir": "/home/lailai/ollama-test",
+    "com.docker.compose.service": "app"
+  },
+  "selected_env": {
+    "DB_PORT": "5433",
+    "SESSION_COOKIE_SECURE": "false",
+    "SESSION_TTL_SECONDS": "86400",
+    "DB_HOST": "127.0.0.1"
+  },
+  "filesystem_diff": {
+    "argv": [
+      "docker",
+      "diff",
+      "local-ollama-chat"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,10 @@
+model,category,automatic_n,automatic_correct,automatic_accuracy
+gemma4:12b,reasoning,4,3,0.75
+gemma4:12b,instruction,4,3,0.75
+gemma4:12b,gsm8k,50,47,0.94
+qwen3:1.7b,reasoning,4,1,0.25
+qwen3:1.7b,instruction,4,0,0.0
+qwen3:1.7b,gsm8k,50,34,0.68
+qwen3:8b,reasoning,4,0,0.0
+qwen3:8b,instruction,4,3,0.75
+qwen3:8b,gsm8k,50,45,0.9

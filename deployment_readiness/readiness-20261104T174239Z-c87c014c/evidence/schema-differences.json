@@ -1,0 +1,64 @@
+{
+  "CreateResearcherRequest": {
+    "8001": null,
+    "8002": {
+      "properties": {
+        "username": {
+          "type": "string",
+          "maxLength": 32,
+          "minLength": 1,
+          "title": "Username"
+        },
+        "password": {
+          "type": "string",
+          "maxLength": 1024,
+          "minLength": 12,
+          "title": "Password"
+        }
+      },
+      "type": "object",
+      "required": [
+        "username",
+        "password"
+      ],
+      "title": "CreateResearcherRequest"
+    }
+  },
+  "LoginRequest": {
+    "8001": null,
+    "8002": {
+      "properties": {
+        "username": {
+          "type": "string",
+          "title": "Username"
+        },
+        "password": {
+          "type": "string",
+          "title": "Password"
+        }
+      },
+      "type": "object",
+      "required": [
+        "username",
+        "password"
+      ],
+      "title": "LoginRequest"
+    }
+  },
+  "UpdateResearcherStatusRequest": {
+    "8001": null,
+    "8002": {
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "title": "Enabled"
+        }
+      },
+      "type": "object",
+      "required": [
+        "enabled"
+      ],
+      "title": "UpdateResearcherStatusRequest"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "application_suites": [
+    {
+      "suite": "portal",
+      "passed": 108,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "raw_prefix": "raw/portal-2"
+    },
+    {
+      "suite": "chat",
+      "passed": 77,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "raw_prefix": "raw/chat-1"
+    },
+    {
+      "suite": "postgres",
+      "passed": 11,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "raw_prefix": "raw/postgres-1"
+    }
+  ],
+  "final_passed": 196,
+  "expected_canary_failure_exit": 1,
+  "canary_excluded_from_application_results": true,
+  "superseded_portal_attempt": "raw/portal-1:106 passed before preserving bootstrap restriction; retained, not double-counted",
+  "remaining_characterization": "portal SQLite outage still fails closed with generic500; outside three requested fixes"
+}

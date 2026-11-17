@@ -1,0 +1,31 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "01_automatic_accuracy.png": true,
+    "02_gsm8k_accuracy_wilson.png": true,
+    "03_human_verdict_distribution.png": true,
+    "04_category_correctness.png": true,
+    "05_latency_distributions.png": true,
+    "06_throughput_and_allocation.png": true,
+    "07_gsm8k_paired_differences.png": true,
+    "01_automatic_accuracy.svg": true,
+    "02_gsm8k_accuracy_wilson.svg": true,
+    "03_human_verdict_distribution.svg": true,
+    "04_category_correctness.svg": true,
+    "05_latency_distributions.svg": true,
+    "06_throughput_and_allocation.svg": true,
+    "07_gsm8k_paired_differences.svg": true,
+    "model_results_rows": 3,
+    "automatic_categories_rows": 9,
+    "human_categories_rows": 9,
+    "latency_seconds_rows": 3,
+    "tokens_and_generation_rows": 3,
+    "ollama_memory_allocations_rows": 3,
+    "gsm8k_paired_comparisons_rows": 3,
+    "gsm8k_question_outcomes_rows": 50,
+    "request_metrics_rows": 210,
+    "notable_failures_rows": 6,
+    "source_inventory_hashes": true,
+    "3776_source_checks": true
+  }
+}

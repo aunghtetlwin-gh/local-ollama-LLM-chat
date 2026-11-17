@@ -1,0 +1,7 @@
+{
+  "deployed_canonical_sha256": "fea107903acdb8d08cd0172f5582754b12b7c54997b39b2ea2390c80da521b66",
+  "candidate_canonical_sha256": "fea107903acdb8d08cd0172f5582754b12b7c54997b39b2ea2390c80da521b66",
+  "candidate_policy_file_sha256": "a002a4655b1c29ac1a9e5e519d132d0c8dc3e66ac43bde03f0c33eef6996f653",
+  "deployed_dropin_sha256": "976ff72fa2a4efd37c400d0c82a6e06bdcef549f429311bfa88d29fafa424d18",
+  "matches": true
+}

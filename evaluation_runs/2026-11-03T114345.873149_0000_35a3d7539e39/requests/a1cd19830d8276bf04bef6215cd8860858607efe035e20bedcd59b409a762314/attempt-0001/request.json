@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "K04",
+  "repetition": 1,
+  "prompt_sha256": "d0530b40f85d7b50a497e0ca205d622b39439c2d30606d98f93b4236a43f8b45",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "A messages.conversation_id foreign key references conversations.id with ON DELETE CASCADE. In exactly two bullet lines beginning with \"- \", explain what happens when a message references a nonexistent conversation and when an existing conversation is deleted."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "a1cd19830d8276bf04bef6215cd8860858607efe035e20bedcd59b409a762314"
+}

@@ -1,0 +1,38 @@
+{
+  "argv": [
+    "/home/lailai/slurm-portal/.venv/bin/python",
+    "-c",
+    "import importlib.metadata,json,sys; print(json.dumps({'python':sys.version,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+  ],
+  "exit_code": 0,
+  "current": {
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "packages": {
+      "h11": "0.16.0",
+      "pydantic-core": "2.46.5",
+      "typing-inspection": "0.4.4",
+      "argon2-cffi": "25.1.0",
+      "exceptiongroup": "1.3.1",
+      "requests": "2.34.2",
+      "starlette": "1.7.0",
+      "fastapi": "0.141.1",
+      "annotated-types": "0.8.0",
+      "urllib3": "2.8.0",
+      "idna": "3.20",
+      "argon2-cffi-bindings": "26.1.0",
+      "certifi": "2026.7.22",
+      "pip": "22.0.2",
+      "pycparser": "3.11",
+      "setuptools": "59.6.0",
+      "charset-normalizer": "3.5.1",
+      "uvicorn": "0.54.0",
+      "anyio": "4.15.1",
+      "typing-extensions": "4.16.0",
+      "click": "8.5.0",
+      "pydantic": "2.13.5",
+      "annotated-doc": "0.0.5",
+      "cffi": "2.1.1"
+    }
+  },
+  "matches_recorded_runtime_profile": true
+}

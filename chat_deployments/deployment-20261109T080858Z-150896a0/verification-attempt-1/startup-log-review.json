@@ -1,0 +1,7 @@
+{
+  "docker_logs_exit": 0,
+  "startup_complete": true,
+  "error_markers": {},
+  "sentinel_present": false,
+  "raw_logs_saved": false
+}

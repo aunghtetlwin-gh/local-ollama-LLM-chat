@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "result": null,
+  "stderr": "Expected deployed module or policy absent; production resolution check not executed"
+}

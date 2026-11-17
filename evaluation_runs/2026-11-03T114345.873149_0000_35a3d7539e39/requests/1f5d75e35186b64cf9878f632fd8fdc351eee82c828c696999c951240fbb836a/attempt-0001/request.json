@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "C04",
+  "repetition": 1,
+  "prompt_sha256": "0d86d7e2254830e377ecf817adc02dddbf0845903b680ae6be44f2d8b2c00b42",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Write a Python function group_values(pairs). Input is a list of (key, value) tuples; keys are strings and values are integers. Return a dictionary mapping each key to a list of its values in input order. Empty input returns {}. Do not mutate the input or import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "1f5d75e35186b64cf9878f632fd8fdc351eee82c828c696999c951240fbb836a"
+}

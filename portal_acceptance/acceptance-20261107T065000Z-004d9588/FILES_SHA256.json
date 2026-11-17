@@ -1,0 +1,20 @@
+{
+  "README.md": "0c3aefd7c3e8f05ff578b3f6b1b1c6a9c8ee412070c804867e8eb2057355c99e",
+  "reports/acceptance-matrix.csv": "5f1f0b7caef2b0218ea7cc678371ee1c1a555553531fa8fcad53bb821004037c",
+  "reports/FINAL_PORTAL_ACCEPTANCE.md": "cbf4526c97b04c11288851585a7c42cfb4da38a9702a02e81fd2a6efd2b0a39b",
+  "raw/output-ownership.log": "2ed0cfdf0f05ecc6599082d4c328d9d741d72fdf9205487e2caa410173b82bbd",
+  "raw/fixture-command.json": "766fa1640b1669d3ef76772fd0ffa40a336c71174d8ff51eac14521fd040a577",
+  "raw/output-ownership.xml": "b703543ea5ced73dfa2f7fdd08f7104fa4ab0b3d66a37a20e915f7af8d42903a",
+  "evidence/observed-jobs-saved-output-metadata.json": "7eecbf11f0a9d32178ba37c8b5b450e691ddaea468b6c226a5968a2582096cdb",
+  "evidence/browser-observations.json": "1d9921429fe150de4377a61addd8f8dc40ea610277ffa90aeccf060adf69803b",
+  "evidence/output-request-events.json": "9f62b6951bbe94a76d17e3830edf2642de77daa4b21009e5e2b2fed69f92b1c7",
+  "evidence/source-hash-verification.json": "9711d6f5c6842745c22ccc2d7b37544e43ea788dc46e62494fdcc56d9698030b",
+  "evidence/tmp-output-metadata.json": "6e75e2279a53f7e1bc2fe69a71e8c3c17c67f94595be57bc4dc15595974ce841",
+  "evidence/final-runtime-snapshot.json": "2f6d336133dd8868df38304085701377fa775bec8f4bcdb764136d39e65617c5",
+  "fixtures/portal/slurm_identity.py": "37f24fc6d04162493bb6caa7e8d639c614dfc1b1c0519a937bb7ab2125870744",
+  "fixtures/portal/auth.py": "cae1cf4875fe66d7f2bb23d75ddf61613954d56157e69c0e11bd6f12dfc945d4",
+  "fixtures/portal/app.py": "2ae0f5197826872fd87f3fca922ba2354489855e78fe89b7ba05d780c3a58af1",
+  "fixtures/portal/frontend.html": "02ca086d552862613f817b24f8818b344d848d545fb91f8ded5f66a89adb8f8e",
+  "fixtures/tests/test_portal_security.py": "5f6cf29d8cda395efde9bde912f0aae3065d89364851ffadd82461ececc1d54d",
+  "fixtures/tests/test_custom_stdout.py": "2a8b2349ea3eb35704d77d85af8fbcd24f0e46597908e0557903614c3a416dd0"
+}

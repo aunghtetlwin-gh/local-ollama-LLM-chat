@@ -1,0 +1,26 @@
+[
+  {
+    "name": "candidate_seal",
+    "passed": true
+  },
+  {
+    "name": "managed_service_healthy",
+    "passed": true
+  },
+  {
+    "name": "reviewed_release_directory",
+    "passed": false
+  },
+  {
+    "name": "daemon_reload_complete",
+    "passed": true
+  },
+  {
+    "name": "localhost8001_no_reload",
+    "passed": true
+  },
+  {
+    "name": "original_db_path",
+    "passed": true
+  }
+]

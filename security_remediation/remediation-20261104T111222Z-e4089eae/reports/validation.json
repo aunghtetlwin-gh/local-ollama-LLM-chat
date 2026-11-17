@@ -1,0 +1,22 @@
+{
+  "passed_application_cases": 196,
+  "final_suite_passes": {
+    "portal": 108,
+    "chat": 77,
+    "postgres": 11
+  },
+  "application_failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "application_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "expected_harness_failure_exit": 1,
+  "patch_checks_passed": true,
+  "original_files_unchanged": true,
+  "protected_original_files_n": 1666,
+  "implemented_in_isolated_copies": true,
+  "deployed": false
+}

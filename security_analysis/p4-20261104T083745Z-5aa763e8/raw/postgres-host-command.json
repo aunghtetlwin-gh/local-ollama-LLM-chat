@@ -1,0 +1,23 @@
+{
+  "suite": "postgres",
+  "cwd": "/home/lailai/ollama-test",
+  "argv": [
+    "/tmp/conversation-isolation-tools/bin/python",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-vv",
+    "--tb=short",
+    "integration_tests/test_postgres_isolation.py",
+    "--junitxml=/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/raw/postgres-host.xml"
+  ],
+  "shell_command": "/tmp/conversation-isolation-tools/bin/python -m pytest -p no:cacheprovider -vv --tb=short integration_tests/test_postgres_isolation.py --junitxml=/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8/raw/postgres-host.xml",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "started_epoch": 1793782021.9908822,
+  "exit_code": 0,
+  "ended_epoch": 1793782023.4875286
+}

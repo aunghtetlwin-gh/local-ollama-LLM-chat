@@ -9,8 +9,9 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY server.py .
-COPY index.html .
+COPY server.py database.py auth.py migrate.py ./
+COPY index.html login.html register.html ./
+COPY migrations/ ./migrations/
 
 EXPOSE 8000
 

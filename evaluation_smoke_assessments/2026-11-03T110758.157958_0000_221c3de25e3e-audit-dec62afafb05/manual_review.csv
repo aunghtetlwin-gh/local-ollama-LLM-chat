@@ -1,0 +1,31 @@
+blind_id,question_id,repetition,prompt,response,status,criteria,review_examples,reviewer_id,correctness,instruction_following,relevance,completeness,conciseness,rationale
+334b342adbff93d55078,C03,1,"Write a Python function chunks(items, size). Input items is a list and size is an integer (not a boolean). Return a new list of consecutive sublists of at most size elements, preserving order. Keep a final short chunk. Empty items returns []. Raise ValueError if size <= 0, including for empty items. Do not mutate items or import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation.","def chunks(items, size):
+    if size <= 0:
+        raise ValueError(""Size must be greater than 0"")
+    if not items:
+        return []
+    result = []
+    for i in range(0, len(items), size):
+        result.append(items[i:i + size])
+    return result",completed,Reject nonpositive size before returning for empty input. | Keep every element exactly once in order. | Final short chunk is retained; size larger than input is valid.,"[{'input': [[1, 2, 3, 4, 5], 2], 'output': [[1, 2], [3, 4], [5]]}, {'input': [[], 0], 'raises': 'ValueError'}]",,,,,,,
+6b6bb0f6f029f99b1581,C03,1,"Write a Python function chunks(items, size). Input items is a list and size is an integer (not a boolean). Return a new list of consecutive sublists of at most size elements, preserving order. Keep a final short chunk. Empty items returns []. Raise ValueError if size <= 0, including for empty items. Do not mutate items or import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation.","def chunks(items, size):  
+    if size <= 0:  
+        raise ValueError  
+    result = []  
+    for i in range(0, len(items), size):  
+        result.append(items[i:i+size])  
+    return result",completed,Reject nonpositive size before returning for empty input. | Keep every element exactly once in order. | Final short chunk is retained; size larger than input is valid.,"[{'input': [[1, 2, 3, 4, 5], 2], 'output': [[1, 2], [3, 4], [5]]}, {'input': [[], 0], 'raises': 'ValueError'}]",,,,,,,
+d75145fcd44474d8e3f1,I01,1,"For the values 4, -2, 4, 10, return only a JSON object with exactly the keys count, sum, max and integer values. Do not include Markdown or explanations.","{""count"":4,""sum"":16,""max"":10}",completed,Exactly the three specified keys and integer values; duplicate input values still count.,[],,,,,,,
+dac79262971803b64cb8,I01,1,"For the values 4, -2, 4, 10, return only a JSON object with exactly the keys count, sum, max and integer values. Do not include Markdown or explanations.","{
+  ""count"": 4,
+  ""sum"": 16,
+  ""max"": 10
+}",completed,Exactly the three specified keys and integer values; duplicate input values still count.,[],,,,,,,
+dd0a53c045bb44e5a687,I01,1,"For the values 4, -2, 4, 10, return only a JSON object with exactly the keys count, sum, max and integer values. Do not include Markdown or explanations.","{""count"": 4, ""sum"": 16, ""max"": 10, ""integer"": true}",completed,Exactly the three specified keys and integer values; duplicate input values still count.,[],,,,,,,
+f9467e8e6cdbf22c013e,C03,1,"Write a Python function chunks(items, size). Input items is a list and size is an integer (not a boolean). Return a new list of consecutive sublists of at most size elements, preserving order. Keep a final short chunk. Empty items returns []. Raise ValueError if size <= 0, including for empty items. Do not mutate items or import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation.","def chunks(items, size):
+    if size <= 0:
+        return []
+    result = []
+    for i in range(0, len(items), size):
+        result.append(items[i:i+size])
+    return result",completed,Reject nonpositive size before returning for empty input. | Keep every element exactly once in order. | Final short chunk is retained; size larger than input is valid.,"[{'input': [[1, 2, 3, 4, 5], 2], 'output': [[1, 2], [3, 4], [5]]}, {'input': [[], 0], 'raises': 'ValueError'}]",,,,,,,

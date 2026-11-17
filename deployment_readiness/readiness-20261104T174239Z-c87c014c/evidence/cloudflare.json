@@ -1,0 +1,58 @@
+{
+  "credential_values_read": false,
+  "remote_api_called": false,
+  "management_tools_available": false,
+  "journal": [
+    {
+      "argv": [
+        "journalctl",
+        "-u",
+        "cloudflared.service",
+        "--grep",
+        "Starting tunnel",
+        "-n",
+        "10",
+        "--no-pager",
+        "-o",
+        "cat"
+      ],
+      "exit_code": 1,
+      "tunnel_ids": [],
+      "ingress": []
+    },
+    {
+      "argv": [
+        "journalctl",
+        "-u",
+        "cloudflared.service",
+        "--grep",
+        "Updated to new configuration",
+        "-n",
+        "10",
+        "--no-pager",
+        "-o",
+        "cat"
+      ],
+      "exit_code": 1,
+      "tunnel_ids": [],
+      "ingress": []
+    }
+  ],
+  "local_configuration": [
+    {
+      "path": "/etc/cloudflared/token",
+      "bytes": 184,
+      "mode": "0o600",
+      "content_read": false
+    },
+    {
+      "path": "/home/lailai/.cloudflared",
+      "unavailable": "FileNotFoundError"
+    }
+  ],
+  "management_credentials_presence": {
+    "CLOUDFLARE_API_TOKEN": false,
+    "CF_API_TOKEN": false,
+    "CLOUDFLARE_ACCOUNT_ID": false
+  }
+}

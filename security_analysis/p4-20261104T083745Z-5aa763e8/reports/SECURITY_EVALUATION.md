@@ -1,0 +1,55 @@
+# Security Evaluation and Discussion
+
+## Scope and method
+
+This evaluation addresses committee requirement P4 (the security/access-control question). It evaluates the checked-out NECTEC Slurm portal and Ollama chat applications, supplemented by read-only host metadata. It is a focused authorization regression study, not comprehensive security certification or penetration testing. The unit of evidence is an explicit assertion recorded in a successful test run; source inspection alone is not treated as functional verification.
+
+The portal was imported only after PORTAL_AUTH_DB was redirected to a private temporary SQLite database. Synthetic administrator and researcher accounts exercised real FastAPI dependencies and authentication logic through an in-process TestClient. Slurm REST calls, Linux identity lookup and Slurm credential commands were replaced where appropriate; external requests and unapproved host commands were blocked. Temporary output files exercised the actual no-follow open and file validation path. No real user/password records were queried or changed, and no live Slurm jobs were submitted. Mocked token-command construction does not demonstrate deployed sudoers or JWT configuration.
+
+Chat regressions used an in-memory SQLite query adapter with PostgreSQL/Ollama entrypoints blocked. A separate integration suite created a private PostgreSQL 14 cluster with synthetic accounts, private Unix socket and no TCP listener. Actual authentication/ownership migration SQL and conversation queries were exercised; Ollama was replaced by an in-memory response. The fixture stopped and removed only its own temporary cluster. No deployed database, existing service, GPU or model inference was used.
+
+## Test outcomes
+
+Five completed suites recorded 146 passed tests: 96 portal behavior tests, 35 chat regressions, 11 disposable-PostgreSQL integration tests and four explicit limitation characterizations. There were zero failed/error/skipped cases in these completed suites, and all processes returned exit code zero. One TestClient/httpx dependency deprecation warning appeared per suite. Two earlier sandbox TestClient attempts timed out at 240 seconds; these environment failures are retained separately and are not counted as passed tests or application assertion failures. Their initial wrapper did not retain partial child stdout; complete output, commands and JUnit results of all successful host reruns are preserved.
+
+A passing test is evidence of its asserted behavior, not proof that the overall design is secure. In particular, one portal test reproduces an onboarding/token allowlist mismatch, and four characterization tests deliberately confirm limitations.
+
+## Verified application behavior
+
+The portal hashes researcher passwords with Argon2id, stores opaque-session digests, and enforces session expiry, account enablement and logout revocation. Missing, invalid, expired, deleted and disabled sessions are denied. State-changing job and administrative endpoints reject missing, invalid and another session's CSRF token. Researchers cannot use administrator user-management endpoints; administrator-created researchers remain role=user even when an extra role=admin field is supplied. Duplicate onboarding does not overwrite the account, disabling a researcher revokes its sessions, and re-enabling does not restore old tokens.
+
+Ownership tests returned only a researcher's own active/history records even when the mocked backend supplied other users' jobs. Administrators may view other users' metadata, but cannot cancel/requeue their jobs or read their output. Rejected mutations generated no mocked cancellation/requeue calls. Output checks included scheduler/accounting ownership, file UID, symlinks, directories, missing files and the 1 MiB limit. These are API/file-handler guarantees within the tested paths; actual Slurm server authorization was not exercised.
+
+For chat, the real PostgreSQL integration test verified that one researcher's conversation was absent from another's list and inaccessible for reading, continuation or deletion. Foreign/nonexistent/zero/negative identifiers and forged user_id fields did not override authenticated ownership or trigger inference. Denied requests preserved the owner's database state. Anonymous and invalid-session requests were rejected, and deletion cascaded only the owner's messages. Existing SQLite regressions additionally verified authentication lifecycle, migration readiness and failure-denial behavior.
+
+## Reproduced limitations
+
+First, portal onboarding and Slurm credential issuance use different policies. An otherwise eligible synthetic Linux/Slurm researcher can be onboarded, but the credential helper accepts only lailai, mangkud and apple. The mismatch fails closed, preventing job access rather than granting unauthorized access, but leaves the onboarding workflow inconsistent.
+
+Second, an isolated POST /auth/login request containing a synthetic password but missing username returned HTTP 422 with that submitted password in the validation response. This discloses the submitted value, not an existing stored password; it can unnecessarily propagate credentials into client/error logging. A simulated SQLite authentication outage denied access without calling the scheduler, but returned generic HTTP 500 rather than a controlled availability response.
+
+Third, authenticated chat DELETE and logout requests with an untrusted Origin header succeeded without a CSRF token. TestClient supplied the valid session cookie and does not implement browser SameSite/CORS behavior; this finding establishes missing backend Origin/token checks, not a demonstrated browser exploit. SameSite=Lax and JSON/CORS behavior may constrain particular attacks but must not be presented as complete tested CSRF protection. OWASP recommends considering SameSite as an additional layer rather than a general replacement for appropriate CSRF defenses. [OWASP CSRF guidance](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html).
+
+## Deployment and operating-system boundary
+
+Observed portal/chat API listeners were on loopback. No public HTTPS gateway, certificate chain, tunnel policy or effective browser cookie was tested. Both source implementations default Secure off; tests established that their configuration toggles work. Portal uses HttpOnly/SameSite=Strict and chat HttpOnly/SameSite=Lax. Selected initial process-environment fields were absent for two Uvicorn processes and unreadable for another; this does not prove effective runtime values because application dotenv loading, process identity and gateways were not fully audited. Transport/session deployment verification remains necessary before public/shared browser exposure. [OWASP session guidance](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html).
+
+Four sampled /tmp/slurm-*.out files had mode 0644 in a 01777 directory. These permission bits expose output beyond the portal API boundary to local users; no cross-user adversarial filesystem read was attempted. The portal credential database was mode 0600. Private job-output directories and restrictive file creation permissions are needed before claiming output confidentiality from other Linux users. Existing output permissions were not changed.
+
+NVIDIA device nodes were mode 0666, and inspected cgroup.conf constrained CPU/RAM/swap but did not specify ConstrainDevices. This is insufficient evidence for GPU access enforcement; no unallocated-user GPU attempt was made. SchedMD documents device constraints separately from CPU/RAM controls. [SchedMD cgroup configuration](https://slurm.schedmd.com/cgroup.conf.html).
+
+The MPS directory was mode 0777, its ordinary control socket 0666, and the privileged socket 0755. These are observed access-surface permissions, not proof that every daemon command is authorized or exploitable. Daemon credential checks, namespace safety and negative cross-user control tests remain unverified. MPS resource sharing is not equivalent to a tested multi-user security boundary; NVIDIA also documents mode-specific user isolation trade-offs. No privileged MPS command or disruption was attempted. [NVIDIA MPS guidance](https://docs.nvidia.com/deploy/mps/when-to-use-mps.html).
+
+Chat database isolation is enforced by ownership-scoped application queries; supplied migrations do not establish row-level security. Disposable PostgreSQL tests used a bootstrap role and do not prove production least privilege, backup confidentiality or administrator isolation. No application login throttle was identified in the reviewed code, but upstream rate limits were not assessed and no brute-force test was performed. Browser XSS, session-theft resistance, concurrent authorization races and session revocation during a live stream were not tested. Sanitizer source code is not treated as successful XSS verification.
+
+## Minimum remediation and remaining report requirements
+
+1. Redact portal validation errors, including nested request input; using a secret-typed password field alone is not sufficient for a missing-field error that includes the whole body. Add a focused regression for the sentinel case. Handle authentication DB errors with a controlled fail-closed availability response.
+2. Unify researcher onboarding and credential issuance around an explicit approved identity policy. Keep default-deny semantics; do not remove the allowlist as a generic workaround. Test both eligible approved and eligible unapproved accounts.
+3. Introduce and test an explicit chat CSRF/Origin policy for cookie-authenticated mutations, then verify it in a real browser with the deployment's actual cookie/TLS configuration. Verify registration/login abuse controls at the selected application or gateway boundary without production load testing.
+4. Have the operator review private output directories/creation permissions, GPU device cgroup enforcement, MPS namespace/socket permissions and backend sudo/JWT privileges. Host changes or adversarial/live Slurm checks require separate approval and a maintenance/test window. Do not blindly chmod active sockets or enable device restrictions on a running shared setup.
+5. Before final publication, obtain operator confirmation of the public transport path, effective cookie settings and intended trusted-user threat model. Report the verified application claims now, with host/deployment limitations explicit. Re-test only affected controls after reviewed fixes.
+
+## Conclusion
+
+The recorded tests support the implemented application authentication, role separation and ownership boundaries in the stated isolated environments. They also reproduce concrete credential-validation, CSRF-policy and identity-policy limitations. P4 can be answered as an evidence-backed application-security evaluation with acknowledged deployment gaps; it cannot be presented as comprehensive multi-user host isolation, production security certification or penetration testing. No production remediation was performed in this task.

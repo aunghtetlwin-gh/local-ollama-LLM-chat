@@ -1,0 +1,175 @@
+[
+  {
+    "check": "managed_service_active_healthy",
+    "passed": true,
+    "epoch": 1793983500.2950356,
+    "pid": 1565020,
+    "n_restarts": "0"
+  },
+  {
+    "check": "effective_working_directory",
+    "passed": true,
+    "epoch": 1793983500.2950692
+  },
+  {
+    "check": "service_identity_and_reload_state",
+    "passed": true,
+    "epoch": 1793983500.2951274
+  },
+  {
+    "check": "approved_dropin_exact_bytes",
+    "passed": true,
+    "epoch": 1793983500.2974944,
+    "sha256": "c9f2f7f76dd05d900ee3e5100a91f5a4d8ab4785eeda3d0c6b9282b67f161298"
+  },
+  {
+    "check": "running_process_uses_release_and_localhost8001",
+    "passed": true,
+    "epoch": 1793983500.2976418
+  },
+  {
+    "check": "original_authentication_database_path",
+    "passed": true,
+    "epoch": 1793983500.2976873,
+    "database_location": "/home/lailai/slurm-portal/portal_users.db"
+  },
+  {
+    "check": "deployed_sources_match_reviewed_manifest",
+    "passed": true,
+    "epoch": 1793983500.2977953
+  },
+  {
+    "check": "expected_authenticated16_operations",
+    "passed": true,
+    "epoch": 1793983500.309859,
+    "operations": 16
+  },
+  {
+    "check": "csrf_and_session_route_metadata:post/jobs",
+    "passed": true,
+    "epoch": 1793983500.3099284
+  },
+  {
+    "check": "csrf_and_session_route_metadata:post/jobs/{job_id}/cancel",
+    "passed": true,
+    "epoch": 1793983500.3105159
+  },
+  {
+    "check": "csrf_and_session_route_metadata:post/jobs/{job_id}/requeue",
+    "passed": true,
+    "epoch": 1793983500.310595
+  },
+  {
+    "check": "csrf_and_session_route_metadata:post/auth/logout",
+    "passed": true,
+    "epoch": 1793983500.3106418
+  },
+  {
+    "check": "csrf_and_session_route_metadata:post/admin/users",
+    "passed": true,
+    "epoch": 1793983500.3106842
+  },
+  {
+    "check": "csrf_and_session_route_metadata:patch/admin/users/{username}/status",
+    "passed": true,
+    "epoch": 1793983500.3107257
+  },
+  {
+    "check": "password_redaction:missing_username",
+    "passed": true,
+    "epoch": 1793983500.312756,
+    "status": 422
+  },
+  {
+    "check": "password_redaction:invalid_username_type",
+    "passed": true,
+    "epoch": 1793983500.3134127,
+    "status": 422
+  },
+  {
+    "check": "unauthenticated_denied:/auth/me",
+    "passed": true,
+    "epoch": 1793983500.3223627,
+    "status": 401
+  },
+  {
+    "check": "unauthenticated_denied:/admin/users",
+    "passed": true,
+    "epoch": 1793983500.3235102,
+    "status": 401
+  },
+  {
+    "check": "unauthenticated_denied:/jobs/active",
+    "passed": true,
+    "epoch": 1793983500.3245122,
+    "status": 401
+  },
+  {
+    "check": "unauthenticated_denied:/jobs/history",
+    "passed": true,
+    "epoch": 1793983500.325663,
+    "status": 401
+  },
+  {
+    "check": "unauthenticated_denied:/cluster/node",
+    "passed": true,
+    "epoch": 1793983500.3270888,
+    "status": 401
+  },
+  {
+    "check": "invalid_session_denied",
+    "passed": true,
+    "epoch": 1793983500.3282838,
+    "status": 401
+  },
+  {
+    "check": "anonymous_logout_denied:missing_csrf",
+    "passed": true,
+    "epoch": 1793983500.3293178,
+    "status": 401
+  },
+  {
+    "check": "anonymous_logout_denied:invalid_csrf",
+    "passed": true,
+    "epoch": 1793983500.3301024,
+    "status": 401
+  },
+  {
+    "check": "fallback8002_same_process",
+    "passed": true,
+    "epoch": 1793983500.3303072
+  },
+  {
+    "check": "fallback8002_healthy_unchanged_api",
+    "passed": true,
+    "epoch": 1793983500.3319883,
+    "operations": 16
+  },
+  {
+    "check": "original_source_frontend_and_base_unit_unchanged",
+    "passed": true,
+    "epoch": 1793983500.3321748
+  },
+  {
+    "check": "startup_logs_no_error_markers",
+    "passed": true,
+    "epoch": 1793983500.4100492,
+    "current_pid_records": 4,
+    "startup_complete_observed": true
+  },
+  {
+    "check": "password_sentinel_absent_from_reviewed_logs",
+    "passed": true,
+    "epoch": 1793983500.410165
+  },
+  {
+    "check": "service_remains_stable",
+    "passed": true,
+    "epoch": 1793983503.4217863
+  },
+  {
+    "check": "sealed_remediation_and_readiness_unchanged",
+    "passed": true,
+    "epoch": 1793983503.4241505
+  }
+]

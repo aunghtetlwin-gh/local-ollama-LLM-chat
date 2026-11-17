@@ -1,0 +1,1 @@
+{"model": "gemma4:12b", "created_at": "2026-11-03T11:51:24.605167451Z", "message": {"role": "assistant", "content": "{\n  \"count\": 4,\n  \"sum\": 16,\n  \"max\": 10\n}"}, "done": true, "done_reason": "stop", "total_duration": 771593288, "load_duration": 3216949, "prompt_eval_count": 77, "prompt_eval_duration": 78031000, "eval_count": 29, "eval_duration": 605297000}

@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-08T13:29:12.523883+00:00",
+  "status": "PASS-ready-for-deployment-review-not-deployed",
+  "portal_tests": 190,
+  "failed": 0,
+  "skipped": 0,
+  "test_exit_code": 0,
+  "exact_policy_positive_paths": 9,
+  "exact_policy_negative_paths": 7,
+  "real_outputs_opened": 0,
+  "sources_match_remediation": true,
+  "deployed_base_unchanged": true,
+  "source_file_modes": "0444",
+  "source_directory_mode": "0555",
+  "current_runtime_matches_tested_profile": true,
+  "warning": "one existing TestClient/httpx deprecation"
+}

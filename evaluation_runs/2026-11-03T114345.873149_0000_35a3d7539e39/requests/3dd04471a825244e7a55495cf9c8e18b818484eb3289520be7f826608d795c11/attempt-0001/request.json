@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "K03",
+  "repetition": 1,
+  "prompt_sha256": "5f6526ff3f579509ded59432b977c71eb5c57d2a538a09439b2ab3c6fb0cad99",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "A service must debit account A and credit account B as one operation. The second update fails. In exactly two sentences, explain the required transaction outcome and why. Assume a transaction-capable database and no commit before both updates succeed."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3dd04471a825244e7a55495cf9c8e18b818484eb3289520be7f826608d795c11"
+}

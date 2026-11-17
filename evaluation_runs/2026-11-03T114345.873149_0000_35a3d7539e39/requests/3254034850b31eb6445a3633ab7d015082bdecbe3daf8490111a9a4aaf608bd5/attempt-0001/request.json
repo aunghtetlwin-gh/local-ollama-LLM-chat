@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "R03",
+  "repetition": 1,
+  "prompt_sha256": "71f2e982b76ad9e2e2f79dc83b2b6b83dc682e696befae3af7751bd173171a80",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Mean latency falls from 800 milliseconds to 600 milliseconds. What is the percentage reduction relative to the original latency? Return only the percentage as an integer followed immediately by %."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "3254034850b31eb6445a3633ab7d015082bdecbe3daf8490111a9a4aaf608bd5"
+}

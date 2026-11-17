@@ -1,0 +1,29 @@
+{
+  "status": "SUCCESS",
+  "phase": "automated-verification-complete-browser-acceptance-pending",
+  "maintenance_start": "2026-11-09T15:00:00+07:00",
+  "maintenance_end": "2026-11-09T15:30:00+07:00",
+  "production_recreation_attempted": true,
+  "window_checked_at": "2026-11-09T08:11:33.920797+00:00",
+  "private_backups_created": true,
+  "old_app_id": "a6526b0cbd1401c78416747f93a1f4e174e5e790b319a38cf1bb1653113aead6",
+  "old_image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "database_id": "3568ff1916f8eec35c6d6290b0d5471e12a5c5771a418ec07841004cf523d9cd",
+  "database_started": "2026-09-16T02:21:35.011146333Z",
+  "portal_processes_before": {
+    "2610502": {
+      "present": true,
+      "start_ticks": "467325235"
+    },
+    "2019096": {
+      "present": true,
+      "start_ticks": "364346317"
+    }
+  },
+  "activation_time": "2026-11-09T08:11:34.140377+00:00",
+  "compose_exit_code": 0,
+  "new_app_id": "dbbb685f46aa0161f63023409b390421e50137d4cfa8292c7b4904528e6b8bd1",
+  "new_image_id": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "activation_finished": "2026-11-09T08:11:34.989224+00:00",
+  "verification_time": "2026-11-09T08:14:00.819848+00:00"
+}

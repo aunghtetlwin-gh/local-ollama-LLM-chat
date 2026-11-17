@@ -1,0 +1,11 @@
+{
+  "all_original_files_unchanged": true,
+  "protected_files_n": 1666,
+  "changed": [],
+  "prior_package_seals_verified": {
+    "/home/lailai/ollama-test/evaluation_final_report/2026-11-03T114345.873149_0000_35a3d7539e39-final-7a5bd582fbbc": 39,
+    "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4": 108,
+    "/home/lailai/ollama-test/security_analysis/p4-20261104T083745Z-5aa763e8": 81
+  },
+  "scope": "Original source, databases as byte-hash preservation only, previous LLM/security/MPS evidence; dependency environments, Git internals and caches excluded; no production database queries"
+}

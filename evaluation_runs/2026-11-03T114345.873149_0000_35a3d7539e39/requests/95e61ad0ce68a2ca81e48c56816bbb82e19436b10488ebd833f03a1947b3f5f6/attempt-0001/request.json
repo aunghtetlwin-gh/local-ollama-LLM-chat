@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "C02",
+  "repetition": 1,
+  "prompt_sha256": "0cabb46258d114a74a161dcc0ba8cb64155ab7bd5199e34341c17a828ee7664f",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Write a Python function second_largest(items). Input is a list of integers (not booleans). Return the second-largest distinct value, or None when fewer than two distinct values exist. Do not mutate the input. Do not import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "95e61ad0ce68a2ca81e48c56816bbb82e19436b10488ebd833f03a1947b3f5f6"
+}

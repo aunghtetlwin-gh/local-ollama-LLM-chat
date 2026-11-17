@@ -1,0 +1,134 @@
+[
+  {
+    "name": "candidate_image_running",
+    "passed": true
+  },
+  {
+    "name": "expected_new_container",
+    "passed": true
+  },
+  {
+    "name": "no_unexpected_restarts",
+    "passed": true
+  },
+  {
+    "name": "all_candidate_source_hashes",
+    "passed": true
+  },
+  {
+    "name": "all_dependencies_and_python_unchanged",
+    "passed": true
+  },
+  {
+    "name": "health_http200",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "name": "health_no_store",
+    "passed": true
+  },
+  {
+    "name": "exact13_expected_operations",
+    "passed": true,
+    "operations": 13
+  },
+  {
+    "name": "anonymous_denied:/auth/session",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denied:/models",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "anonymous_denied:/conversations",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "origin_policy:missing_origin",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "origin_policy:hostile_origin",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "origin_policy:null_origin",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "origin_policy:mismatched_port",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "origin_policy:matching_origin",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "name": "origin_policy:matching_referer",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "name": "origin_policy:bad_origin_not_rescued",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "origin_policy:invalid_referer",
+    "passed": true,
+    "status": 403
+  },
+  {
+    "name": "forwarded_browser_host_origin_shape",
+    "passed": true,
+    "status": 200
+  },
+  {
+    "name": "anonymous_chat_denied_before_inference",
+    "passed": true,
+    "status": 401
+  },
+  {
+    "name": "malformed_login_redacted",
+    "passed": true,
+    "status": 422
+  },
+  {
+    "name": "database_id_image_start_unchanged",
+    "passed": true
+  },
+  {
+    "name": "database_volume_unchanged",
+    "passed": true
+  },
+  {
+    "name": "database_still_healthy",
+    "passed": true
+  },
+  {
+    "name": "rollback_image_available",
+    "passed": true
+  },
+  {
+    "name": "startup_complete_no_errors",
+    "passed": true
+  },
+  {
+    "name": "sentinel_not_in_logs",
+    "passed": true
+  },
+  {
+    "name": "app_remains_same_running_container",
+    "passed": true
+  }
+]

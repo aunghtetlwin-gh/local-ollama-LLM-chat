@@ -1,0 +1,15 @@
+{
+  "version": "human-review-import-v1",
+  "packet_manifest_sha256": "c225f5b378d43d7bb097af8301801d651f649ee57bd437c130bc64354cb31cb0",
+  "ratings_file_sha256": "d60998316d78bc49359d3e9c798bf2ff320483c1bd3de84af52d26f676015e11",
+  "reviewer_id": "R1",
+  "rating_rows": 36,
+  "automatic_results_modified": false,
+  "model_code_executed": false,
+  "notes": [
+    "Human verdicts are explicit reviewer judgements, never inferred from numeric ratings.",
+    "Partly correct is not counted as fully correct; uncertainty counts and both denominators are retained.",
+    "Do not combine automatic accuracy and human verdict proportions into an overall /70 accuracy.",
+    "Coding correctness is manual algorithm assessment; runtime correctness remains NOT EVALUATED."
+  ]
+}

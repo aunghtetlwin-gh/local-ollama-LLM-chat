@@ -1,0 +1,13 @@
+{
+  "input_manifest_sha256": "a415cafcdd5a38d958708fd2d4543fd95b5714cd5bcb39dde48df8a1b4b2cfe1",
+  "plan_sha256": "453cc9d9d9a8205c642ccbf56c8c8ccf54c1eda7ebd84c85591d113f2f22bff2",
+  "reference_hashes": {
+    "internal_v2": "c1141a95943bae86c224d864a16018c5e9953a290b209b74988d4d7ac3d5088a"
+  },
+  "evaluator_hashes": {
+    "score_offline.py": "80effc68dd4f56b0023a5d30d16aa2b01288774daed6a106168b1aae33273b40",
+    "scoring.py": "725711e683440e6a3931b776523e061f6ff7b4d5109c62df11a5f3d8cc4b2207"
+  },
+  "rubric_sha256": "6512e2e97c031332fcc91947a5599cb484c98b487af0b8bdcee631c0ba569f14",
+  "note": "No generated code executed. No automatic semantic score for knowledge, summaries, or coding."
+}

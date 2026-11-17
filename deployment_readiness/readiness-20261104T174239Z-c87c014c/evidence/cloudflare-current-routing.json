@@ -1,0 +1,48 @@
+{
+  "source": "loopback cloudflared metadata handlers; no credential files or remote API",
+  "endpoints": {
+    "/config": {
+      "status": 200,
+      "version": 1,
+      "ingress": [
+        {
+          "hostname": "ssh-lai512.aunghtetlwin.com",
+          "path": null,
+          "service": "ssh://localhost:22",
+          "originRequest": {
+            "connectTimeout": 30,
+            "httpHostHeader": "",
+            "originServerName": "",
+            "noTLSVerify": false,
+            "http2Origin": false
+          }
+        },
+        {
+          "hostname": "",
+          "path": null,
+          "service": "http_status:404",
+          "originRequest": {
+            "connectTimeout": 30,
+            "httpHostHeader": "",
+            "originServerName": "",
+            "noTLSVerify": false,
+            "http2Origin": false
+          }
+        }
+      ],
+      "global_originRequest": {
+        "httpHostHeader": "",
+        "originServerName": "",
+        "noTLSVerify": false,
+        "http2Origin": false
+      }
+    },
+    "/diag/tunnel": {
+      "status": 200,
+      "tunnelID": "9e2093df-2a57-4116-afc8-6b96cacc9f64",
+      "connectorID": "d58df686-5a7d-4849-bf5e-2f2ab734c15c",
+      "connections_n": 4
+    }
+  },
+  "cloudflared_version": "cloudflared version 2026.8.2 (built 2026-08-14-12:17 UTC)"
+}

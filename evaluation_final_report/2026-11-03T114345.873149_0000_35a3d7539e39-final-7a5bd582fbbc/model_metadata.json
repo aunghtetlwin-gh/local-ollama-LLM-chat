@@ -1,0 +1,68 @@
+{
+  "run": "/home/lailai/ollama-test/evaluation_runs/2026-11-03T114345.873149_0000_35a3d7539e39",
+  "analysis": "/home/lailai/ollama-test/evaluation_analysis/2026-11-03T114345.873149_0000_35a3d7539e39-offline-1b1d6d878b27",
+  "human_ratings": "/home/lailai/ollama-test/evaluation_human_review/human-review-20261104-cd80448ab4a3/private/results/reviewer_R1_01",
+  "models": {
+    "qwen3:1.7b": {
+      "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "2.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "qwen3:8b": {
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    "gemma4:12b": {
+      "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gemma4",
+        "families": [
+          "gemma4"
+        ],
+        "parameter_size": "11.9B",
+        "quantization_level": "Q4_K_M"
+      }
+    }
+  },
+  "runtime": {
+    "version": "0.32.15"
+  },
+  "request_options": {
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "temperature": 0,
+    "seed": 42,
+    "top_k": 40,
+    "top_p": 0.9,
+    "repeat_last_n": 64,
+    "repeat_penalty": 1.0
+  },
+  "think": false,
+  "system_prompt": "Follow the user's task and output requirements. Do not use tools or external resources.",
+  "repetitions": 1,
+  "keep_alive": "30s",
+  "timeout_seconds": 600,
+  "scope": "fixed-workload-readiness-v1; capacity_verified=false",
+  "python": "3.10.12",
+  "numpy": "2.2.6",
+  "matplotlib": "3.10.9"
+}

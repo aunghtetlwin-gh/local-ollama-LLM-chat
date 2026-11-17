@@ -1,0 +1,21 @@
+{
+  "path": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35-before-deploy",
+  "present": true,
+  "previous_override_present": true,
+  "previous_override_matches_predeploy": true,
+  "source_checks": {
+    "app.py": {
+      "present": true,
+      "matches": true
+    },
+    "auth.py": {
+      "present": true,
+      "matches": true
+    },
+    "slurm_identity.py": {
+      "present": true,
+      "matches": true
+    }
+  },
+  "base_unit_backup_present": true
+}

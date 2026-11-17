@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "slurmrestd",
+    "--generate-openapi-spec",
+    "-d",
+    "v0.0.45",
+    "-s",
+    "slurmctld,slurmdbd"
+  ],
+  "exit_code": 0,
+  "stderr": ""
+}

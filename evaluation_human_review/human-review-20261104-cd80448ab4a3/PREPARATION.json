@@ -1,0 +1,28 @@
+{
+  "version": "human-review-preparation-v1",
+  "selected_responses": 36,
+  "coding": 12,
+  "knowledge": 12,
+  "summarization": 12,
+  "review_ratings_submitted": false,
+  "response_strings_exact": true,
+  "existing_blind_ids_preserved": true,
+  "model_names_detected_in_reviewer_files": false,
+  "offline_review_checks_passed": 11,
+  "dataset_historical_validation": "passed",
+  "preserved_source_file_count": 1269,
+  "all_preserved_sources_unchanged": true,
+  "evaluation_source_hashes_match_frozen_run": true,
+  "files_sha256": {
+    "README_OPERATOR.md": "1c3c31c5717731e331493cb87daa014d04e06e48bb05c277acc85321edd436ef",
+    "private/checks.py": "9c334dcb2307b3ffb5627903bbc5ff3081460087f4351e4139b8e3334df2b8b2",
+    "private/import_ratings.py": "1f11c2bc21f7674ddfca2c4f21b89f88d3e022ecf2907ebf4e0da7d4e8f09069",
+    "private/manifest.json": "c225f5b378d43d7bb097af8301801d651f649ee57bd437c130bc64354cb31cb0",
+    "reviewer/booklet.html": "eedcfecb70b84f3d0e76c3f730206d127a2c53ab0c437eb60936033f06462ba5",
+    "reviewer/guide.md": "d3a625301972684ad37586b8c589e0413835daf4ab4fd2cbc4f4d58d6fe95c3d",
+    "reviewer/ratings_template.csv": "9e877ebd9fc266007fcc8b1fd74aa8be5498741985e53abe8f38032f3c9032e7",
+    "reviewer/responses.jsonl": "d15415005483f8c443c4921eb45ce7c2621f28b50acc65c53d4ad85c0a0e343b",
+    "reviewer/rubric.md": "6512e2e97c031332fcc91947a5599cb484c98b487af0b8bdcee631c0ba569f14",
+    "reviewer/selection.csv": "19ba723a82b45827f3d0b462158416e3c1a66f8962861dcf1193d48f7a524adf"
+  }
+}

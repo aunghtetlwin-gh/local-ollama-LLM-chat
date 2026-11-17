@@ -1,0 +1,16 @@
+{
+  "pid": 1565020,
+  "cwd": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release",
+  "argv": [
+    "/home/lailai/slurm-portal/.venv/bin/python3",
+    "/home/lailai/slurm-portal/.venv/bin/uvicorn",
+    "app:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8001"
+  ],
+  "selected_environment": {
+    "PORTAL_AUTH_DB": "/home/lailai/slurm-portal/portal_users.db"
+  }
+}

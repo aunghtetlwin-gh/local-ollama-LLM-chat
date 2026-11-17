@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "local-ollama-chat",
+    "python",
+    "-B",
+    "-c",
+    "import sys,json,hashlib,importlib.metadata; from pathlib import Path; names=['server.py', 'auth.py', 'database.py', 'migrate.py', 'index.html', 'login.html', 'register.html', 'requirements.txt', 'migrations/001_users_sessions.sql', 'migrations/002_conversation_ownership.sql']; print(json.dumps({'python':sys.version,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()},'files_sha256':{n:hashlib.sha256((Path('/app')/n).read_bytes()).hexdigest() for n in names}}))"
+  ],
+  "exit_code": 0,
+  "started_or_recorded": "2026-11-09T06:08:29.142069+00:00"
+}

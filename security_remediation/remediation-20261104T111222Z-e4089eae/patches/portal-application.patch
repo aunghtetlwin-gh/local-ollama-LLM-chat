@@ -1,0 +1,140 @@
+--- a/app.py
++++ b/app.py
+@@ -1,7 +1,8 @@
+ from fastapi import FastAPI, HTTPException
+-from fastapi.responses import HTMLResponse
++from fastapi.responses import HTMLResponse, JSONResponse
++from fastapi.exceptions import RequestValidationError
+ from datetime import datetime
+-from pydantic import BaseModel, Field
++from pydantic import BaseModel, Field, SecretStr
+ from pathlib import Path
+ import re
+ import sqlite3
+@@ -17,6 +18,7 @@
+ from slurm_identity import (
+     slurm_headers as user_slurm_headers,
+     SlurmIdentityError,
++    is_allowed_slurm_user,
+ )
+ 
+ from auth import (
+@@ -36,6 +38,13 @@
+     version="0.2.0",
+ )
+ 
++@app.exception_handler(RequestValidationError)
++async def validation_error(request, error):
++    # Never serialize error input/body: missing-field errors may contain passwords.
++    # Deliberately do not log the exception or request body.
++    return JSONResponse(status_code=422, content={"detail": "Invalid request fields."})
++
++
+ init_db()
+ app.include_router(auth_router)
+ 
+@@ -130,7 +139,7 @@
+         min_length=1,
+         max_length=32,
+     )
+-    password: str = Field(
++    password: SecretStr = Field(
+         min_length=12,
+         max_length=1024,
+     )
+@@ -149,6 +158,12 @@
+         raise HTTPException(
+             status_code=400,
+             detail="Invalid Linux username",
++        )
++
++    if not is_allowed_slurm_user(username):
++        raise HTTPException(
++            status_code=400,
++            detail="Researcher is not approved for Slurm access",
+         )
+ 
+     try:
+@@ -231,7 +246,7 @@
+     try:
+         user = create_researcher(
+             username=body.username,
+-            password=body.password,
++            password=body.password.get_secret_value(),
+         )
+     except sqlite3.IntegrityError:
+         raise HTTPException(
+--- a/auth.py
++++ b/auth.py
+@@ -13,7 +13,9 @@
+ from argon2 import PasswordHasher
+ from argon2.exceptions import VerifyMismatchError, VerificationError
+ from fastapi import APIRouter, Cookie, Depends, Header, HTTPException, Response
+-from pydantic import BaseModel
++from pydantic import BaseModel, SecretStr
++
++from slurm_identity import is_allowed_slurm_user
+ 
+ DB_PATH = Path(os.environ.get('PORTAL_AUTH_DB', str(Path(__file__).with_name('portal_users.db'))))
+ SESSION_SECONDS = 8 * 60 * 60
+@@ -41,7 +43,9 @@
+ 
+ 
+ def add_user(username: str, password: str, role: str):
+-    if username not in ('lailai', 'mangkud') or role not in ('admin', 'user'):
++    if (username not in ('lailai', 'mangkud')
++            or not is_allowed_slurm_user(username)
++            or role not in ('admin', 'user')):
+         raise ValueError('This prototype permits only preapproved Linux usernames and roles')
+     if len(password) < 12:
+         raise ValueError('Use a password of at least 12 characters')
+@@ -64,6 +68,8 @@
+ 
+ def create_researcher(username: str, password: str):
+     """Create a new researcher without overwriting existing accounts."""
++    if not is_allowed_slurm_user(username):
++        raise ValueError("Researcher is not approved for Slurm access")
+     if len(password) < 12:
+         raise ValueError("Password must contain at least 12 characters")
+ 
+@@ -116,7 +122,7 @@
+ 
+ class LoginRequest(BaseModel):
+     username: str
+-    password: str
++    password: SecretStr
+ 
+ 
+ def get_identity(portal_session: Annotated[str | None, Cookie()] = None):
+@@ -141,7 +147,7 @@
+     with connect() as db:
+         row = db.execute('SELECT username,password_hash,role FROM users WHERE username=? AND enabled=1', (body.username,)).fetchone()
+     try:
+-        valid = row is not None and ph.verify(row['password_hash'], body.password)
++        valid = row is not None and ph.verify(row['password_hash'], body.password.get_secret_value())
+     except (VerifyMismatchError, VerificationError):
+         valid = False
+     if not valid:
+--- a/slurm_identity.py
++++ b/slurm_identity.py
+@@ -18,6 +18,11 @@
+     pass
+ 
+ 
++def is_allowed_slurm_user(username: str) -> bool:
++    """Single default-deny policy for onboarding and credential issuance."""
++    return username in ALLOWED_SLURM_USERS
++
++
+ def get_slurm_token(username: str) -> str:
+     """
+     Generate a short-lived Slurm JWT for an approved Linux user.
+@@ -29,7 +34,7 @@
+     Tokens are returned to the backend only.
+     """
+ 
+-    if username not in ALLOWED_SLURM_USERS:
++    if not is_allowed_slurm_user(username):
+         raise SlurmIdentityError(
+             "User is not authorized for Slurm access"
+         )

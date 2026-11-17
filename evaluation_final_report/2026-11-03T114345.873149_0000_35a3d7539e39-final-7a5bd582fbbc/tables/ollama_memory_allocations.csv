@@ -1,0 +1,4 @@
+model,size_bytes,size_vram_bytes,ollama_allocation_mib,independent_gpu_peak_measured
+qwen3:1.7b,3174805011,3174805011,3027.729998588562,False
+qwen3:8b,7503400140,7503400140,7155.799999237061,False
+gemma4:12b,9044009942,9044009942,8625.039999008179,False

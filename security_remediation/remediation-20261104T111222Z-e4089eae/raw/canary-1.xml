@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.014" timestamp="2026-11-04T18:20:04.868282+07:00" hostname="lai512"><testcase classname="harness_check.test_expected_failure" name="test_expected_failure_exit_code" time="0.000"><failure message="AssertionError: EXPECTED: prove failed assertions produce a nonzero runner exit&#10;assert False">harness_check/test_expected_failure.py:3: in test_expected_failure_exit_code
+    assert False, 'EXPECTED: prove failed assertions produce a nonzero runner exit'
+E   AssertionError: EXPECTED: prove failed assertions produce a nonzero runner exit
+E   assert False</failure></testcase></testsuite></testsuites>

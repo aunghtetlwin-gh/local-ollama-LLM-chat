@@ -1,3 +1,4 @@
+import argparse
 import ast
 import csv
 import re
@@ -5,22 +6,9 @@ from pathlib import Path
 
 
 INPUT_FILE = Path("multi_prompt_results.csv")
-OUTPUT_FILE = Path("quality_objective_checks.csv")
-REPORT_FILE = Path("quality_objective_checks.md")
+MAX_CODE_CHARACTERS = 100_000
 
-
-# ==================================================
-# Read results
-# ==================================================
-
-with INPUT_FILE.open(
-    newline="",
-    encoding="utf-8",
-) as file:
-
-    rows = list(
-        csv.DictReader(file)
-    )
+# Importing this module performs no evaluation or file I/O.
 
 
 # ==================================================
@@ -177,106 +165,59 @@ def check_reasoning(response):
 # ==================================================
 
 def check_coding(response):
+    """Check source structure only. Never execute or certify generated code.
 
-    no_counter = (
-        "Counter" not in response
-        and "collections.counter"
-        not in response.lower()
-    )
-
-    no_markdown_fence = (
-        "```" not in response
-    )
-
+    Counter detection is deliberately conservative, not alias/data-flow analysis.
+    A passing result establishes neither functional correctness nor code safety.
+    The size limit bounds parser input; it is not a general resource sandbox.
+    """
+    no_markdown_fence = "```" not in response
+    within_size_limit = len(response) <= MAX_CODE_CHARACTERS
     parses = False
     function_exists = False
-    tests_pass = False
+    signature_matches = False
+    no_counter = False
 
-    try:
-
-        tree = ast.parse(response)
-
-        parses = True
-
-        function_exists = any(
-            isinstance(node, ast.FunctionDef)
-            and node.name == "first_unique"
-            for node in tree.body
-        )
-
-        namespace = {}
-
-        exec(
-            compile(
-                tree,
-                filename="<benchmark>",
-                mode="exec",
-            ),
-            namespace,
-        )
-
-        function = namespace.get(
-            "first_unique"
-        )
-
-        if callable(function):
-
-            test_cases = [
-                (
-                    [4, 5, 4, 6, 5],
-                    6,
-                ),
-
-                (
-                    [1, 1, 2, 2],
-                    None,
-                ),
-
-                (
-                    [7],
-                    7,
-                ),
-
-                (
-                    ["a", "b", "a", "c"],
-                    "b",
-                ),
-
-                (
-                    [],
-                    None,
-                ),
-            ]
-
-            tests_pass = all(
-                function(items) == expected
-                for items, expected
-                in test_cases
+    if within_size_limit:
+        try:
+            tree = ast.parse(response)
+            parses = True
+            functions = [node for node in tree.body
+                         if isinstance(node, ast.FunctionDef)
+                         and node.name == "first_unique"]
+            function_exists = len(functions) == 1
+            if function_exists:
+                function = functions[0]
+                args = function.args
+                positional = args.posonlyargs + args.args
+                signature_matches = (
+                    len(positional) == 1 and positional[0].arg == "items"
+                    and not args.defaults and not args.kwonlyargs
+                    and args.vararg is None and args.kwarg is None
+                    and not function.decorator_list
+                )
+            no_counter = not any(
+                (isinstance(node, ast.Name) and node.id == "Counter")
+                or (isinstance(node, ast.Attribute) and node.attr == "Counter")
+                or (isinstance(node, ast.ImportFrom)
+                    and node.module == "collections"
+                    and any(alias.name in {"Counter", "*"} for alias in node.names))
+                for node in ast.walk(tree)
             )
+        except (SyntaxError, ValueError, RecursionError):
+            # Syntax errors, NUL bytes, or excessive parser nesting are failures.
+            pass
 
-    except Exception:
-        pass
-
-
-    passed = all(
-        [
-            no_counter,
-            no_markdown_fence,
-            parses,
-            function_exists,
-            tests_pass,
-        ]
-    )
-
+    static_pass = all((within_size_limit, no_markdown_fence, parses,
+                       function_exists, signature_matches, no_counter))
     details = (
-        f"no_counter={no_counter}; "
-        f"no_markdown_fence={no_markdown_fence}; "
-        f"parses={parses}; "
-        f"function_exists={function_exists}; "
-        f"tests_pass={tests_pass}"
+        f"within_size_limit={within_size_limit}; "
+        f"no_counter={no_counter}; no_markdown_fence={no_markdown_fence}; "
+        f"parses={parses}; function_exists={function_exists}; "
+        f"signature_matches={signature_matches}; "
+        "coding_correctness=not evaluated; execution=disabled"
     )
-
-    return passed, details
+    return static_pass, details
 
 
 # ==================================================
@@ -333,180 +274,87 @@ def check_instruction(response):
 
 
 # ==================================================
-# Run checks
+# Explicit evaluation and reporting (no import-time work)
 # ==================================================
 
-evaluated = []
-
-
-for row in rows:
-
-    task_id = row["task_id"]
-    response = row["response"]
-
-    if task_id == "knowledge":
-        passed, details = (
-            check_knowledge(response)
-        )
-
-    elif task_id == "reasoning":
-        passed, details = (
-            check_reasoning(response)
-        )
-
-    elif task_id == "coding":
-        passed, details = (
-            check_coding(response)
-        )
-
-    elif task_id == "summarization":
-        passed, details = (
-            check_summarization(response)
-        )
-
-    elif task_id == "instruction":
-        passed, details = (
-            check_instruction(response)
-        )
-
-    else:
-        passed = False
-        details = "unknown_task"
-
-
-    evaluated.append(
-        {
+def evaluate_rows(rows):
+    checks = {
+        "knowledge": check_knowledge,
+        "reasoning": check_reasoning,
+        "coding": check_coding,
+        "summarization": check_summarization,
+        "instruction": check_instruction,
+    }
+    evaluated = []
+    for row in rows:
+        task = row["task_id"]
+        check = checks.get(task)
+        passed, details = check(row["response"]) if check else (False, "unknown_task")
+        coding = task == "coding"
+        evaluated.append({
             "model": row["model"],
-            "task_id": task_id,
+            "task_id": task,
             "category": row["category"],
-            "objective_pass": passed,
+            # None becomes an empty CSV cell, never a correctness PASS/FAIL.
+            "objective_pass": None if coding else passed,
+            "static_checks_pass": passed if coding else None,
+            "coding_correctness": "not evaluated" if coding else "not applicable",
             "details": details,
-        }
-    )
+        })
+    return evaluated
 
 
-# ==================================================
-# Write CSV
-# ==================================================
-
-fieldnames = [
-    "model",
-    "task_id",
-    "category",
-    "objective_pass",
-    "details",
-]
-
-
-with OUTPUT_FILE.open(
-    "w",
-    newline="",
-    encoding="utf-8",
-) as file:
-
-    writer = csv.DictWriter(
-        file,
-        fieldnames=fieldnames,
-    )
-
-    writer.writeheader()
-    writer.writerows(evaluated)
-
-
-# ==================================================
-# Markdown report
-# ==================================================
-
-with REPORT_FILE.open(
-    "w",
-    encoding="utf-8",
-) as report:
-
-    report.write(
-        "# Objective Quality Checks\n\n"
-    )
-
-    report.write(
-        "| Model | Task | Result | Details |\n"
-    )
-
-    report.write(
-        "|---|---|---|---|\n"
-    )
-
-    for row in evaluated:
-
-        status = (
-            "PASS"
-            if row["objective_pass"]
-            else "FAIL"
-        )
-
-        details = (
-            row["details"]
-            .replace("|", "\\|")
-        )
-
+def write_reports(evaluated, output_dir):
+    """Write only into a new directory; refuse reuse of any existing path."""
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=False)
+    csv_path = output_dir / "quality_static_checks.csv"
+    report_path = output_dir / "quality_static_checks.md"
+    fields = ["model", "task_id", "category", "objective_pass",
+              "static_checks_pass", "coding_correctness", "details"]
+    with csv_path.open("x", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(evaluated)
+    with report_path.open("x", encoding="utf-8") as report:
         report.write(
-            f"| {row['model']} "
-            f"| {row['task_id']} "
-            f"| {status} "
-            f"| {details} |\n"
+            "# Static Quality Checks\n\n"
+            "Generated Python is never executed. Coding correctness is **not evaluated**. "
+            "Static PASS means only the listed source checks passed; it does not "
+            "establish correctness or safety. Other task checks retain their existing heuristics.\n\n"
+            "| Model | Task | Objective result | Static checks | Coding correctness | Details |\n"
+            "|---|---|---|---|---|---|\n"
         )
+        for row in evaluated:
+            objective = row["objective_pass"]
+            static = row["static_checks_pass"]
+            values = [row["model"], row["task_id"],
+                      "not evaluated" if objective is None else ("PASS" if objective else "FAIL"),
+                      "not applicable" if static is None else ("PASS" if static else "FAIL"),
+                      row["coding_correctness"], row["details"]]
+            report.write("| " + " | ".join(
+                str(value).replace("|", "\\|").replace("\n", " ").replace("\r", " ")
+                for value in values
+            ) + " |\n")
+    return csv_path, report_path
 
 
-# ==================================================
-# Terminal summary
-# ==================================================
-
-print(
-    "======================================"
-)
-
-print(
-    "OBJECTIVE QUALITY CHECKS"
-)
-
-print(
-    "======================================"
-)
-
-print()
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Non-executing quality checks for saved responses.")
+    parser.add_argument("--input", type=Path, default=INPUT_FILE)
+    parser.add_argument("--output-dir", type=Path, required=True,
+                        help="New directory that must not already exist; historical reports are never overwritten.")
+    args = parser.parse_args(argv)
+    try:
+        with args.input.open(newline="", encoding="utf-8") as file:
+            evaluated = evaluate_rows(csv.DictReader(file))
+        csv_path, report_path = write_reports(evaluated, args.output_dir)
+    except (OSError, csv.Error, KeyError) as error:
+        parser.exit(1, f"Evaluation stopped: {error}\n")
+    print("Coding correctness: not evaluated (execution disabled).")
+    print(f"Static-check CSV: {csv_path}")
+    print(f"Static-check report: {report_path}")
 
 
-for model in [
-    "qwen3:1.7b",
-    "qwen3:8b",
-    "gemma4:12b",
-]:
-
-    model_rows = [
-        row
-        for row in evaluated
-        if row["model"] == model
-    ]
-
-    passed = sum(
-        1
-        for row in model_rows
-        if row["objective_pass"]
-    )
-
-    print(
-        f"{model}: "
-        f"{passed}/{len(model_rows)} "
-        "objective checks passed"
-    )
-
-
-print()
-
-print(
-    "Detailed CSV:",
-    OUTPUT_FILE,
-)
-
-print(
-    "Readable report:",
-    REPORT_FILE,
-)
+if __name__ == "__main__":
+    main()

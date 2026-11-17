@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-11-08T06:37:54.176473+00:00",
+  "service": {
+    "command": [
+      "systemctl",
+      "show",
+      "slurm-portal.service",
+      "--property=ActiveState,SubState,MainPID,Result,NRestarts,WorkingDirectory,DropInPaths"
+    ],
+    "exit_code": 0,
+    "stdout": "MainPID=1565020\nResult=success\nNRestarts=0\nWorkingDirectory=/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release\nActiveState=active\nSubState=running\nDropInPaths=/etc/systemd/system/slurm-portal.service.d/90-nectec-security-30beac16.conf\n",
+    "stderr": ""
+  },
+  "authentication_database_path": [
+    "/home/lailai/slurm-portal/portal_users.db"
+  ],
+  "ports": {
+    "8001": {
+      "http_status": 200,
+      "operation_count": 16,
+      "operations": [
+        {
+          "method": "POST",
+          "path": "/auth/login"
+        },
+        {
+          "method": "GET",
+          "path": "/auth/me"
+        },
+        {
+          "method": "POST",
+          "path": "/auth/logout"
+        },
+        {
+          "method": "GET",
+          "path": "/admin/users"
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users"
+        },
+        {
+          "method": "PATCH",
+          "path": "/admin/users/{username}/status"
+        },
+        {
+          "method": "GET",
+          "path": "/"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/active"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/history"
+        },
+        {
+          "method": "GET",
+          "path": "/ui"
+        },
+        {
+          "method": "GET",
+          "path": "/cluster/node"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/cancel"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/requeue"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}/output"
+        }
+      ]
+    },
+    "8002": {
+      "http_status": 200,
+      "operation_count": 16,
+      "operations": [
+        {
+          "method": "POST",
+          "path": "/auth/login"
+        },
+        {
+          "method": "GET",
+          "path": "/auth/me"
+        },
+        {
+          "method": "POST",
+          "path": "/auth/logout"
+        },
+        {
+          "method": "GET",
+          "path": "/admin/users"
+        },
+        {
+          "method": "POST",
+          "path": "/admin/users"
+        },
+        {
+          "method": "PATCH",
+          "path": "/admin/users/{username}/status"
+        },
+        {
+          "method": "GET",
+          "path": "/"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/active"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/history"
+        },
+        {
+          "method": "GET",
+          "path": "/ui"
+        },
+        {
+          "method": "GET",
+          "path": "/cluster/node"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/cancel"
+        },
+        {
+          "method": "POST",
+          "path": "/jobs/{job_id}/requeue"
+        },
+        {
+          "method": "GET",
+          "path": "/jobs/{job_id}/output"
+        }
+      ]
+    }
+  },
+  "fallback": {
+    "pid": 2019096,
+    "exists": true,
+    "start_ticks": "364346317"
+  },
+  "accounting": {
+    "command": [
+      "sacct",
+      "-nPX",
+      "-j",
+      "127,129",
+      "-S",
+      "2026-11-01",
+      "--format=JobID,User,JobName%40,State,StdOut%220,WorkDir%120"
+    ],
+    "exit_code": 0,
+    "stdout": "127|lailai|nectec-r2-concurrent-job1|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-%j.out|/home/lailai/ollama-test\n129|lailai|nectec-r3-baseline-job1|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-%j.out|/home/lailai/ollama-test\n",
+    "stderr": ""
+  },
+  "real_job_output_content_read": false
+}

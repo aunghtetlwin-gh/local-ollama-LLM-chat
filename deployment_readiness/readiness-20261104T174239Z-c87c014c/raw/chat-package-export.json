@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "docker",
+    "cp",
+    "local-ollama-chat:/usr/local/lib/python3.10/site-packages",
+    "/home/lailai/ollama-test/deployment_readiness/readiness-20261104T174239Z-c87c014c/exports/chat-site-packages"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

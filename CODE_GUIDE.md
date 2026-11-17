@@ -1,5 +1,33 @@
 # Code Guide
 
+## Authentication and ownership
+
+`auth.py` implements registration/login/logout, email normalization, Argon2id hashing,
+and PostgreSQL session lookup. `database.py` shares connection configuration without
+connecting on import. `register.html` and `login.html` submit JSON and navigate to chat
+after the server sets an HttpOnly session cookie. No password or session token is stored
+in localStorage. The server stores the password hash and session-token digest only.
+
+`server.py` uses `require_chat_user` on model, conversation, and chat APIs. It checks
+that migration 2 has completed, then scopes each conversation operation to the current
+user. Message queries use the parent conversation's owner; writes use an ownership-filtered
+`INSERT ... SELECT`. This includes assistant persistence after streaming. Ollama still
+receives only the selected model, role/content history, and `stream: true`.
+
+`index.html` wraps API fetches to handle expired sessions, clears displayed chats before
+redirecting to login, and provides logout. A session expires after the configured fixed
+lifetime. The app does not reauthenticate each stream chunk.
+
+The database now also has `users`, `sessions`, and `schema_migrations`.
+`conversations.user_id` references `users.id`; `messages` keeps its existing schema.
+`migrate.py` runs the two SQL migrations only when explicitly invoked. The ownership
+migration selects the sole registered user, rejects zero users, and requires `--owner-id`
+when multiple users exist. It does not delete historical data. See README for the exact
+backup and deployment sequence; no migration runs during startup.
+
+Tests in `tests/` use isolated in-memory data and block external service connections.
+They do not validate migration DDL against a live PostgreSQL server.
+
 You do **not** need to understand every line in this project. Start by understanding how the pieces connect, where configuration lives, and how one chat message moves through the system. You can learn the implementation details when you need to change them.
 
 ## What you should understand first

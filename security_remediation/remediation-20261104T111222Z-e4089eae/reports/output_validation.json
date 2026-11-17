@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "checks_n": 15,
+  "checks": {
+    "portal-2": true,
+    "portal-2_tested_sources_unchanged": true,
+    "chat-1": true,
+    "chat-1_tested_sources_unchanged": true,
+    "postgres-1": true,
+    "postgres-1_tested_sources_unchanged": true,
+    "196_final_cases": true,
+    "expected_failure_propagates_exit_1": true,
+    "runtime_patches_apply_check": true,
+    "4_changed_runtime_files_bound": true,
+    "1666_originals_unchanged": true,
+    "evaluation_final_report_prior_seal": true,
+    "slurm_contention_runs_prior_seal": true,
+    "security_analysis_prior_seal": true,
+    "case_inventory": true
+  }
+}

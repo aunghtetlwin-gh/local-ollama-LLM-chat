@@ -1,0 +1,18 @@
+{
+  "provenance": "User-reported browser acceptance in current conversation; no screenshots/cookies/credentials collected",
+  "url": "http://127.0.0.1:18003/ui",
+  "administrator_account": "lailai",
+  "researcher_account": "mangkud",
+  "observed": [
+    "both logins succeeded",
+    "role-specific controls displayed",
+    "Slurm node statistics displayed",
+    "researcher job history displayed"
+  ],
+  "historical_output_error": {
+    "detail": "Job output not found",
+    "job_id": "not yet supplied",
+    "account_for_failed_request": "not yet supplied"
+  },
+  "scope_limit": "Does not prove cross-user API denials or authenticated CSRF behavior"
+}

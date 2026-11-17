@@ -1,0 +1,18 @@
+{
+  "version": "gsm8k_50_v1",
+  "count": 50,
+  "upstream_count": 1319,
+  "source": "https://github.com/openai/grade-school-math",
+  "revision": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_path": "grade_school_math/data/test.jsonl",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 OpenAI",
+  "retrieved_at": "2026-10-30T08:10:12.638772+00:00",
+  "questions_sha256": "e29398d090b6d097efe6b4d4b66691b47b406bd2d22accd687445e5778809714",
+  "references_sha256": "23d0ec7773d669bed9e720a1a49f563c42dc5736cf8e334dd0a5e46ef86d4a51",
+  "upstream_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "license_sha256": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
+  "readme_sha256": "27e1676d572f2289210170ff6dbb8c2ef7d9f6950c0f08c978ea8ee6b39dca29",
+  "selection_sha256": "ff9a6b8239a26d99b026624139bcfe07e5053e22f32675274ac31c6812f52187",
+  "sampling": "See selection.json; no model outcomes used to select questions."
+}

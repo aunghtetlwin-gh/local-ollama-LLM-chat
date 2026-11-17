@@ -1,0 +1,25 @@
+{
+  "run": "/home/lailai/ollama-test/evaluation_runs/2026-11-03T114345.873149_0000_35a3d7539e39",
+  "analysis": "/home/lailai/ollama-test/evaluation_analysis/2026-11-03T114345.873149_0000_35a3d7539e39-offline-1b1d6d878b27",
+  "files_sha256": {
+    "README.md": "406935d9c6e129cb7ec72779cee640d549c7d00604b70dfdb6600617a27905b6",
+    "analysis_files_sha256.json": "c6c05717057f8ed6384c9a1a904dae63b2c046a90f4af12905cf9d4fd570e03b",
+    "analysis_manifest.json": "2b10a4a9d881f3a91905a55d664e8dff2558f8c366518c0624521b8fda6582fa",
+    "category_summary.csv": "27be5a01910fd38908042908810f5feeda64c1c9ff0c8f5719156309c5f2cddf",
+    "integrity_checks.json": "af4cd62ee9111c5edf649354f9e59d559a662168f5e983095ef7e31a58f25414",
+    "manual_review.csv": "244f6ac94c7009c1f2500e2716ec92b3e628e7f98419ed5cc31a0366bad1df6b",
+    "model_summary.csv": "7615f69d7119613e4527e43ad94ddd062fac1bde7f037e98a59d6c85a4bfd94e",
+    "preservation.json": "928467b3a3ef7487dd78c93bafd149f61c0266ad91a249830fea8148e3856f5e",
+    "private_blind_mapping.json": "be98d3fe17ae96fe8fe3579b1687ce0050c2d1f986076fb94093ca3de30e829b",
+    "quality_failures.csv": "90eb6002ae780de4c9d040574cde72ff6f5f0e95f085900bbc8f9fcedc8fd89b",
+    "request_metrics.csv": "579247910fd47031822ab7b8b38642148b049e00198053dee6d4120a3be4291b",
+    "request_metrics.json": "6109a3c3eb07acd9936f43d6791a4a8c4fdea9d2d21cf51e32d681ca1fa48022",
+    "scores.csv": "02c2ff4d447d6350cf78e195bb7384294b328f771ba7a5f0a7eb0ea41c65d049",
+    "scores.json": "3442ce75458f9563702ea752161975a61de84b44948b1871eea6f973e3508531",
+    "summary.json": "e3219570bc4146ce9a507e7b22da0be49a74693abe1befcea7e1e2e9249885cf",
+    "validation_results.json": "0d9ffcb9cf31d1ca2ae0c312d52a8ee91d747bb296119f6934f35f844b0bb6c2"
+  },
+  "original_run_modified": false,
+  "regression_tests_passed": 179,
+  "subtests_passed": 162
+}

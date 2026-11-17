@@ -1,0 +1,26 @@
+{
+  "model": "qwen3:1.7b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+    },
+    {
+      "role": "user",
+      "content": "Reply with OK."
+    }
+  ],
+  "stream": false,
+  "keep_alive": "30s",
+  "think": false,
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 1,
+    "temperature": 0,
+    "seed": 42,
+    "top_k": 40,
+    "top_p": 0.9,
+    "repeat_last_n": 64,
+    "repeat_penalty": 1.0
+  }
+}

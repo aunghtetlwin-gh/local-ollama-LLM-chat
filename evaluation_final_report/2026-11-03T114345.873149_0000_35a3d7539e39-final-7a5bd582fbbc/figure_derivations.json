@@ -1,0 +1,37 @@
+[
+  {
+    "name": "01_automatic_accuracy",
+    "caption": "50 GSM8K + 4 reasoning + 4 instruction items per model; human-reviewed items excluded.",
+    "derivation": "Count answer_correct=True among the 58 objective items/model; no /70 composite."
+  },
+  {
+    "name": "02_gsm8k_accuracy_wilson",
+    "caption": "Same 50 questions/model; pointwise binomial intervals describe item sampling, not run-to-run variability.",
+    "derivation": "Wilson score interval using z=1.959963984540054, n=50; all wrong/format-failed answers retained."
+  },
+  {
+    "name": "03_human_verdict_distribution",
+    "caption": "One researcher, AI-assisted assessment suggestions; no independent inter-rater agreement was measured.",
+    "derivation": "Explicit imported verdict counts; partly-correct answers are retained separately, without half credit."
+  },
+  {
+    "name": "04_category_correctness",
+    "caption": "Automatic and human metrics are distinct. Internal cells have only 4 questions; coding review was static, without execution.",
+    "derivation": "Left: objective answer_correct proportions. Right: explicit human correct verdicts; not numeric-rating thresholds."
+  },
+  {
+    "name": "05_latency_distributions",
+    "caption": "70 requests/model; points retain all observations. Box = IQR; line = median; whiskers = 1.5×IQR. Warm-ups excluded.",
+    "derivation": "Original complete.json wall_time_s, cross-checked against request_metrics.csv; not time to first token."
+  },
+  {
+    "name": "06_throughput_and_allocation",
+    "caption": "Throughput uses each model’s tokenizer and variable-length outputs. Allocations are NOT independent GPU peak measurements.",
+    "derivation": "Throughput = sum(eval_count)/sum(eval_duration_s), 70 scored requests/model. Memory = consistent recorded size_vram / 2^20."
+  },
+  {
+    "name": "07_gsm8k_paired_differences",
+    "caption": "95% paired percentile bootstrap; 20,000 shared-ID resamples, seed 42. Descriptive pointwise intervals; no significance claims.",
+    "derivation": "Resample 50 matched question IDs with replacement, preserving all models for each ID; percentile endpoints 2.5/97.5%."
+  }
+]

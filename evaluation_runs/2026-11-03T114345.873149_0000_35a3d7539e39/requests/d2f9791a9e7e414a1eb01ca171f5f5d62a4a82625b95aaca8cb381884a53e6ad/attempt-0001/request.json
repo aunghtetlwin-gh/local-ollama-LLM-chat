@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "S01",
+  "repetition": 1,
+  "prompt_sha256": "a1b0e1fdfeea5b7a8dcd98f9001107fa997f6a86ae6a16efce9bab6a8ac5a9e6",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Summarize this synthetic incident in exactly two sentences, preserving cause, impact, and recovery. Do not add facts.\n\nAt 09:00 a configuration change routed API traffic to an unavailable backend. Requests failed for twelve minutes. At 09:12 the team rolled back the change and requests recovered. No stored records were lost."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "d2f9791a9e7e414a1eb01ca171f5f5d62a4a82625b95aaca8cb381884a53e6ad"
+}

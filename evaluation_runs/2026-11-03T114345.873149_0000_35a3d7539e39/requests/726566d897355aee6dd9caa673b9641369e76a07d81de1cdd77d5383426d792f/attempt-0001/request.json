@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "K01",
+  "repetition": 1,
+  "prompt_sha256": "f0be466129a8f894d99c89ea7f39f284e34e41a86ca014e2b286a2cc44417568",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Explain authentication and authorization in exactly two bullet lines beginning with \"- \". In the first bullet define authentication and give an example. In the second define authorization and give an example."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "726566d897355aee6dd9caa673b9641369e76a07d81de1cdd77d5383426d792f"
+}

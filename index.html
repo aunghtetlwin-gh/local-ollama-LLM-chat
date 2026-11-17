@@ -112,9 +112,72 @@
         #conversation-list {
             flex: 1;
 
+            min-height: 0;
+
             overflow-y: auto;
 
             padding: 8px;
+        }
+
+
+        #sidebar-account {
+            flex-shrink: 0;
+            margin-top: auto;
+            padding: 16px;
+            border-top: 1px solid #3a3a3a;
+        }
+
+        #account-identity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        #account-avatar {
+            display: grid;
+            place-items: center;
+            flex: 0 0 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #565869;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        #account-email {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+
+        #logout-button {
+            margin-top: 10px;
+            padding: 6px 0;
+            border: none;
+            background: transparent;
+            color: #ccc;
+            font: inherit;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        #logout-button:hover,
+        #logout-button:focus-visible {
+            color: white;
+            text-decoration: underline;
+        }
+
+        #auth-status {
+            margin: 8px 0 0;
+            font-size: 13px;
+            overflow-wrap: anywhere;
+        }
+
+        #auth-status:empty {
+            display: none;
         }
 
 
@@ -498,6 +561,15 @@
         <div id="conversation-list">
         </div>
 
+        <div id="sidebar-account" role="region" aria-label="Your account">
+            <div id="account-identity">
+                <span id="account-avatar" aria-hidden="true">?</span>
+                <span id="account-email">Loading account…</span>
+            </div>
+            <button id="logout-button" type="button" onclick="logout()">Log out</button>
+            <p id="auth-status" role="status" aria-live="polite"></p>
+        </div>
+
     </aside>
 
 
@@ -584,6 +656,74 @@
 
 
 <script>
+// Authentication failures must never be treated as streamed chat or model fallback.
+let leavingSession = false;
+const sessionRequests = new AbortController();
+
+function leaveSession() {
+    leavingSession = true;
+    sessionRequests.abort();
+    messages = [];
+    conversations = [];
+    currentConversationId = null;
+    document.getElementById("chat").replaceChildren();
+    document.getElementById("conversation-list").replaceChildren();
+    window.location.replace("/login");
+}
+
+async function apiFetch(url, options = {}) {
+    const response = await fetch(url, {
+        ...options, credentials: "same-origin", signal: sessionRequests.signal
+    });
+    if (response.status === 401) {
+        leaveSession();
+        const error = new Error("Session expired.");
+        error.authHandled = true;
+        throw error;
+    }
+    if (response.status === 503) {
+        const data = await response.clone().json().catch(() => ({}));
+        document.getElementById("auth-status").textContent = data.detail || "Service unavailable.";
+        const error = new Error("Service unavailable.");
+        error.authHandled = true;
+        throw error;
+    }
+    return response;
+}
+
+async function checkSession() {
+    if (leavingSession) return;
+    try {
+        const response = await apiFetch("/auth/session");
+        if (!response.ok) return;
+        const data = await response.json();
+        const email = data.user.email;
+        const emailLabel = document.getElementById("account-email");
+        emailLabel.textContent = email;
+        emailLabel.title = email;
+        document.getElementById("account-avatar").textContent =
+            Array.from(email.split("@")[0]).slice(0, 2).join("").toUpperCase();
+    } catch {
+        // apiFetch handles expiry; transient network failures do not log users out.
+    }
+}
+
+async function logout() {
+    try {
+        const response = await apiFetch("/logout", {method: "POST"});
+        if (!response.ok) throw new Error("Logout failed.");
+        leaveSession();
+    } catch {
+        if (!leavingSession) {
+            document.getElementById("auth-status").textContent = "Could not log out. Please try again.";
+        }
+    }
+}
+
+window.addEventListener("focus", checkSession);
+window.addEventListener("pageshow", checkSession);
+setInterval(checkSession, 60000);
+
 
 
 /*
@@ -642,7 +782,7 @@ async function loadModels() {
     try {
 
         const response =
-            await fetch(
+            await apiFetch(
                 "/models"
             );
 
@@ -752,6 +892,7 @@ async function loadModels() {
     }
 
     catch (error) {
+        if (leavingSession || error.authHandled) return;
 
         console.error(
             error
@@ -1249,7 +1390,7 @@ async function refreshConversations(
     try {
 
         const response =
-            await fetch(
+            await apiFetch(
                 "/conversations"
             );
 
@@ -1296,6 +1437,7 @@ async function refreshConversations(
     }
 
     catch (error) {
+        if (leavingSession || error.authHandled) return;
 
         console.error(
             error
@@ -1322,7 +1464,7 @@ async function loadConversation(
     try {
 
         const response =
-            await fetch(
+            await apiFetch(
                 "/conversations/"
                 + conversationId
             );
@@ -1364,6 +1506,7 @@ async function loadConversation(
     }
 
     catch (error) {
+        if (leavingSession || error.authHandled) return;
 
         console.error(
             error
@@ -1446,7 +1589,7 @@ async function deleteConversation(
     try {
 
         const response =
-            await fetch(
+            await apiFetch(
                 "/conversations/"
                 + conversationId,
                 {
@@ -1496,6 +1639,7 @@ async function deleteConversation(
     }
 
     catch (error) {
+        if (leavingSession || error.authHandled) return;
 
         console.error(
             error
@@ -1626,7 +1770,7 @@ async function sendMessage() {
     try {
 
         const response =
-            await fetch(
+            await apiFetch(
                 "/chat",
                 {
 
@@ -1854,6 +1998,7 @@ async function sendMessage() {
     }
 
     catch (error) {
+        if (leavingSession || error.authHandled) return;
 
         console.error(
             error

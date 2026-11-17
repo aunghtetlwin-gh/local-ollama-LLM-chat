@@ -1,0 +1,22 @@
+{
+  "status": "CONDITIONAL GO",
+  "timestamp": "2026-11-09T05:02:18.267696+00:00",
+  "live_image": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "live_source_is_expected_prepatch": true,
+  "tested_patch_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+  "all_live_recorded_dependencies_match": true,
+  "compose_environment_matches_live": true,
+  "sealed_chat_tests": 77,
+  "sealed_forwarding_tests": 2,
+  "sealed_postgres_tests": 11,
+  "new_tests_run": false,
+  "deployment_performed": false,
+  "images_built_or_tagged": false,
+  "db_queries_or_data_changes": false,
+  "pending": [
+    "confirm exact current SSH browser URL and client Origin/Referer compatibility",
+    "drain streams and coordinate maintenance window",
+    "separate candidate build/verification and app-only deployment approval",
+    "operator browser/session acceptance after deployment"
+  ]
+}

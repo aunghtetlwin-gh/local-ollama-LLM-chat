@@ -1,0 +1,11 @@
+{
+  "passed": 190,
+  "new_output_cases": 82,
+  "existing_portal_cases": 108,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "deployed_runtime_profile_asserted": true,
+  "sandbox_attempt": "timed out after 120 seconds; not a passing or completed test run",
+  "warning": "Starlette TestClient httpx deprecation"
+}

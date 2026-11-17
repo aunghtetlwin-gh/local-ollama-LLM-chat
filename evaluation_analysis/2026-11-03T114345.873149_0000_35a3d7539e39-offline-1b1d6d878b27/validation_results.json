@@ -1,0 +1,14 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 /tmp/conversation-isolation-tools/bin/python -m pytest tests evaluation/tests -q",
+  "exit_code": 0,
+  "tests_passed": 179,
+  "subtests_passed": 162,
+  "warnings": 1,
+  "warning": "StarletteDeprecationWarning concerning httpx/TestClient; not a test failure",
+  "dataset_historical_validation": {
+    "internal_v2": 20,
+    "gsm8k_50_v1": 50,
+    "pilot_v1": 5
+  },
+  "network_inference_gpu_service_integration_tests_excluded": true
+}

@@ -1,0 +1,60 @@
+{
+  "reviewer": "",
+  "verified_at": "",
+  "environment": {
+    "cpu": "TO_VERIFY",
+    "ram_gib": "TO_VERIFY",
+    "gpu": "TO_VERIFY",
+    "vram_gib": "TO_VERIFY",
+    "driver": "TO_VERIFY",
+    "offload": "TO_VERIFY",
+    "concurrent_workloads": "TO_VERIFY"
+  },
+  "models": {
+    "qwen3:1.7b": {
+      "digest": null,
+      "capacity_verified": false,
+      "evidence_note": "Replace only after an explicitly approved compatibility/development check.",
+      "verified_options": {
+        "num_ctx": 8192,
+        "num_predict": 4096,
+        "temperature": 0,
+        "seed": 42,
+        "top_k": 40,
+        "top_p": 0.9,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0
+      }
+    },
+    "qwen3:8b": {
+      "digest": null,
+      "capacity_verified": false,
+      "evidence_note": "Replace only after an explicitly approved compatibility/development check.",
+      "verified_options": {
+        "num_ctx": 8192,
+        "num_predict": 4096,
+        "temperature": 0,
+        "seed": 42,
+        "top_k": 40,
+        "top_p": 0.9,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0
+      }
+    },
+    "gemma4:12b": {
+      "digest": null,
+      "capacity_verified": false,
+      "evidence_note": "Replace only after an explicitly approved compatibility/development check.",
+      "verified_options": {
+        "num_ctx": 8192,
+        "num_predict": 4096,
+        "temperature": 0,
+        "seed": 42,
+        "top_k": 40,
+        "top_p": 0.9,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0
+      }
+    }
+  }
+}

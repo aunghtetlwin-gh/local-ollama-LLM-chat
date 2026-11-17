@@ -1,0 +1,16 @@
+{
+  "model": "qwen3:1.7b",
+  "created_at": "2026-11-03T07:14:21.050082798Z",
+  "message": {
+    "role": "assistant",
+    "content": "17 × 19 = 323\n\n{\"answer\": 323}"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 1789065223,
+  "load_duration": 1585019502,
+  "prompt_eval_count": 56,
+  "prompt_eval_duration": 78731000,
+  "eval_count": 21,
+  "eval_duration": 116724000
+}

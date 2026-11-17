@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/home/lailai/slurm-portal/.venv/bin/python",
+    "-B",
+    "/tmp/nectec-output-synthetic-acceptance.py"
+  ],
+  "exit_code": 0,
+  "source_copy": "../synthetic_readonly.py",
+  "scope": "deployed helper, disposable synthetic files only; no production app import"
+}

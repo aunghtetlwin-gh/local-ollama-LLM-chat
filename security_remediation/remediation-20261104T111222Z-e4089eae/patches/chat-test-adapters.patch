@@ -1,0 +1,41 @@
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -9,7 +9,11 @@
+ 
+ import psycopg
+ import pytest
+-from fastapi.testclient import TestClient
++from fastapi.testclient import TestClient as BaseTestClient
++
++def TestClient(*args, **kwargs):
++    kwargs.setdefault("headers", {"Origin": "http://testserver"})
++    return BaseTestClient(*args, **kwargs)
+ 
+ import auth
+ import server
+--- a/tests/test_conversation_access.py
++++ b/tests/test_conversation_access.py
+@@ -3,7 +3,7 @@
+ 
+ import pytest
+ from fastapi import HTTPException
+-from fastapi.testclient import TestClient
++from conftest import TestClient
+ 
+ import server
+ 
+--- a/integration_tests/test_postgres_isolation.py
++++ b/integration_tests/test_postgres_isolation.py
+@@ -15,7 +15,11 @@
+ 
+ import pytest
+ import psycopg
+-from fastapi.testclient import TestClient
++from fastapi.testclient import TestClient as BaseTestClient
++
++def TestClient(*args, **kwargs):
++    kwargs.setdefault("headers", {"Origin": "http://testserver"})
++    return BaseTestClient(*args, **kwargs)
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ sys.path.insert(0, str(ROOT))

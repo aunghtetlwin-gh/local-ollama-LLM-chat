@@ -1,0 +1,10 @@
+{
+  "candidate": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35",
+  "junit": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/raw/rerun-20261108T132602Z-c17eab/portal-tests.xml",
+  "passed": 190,
+  "failed": 0,
+  "skipped": 0,
+  "recorded_exit_code": 0,
+  "candidate_seal_verified": true,
+  "suite_rerun_this_attempt": false
+}

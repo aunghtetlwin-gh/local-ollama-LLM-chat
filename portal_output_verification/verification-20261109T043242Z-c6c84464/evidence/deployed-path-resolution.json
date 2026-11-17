@@ -1,0 +1,46 @@
+{
+  "exit_code": 0,
+  "result": {
+    "positive": [
+      {
+        "job_id": 123,
+        "resolved": true
+      },
+      {
+        "job_id": 124,
+        "resolved": true
+      },
+      {
+        "job_id": 125,
+        "resolved": true
+      },
+      {
+        "job_id": 126,
+        "resolved": true
+      },
+      {
+        "job_id": 127,
+        "resolved": true
+      },
+      {
+        "job_id": 128,
+        "resolved": true
+      },
+      {
+        "job_id": 129,
+        "resolved": true
+      },
+      {
+        "job_id": 130,
+        "resolved": true
+      },
+      {
+        "job_id": 131,
+        "resolved": true
+      }
+    ],
+    "negative_denials": 4,
+    "real_file_opens": 0
+  },
+  "stderr": ""
+}

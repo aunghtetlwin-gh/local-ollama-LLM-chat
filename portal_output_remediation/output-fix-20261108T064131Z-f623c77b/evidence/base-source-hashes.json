@@ -1,0 +1,9 @@
+{
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/app.py": "2ae0f5197826872fd87f3fca922ba2354489855e78fe89b7ba05d780c3a58af1",
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/auth.py": "cae1cf4875fe66d7f2bb23d75ddf61613954d56157e69c0e11bd6f12dfc945d4",
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/slurm_identity.py": "37f24fc6d04162493bb6caa7e8d639c614dfc1b1c0519a937bb7ab2125870744",
+  "/home/lailai/slurm-portal/app.py": "3d2ff18c2fd38aea30e648a901858e58a72bf2def8e877499ee6d88ff61d0105",
+  "/home/lailai/slurm-portal/auth.py": "ccdc0c0282334a8e92bc5b37d5fab80520ae83268a7188c5b88ad44b4026f86f",
+  "/home/lailai/slurm-portal/slurm_identity.py": "57b2c7a69a66c1da8e208de3ab320ca06004fb999ecb58640f391cd1d74717c1",
+  "/home/lailai/slurm-portal/frontend.html": "02ca086d552862613f817b24f8818b344d848d545fb91f8ded5f66a89adb8f8e"
+}

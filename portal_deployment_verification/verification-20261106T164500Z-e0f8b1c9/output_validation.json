@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "acceptance_checks": 31,
+  "failed": 0,
+  "startup_complete_seen": true,
+  "startup_error_markers": 0,
+  "authenticated_checks_pending": true,
+  "no_mutating_operation_performed": true,
+  "scope": "evidence consistency and automated post-deployment verification; no comprehensive security certification"
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 3,
+    "text": "uvicorn app:app --host 127.0.0.1 --port 8001 --reload"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 6,
+    "text": "pgrep -af 'uvicorn app:app.*8001'"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 7,
+    "text": "pkill -f 'uvicorn app:app.*--port 8001'"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 8,
+    "text": "ss -ltnp | grep 8001"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 19,
+    "text": ".venv/bin/uvicorn test_auth_app:app \\"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 21,
+    "text": "  --port 8002"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 23,
+    "text": ".venv/bin/uvicorn app:app \\"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 25,
+    "text": "  --port 8002"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 27,
+    "text": "fuser -k -n tcp 8002"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 29,
+    "text": "nohup .venv/bin/uvicorn app:app \\"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 31,
+    "text": "  --port 8002 \\"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 32,
+    "text": "  > logs/uvicorn-8002.log 2>&1 \\"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/note.coffee",
+    "line": 36,
+    "text": "  ssh -N -L 18002:127.0.0.1:8002 lai512"
+  },
+  {
+    "path": "/etc/systemd/system/slurm-portal.service",
+    "line": 9,
+    "text": "User=lailai"
+  },
+  {
+    "path": "/etc/systemd/system/slurm-portal.service",
+    "line": 10,
+    "text": "Group=lailai"
+  },
+  {
+    "path": "/etc/systemd/system/slurm-portal.service",
+    "line": 12,
+    "text": "WorkingDirectory=/home/lailai/slurm-portal"
+  },
+  {
+    "path": "/etc/systemd/system/slurm-portal.service",
+    "line": 16,
+    "text": "ExecStart=/home/lailai/slurm-portal/.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8001"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_admin_users.py",
+    "line": 4,
+    "text": "BASE = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_cancel_authorization.py",
+    "line": 4,
+    "text": "BASE = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_existing_job_access.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_history_visibility.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_job_ownership.py",
+    "line": 5,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_job_visibility.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_management_ownership.py",
+    "line": 7,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_multiuser_submit.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_multiuser_visibility.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_output_access.py",
+    "line": 4,
+    "text": "BASE = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_rbac.py",
+    "line": 4,
+    "text": "BASE_URL = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_requeue.py",
+    "line": 5,
+    "text": "BASE = \"http://127.0.0.1:8002\""
+  },
+  {
+    "path": "/home/lailai/slurm-portal/test_user_management.py",
+    "line": 4,
+    "text": "BASE = \"http://127.0.0.1:8003\""
+  }
+]

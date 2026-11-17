@@ -1,0 +1,29 @@
+{
+  "installed_slurm_version": "26.05.4",
+  "rest_schema": "v0.0.45",
+  "reference_url": "https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN",
+  "implemented": [
+    "%%",
+    "%j",
+    "%1j through %10j"
+  ],
+  "unsupported": "array, step, node, task, user, name, restart, SLUID and backslash-disable substitutions; widths outside 1..10",
+  "expanded_field_policy": "stdout_expanded is literal and is not expanded again",
+  "accounting_fields": [
+    "job_id",
+    "user",
+    "stdout",
+    "stdout_expanded",
+    "working_directory"
+  ],
+  "scheduler_fields": [
+    "job_id",
+    "user_name",
+    "stdout_expanded",
+    "current_working_directory"
+  ],
+  "installed_manpage": {
+    "path": "/usr/share/man/man1/sbatch.1.gz",
+    "sha256": "b66f1bc75a79145272f7bac5de490799b13791838d789bb7ea6d403515d8d8e9"
+  }
+}

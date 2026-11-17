@@ -1,0 +1,23 @@
+{
+  "app_new_id": "dbbb685f46aa0161f63023409b390421e50137d4cfa8292c7b4904528e6b8bd1",
+  "new_image_id": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "expected_image": true,
+  "new_app_running": true,
+  "app_env_identical": true,
+  "network_unchanged": true,
+  "database_id_unchanged": true,
+  "database_image_unchanged": true,
+  "database_start_time_unchanged": true,
+  "database_mounts_unchanged": true,
+  "portal_processes_unchanged": true,
+  "portal_processes_after": {
+    "2610502": {
+      "present": true,
+      "start_ticks": "467325235"
+    },
+    "2019096": {
+      "present": true,
+      "start_ticks": "364346317"
+    }
+  }
+}

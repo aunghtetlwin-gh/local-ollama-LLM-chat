@@ -1,0 +1,4 @@
+model,requests_n,prompt_tokens_total,prompt_tokens_median,prompt_tokens_max,generated_tokens_total,generated_tokens_median,generated_tokens_max,generation_duration_total_s,aggregate_generation_tokens_per_s
+qwen3:1.7b,70,9498,135.0,206,7380,94.0,310,28.481033998999997,259.11980584199017
+qwen3:8b,70,9498,135.0,206,7038,97.0,245,89.61441499999997,78.53647206200033
+gemma4:12b,70,9365,132.5,201,15416,196.5,1467,307.48363899900005,50.13600089483179

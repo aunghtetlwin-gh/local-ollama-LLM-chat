@@ -1,0 +1,37 @@
+{
+  "app": {
+    "compose_service": "app",
+    "environment_keys_compared": 7,
+    "changed_environment_keys": [],
+    "all_compose_environment_values_match_live": true,
+    "image_reference_matches": true,
+    "container_name_matches": true,
+    "network_mode": "host",
+    "configured_volume_references": []
+  },
+  "db": {
+    "compose_service": "db",
+    "environment_keys_compared": 3,
+    "changed_environment_keys": [],
+    "all_compose_environment_values_match_live": true,
+    "image_reference_matches": true,
+    "container_name_matches": true,
+    "network_mode": null,
+    "configured_volume_references": [
+      {
+        "type": "volume",
+        "source": "postgres_data",
+        "target": "/var/lib/postgresql/data",
+        "volume": {}
+      }
+    ]
+  },
+  "compose_project_name": "ollama-test",
+  "volume_definition": {
+    "postgres_data": {
+      "name": "ollama-test_postgres_data"
+    }
+  },
+  "credential_values_saved": false,
+  "production_changes": false
+}

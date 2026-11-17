@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "C03",
+  "repetition": 1,
+  "prompt_sha256": "ac694e91f7753e9cd6cc9ac3a2d86a8d439c341749e510d9079ffe48b8fdc3f7",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Write a Python function chunks(items, size). Input items is a list and size is an integer (not a boolean). Return a new list of consecutive sublists of at most size elements, preserving order. Keep a final short chunk. Empty items returns []. Raise ValueError if size <= 0, including for empty items. Do not mutate items or import modules. Return only the function definition, with no Markdown fences, decorators, type annotations, or explanation."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "bdadf701b46009747075da75ec23a3988ae067fc12a92b8f0586765413a8aa96"
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-08T13:14:51.810611+00:00",
+  "command": [
+    "systemctl",
+    "show",
+    "slurm-portal.service",
+    "--property=ActiveState,SubState,MainPID,WorkingDirectory,Result,NRestarts"
+  ],
+  "exit_code": 0,
+  "stdout": "MainPID=1565020\nResult=success\nNRestarts=0\nWorkingDirectory=/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release\nActiveState=active\nSubState=running\n",
+  "stderr": "",
+  "fallback": {
+    "pid": 2019096,
+    "present": true,
+    "start_ticks": "364346317"
+  },
+  "services_modified": false
+}

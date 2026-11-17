@@ -1,0 +1,14 @@
+from pathlib import Path
+import json,subprocess,datetime,urllib.request
+r=Path(Path('/tmp/nectec-chat-image-path.txt').read_text());plan=json.loads((r/'plan.json').read_text());before=json.loads((r/'evidence/preflight.json').read_text());image=json.loads((r/'evidence/image-validation.json').read_text())
+def get(a):
+ p=subprocess.run(a,capture_output=True,text=True,timeout=20);assert p.returncode==0,'Read-only verification command failed';return json.loads(p.stdout)
+a=get(['docker','inspect','local-ollama-chat'])[0];db=get(['docker','inspect','ollama-chat-db'])[0];appsame=(a['Id']==before['production_container']['id'] and a['Image']==before['production_container']['image'] and a['State']['StartedAt']==before['production_container']['started']);dbsame=(db['Id']==before['database']['id'] and db['Image']==before['database']['image'] and db['State']['StartedAt']==before['database']['started'] and db['Mounts'][0]['Name']==before['database']['volume']);assert appsame and dbsame
+assert get(['docker','image','inspect','local-ollama-chat:1.0'])[0]['Id']==plan['base_image_id'];assert get(['docker','image','inspect',plan['rollback_tag']])[0]['Id']==plan['base_image_id'];assert get(['docker','image','inspect',plan['candidate_tag']])[0]['Id']==image['candidate_image_id']
+base=['docker','compose','-p','ollama-test','-f','/home/lailai/ollama-test/docker-compose.yml'];baseconfig=get(base+['config','--format','json']);comparisons={}
+for name,tag in [('compose.security.yml',plan['candidate_tag']),('compose.rollback.yml',plan['rollback_tag'])]:
+ cfg=get(base+['-f',str(r/'config'/name),'config','--format','json']);assert cfg['services']['db']==baseconfig['services']['db'];assert cfg['volumes']==baseconfig['volumes'];expected=dict(baseconfig['services']['app']);expected.update(image=tag,pull_policy='never');assert cfg['services']['app']==expected
+ comparisons[name]={'only_app_image_and_pull_policy_change':True,'database_service_unchanged':True,'volumes_unchanged':True}
+with urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=10) as f:health=f.status
+left=subprocess.run(['docker','ps','-aq','--filter','label=nectec.chat-candidate='+r.name],capture_output=True,text=True);assert left.returncode==0 and not left.stdout.strip()
+result={'timestamp':datetime.datetime.now(datetime.timezone.utc).isoformat(),'production_app_identity_image_start_unchanged':appsame,'database_identity_image_start_and_volume_unchanged':dbsame,'database_health':db['State']['Health']['Status'],'production_http_health':health,'original_image_tag_still_base':True,'rollback_tag_still_base':True,'candidate_tag_matches_recorded_id':True,'compose_overrides':comparisons,'test_containers_remaining':0,'production_changes':False,'database_contents_queried':False};(r/'evidence/final-preservation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

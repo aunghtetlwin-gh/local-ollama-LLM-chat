@@ -1,0 +1,150 @@
+[
+  {
+    "path": "/home/lailai/slurm-portal/logs/uvicorn-8003.log",
+    "sha256": "39a1fbc04aa13cba5307b96c5d10e0bf2bfed992d10325935f05809758433e39",
+    "mtime_epoch": 1793167408.3245883,
+    "aggregate_requests": [
+      {
+        "method": "GET",
+        "path": "/admin/users",
+        "status": "200",
+        "count": 2
+      },
+      {
+        "method": "GET",
+        "path": "/admin/users",
+        "status": "401",
+        "count": 1
+      },
+      {
+        "method": "GET",
+        "path": "/admin/users",
+        "status": "403",
+        "count": 1
+      },
+      {
+        "method": "GET",
+        "path": "/auth/me",
+        "status": "401",
+        "count": 1
+      },
+      {
+        "method": "PATCH",
+        "path": "/admin/users/{username}/status",
+        "status": "200",
+        "count": 2
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users",
+        "status": "201",
+        "count": 1
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users",
+        "status": "400",
+        "count": 1
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users",
+        "status": "403",
+        "count": 2
+      },
+      {
+        "method": "POST",
+        "path": "/admin/users",
+        "status": "409",
+        "count": 1
+      },
+      {
+        "method": "POST",
+        "path": "/auth/login",
+        "status": "200",
+        "count": 4
+      },
+      {
+        "method": "POST",
+        "path": "/auth/login",
+        "status": "401",
+        "count": 1
+      }
+    ],
+    "limitation": "Historical HTTP status evidence, not identity-attributed proof of real researcher use or authorization assertions"
+  },
+  {
+    "path": "/home/lailai/slurm-portal/logs/uvicorn-8002.log",
+    "sha256": "a83a73f9d57e0d215f2e06038c0a6f15f467edf948c79e3fa46cdb5d8a75d2ec",
+    "mtime_epoch": 1793814263.2339084,
+    "aggregate_requests": [
+      {
+        "method": "GET",
+        "path": "/auth/me",
+        "status": "200",
+        "count": 154
+      },
+      {
+        "method": "GET",
+        "path": "/auth/me",
+        "status": "401",
+        "count": 1
+      },
+      {
+        "method": "GET",
+        "path": "/cluster/node",
+        "status": "200",
+        "count": 901
+      },
+      {
+        "method": "GET",
+        "path": "/jobs/active",
+        "status": "200",
+        "count": 901
+      },
+      {
+        "method": "GET",
+        "path": "/jobs/history",
+        "status": "200",
+        "count": 903
+      },
+      {
+        "method": "GET",
+        "path": "/jobs/{job_id}/output",
+        "status": "200",
+        "count": 6
+      },
+      {
+        "method": "GET",
+        "path": "/jobs/{job_id}/output",
+        "status": "404",
+        "count": 6
+      },
+      {
+        "method": "GET",
+        "path": "/openapi.json",
+        "status": "200",
+        "count": 3
+      },
+      {
+        "method": "GET",
+        "path": "/ui",
+        "status": "200",
+        "count": 2
+      },
+      {
+        "method": "POST",
+        "path": "/auth/login",
+        "status": "200",
+        "count": 1
+      },
+      {
+        "method": "POST",
+        "path": "/jobs",
+        "status": "200",
+        "count": 3
+      }
+    ],
+    "limitation": "Historical HTTP status evidence, not identity-attributed proof of real researcher use or authorization assertions"
+  }
+]

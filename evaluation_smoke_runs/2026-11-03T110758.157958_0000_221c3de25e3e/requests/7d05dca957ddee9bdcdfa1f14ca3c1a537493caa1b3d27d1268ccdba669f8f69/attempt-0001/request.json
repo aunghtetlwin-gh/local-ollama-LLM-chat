@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "I01",
+  "repetition": 1,
+  "prompt_sha256": "5c284b3c9977327fb773c2b2e965a23d20143c24f98f89aa77945ea574731c07",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "For the values 4, -2, 4, 10, return only a JSON object with exactly the keys count, sum, max and integer values. Do not include Markdown or explanations."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "7d05dca957ddee9bdcdfa1f14ca3c1a537493caa1b3d27d1268ccdba669f8f69"
+}

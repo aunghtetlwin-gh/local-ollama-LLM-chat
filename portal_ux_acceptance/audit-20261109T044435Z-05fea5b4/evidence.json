@@ -1,0 +1,365 @@
+{
+  "timestamp": "2026-11-09T04:44:35.832447+00:00",
+  "systemd": {
+    "argv": [
+      "systemctl",
+      "show",
+      "slurm-portal.service",
+      "--property=MainPID,ActiveState,SubState,WorkingDirectory,Result,NRestarts"
+    ],
+    "exit_code": 0,
+    "stdout": "MainPID=2610502\nResult=success\nNRestarts=0\nWorkingDirectory=/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release\nActiveState=active\nSubState=running\n",
+    "stderr": ""
+  },
+  "ports": {
+    "8001": {
+      "status": 200,
+      "operations": 16
+    },
+    "8002": {
+      "status": 200,
+      "operations": 16
+    }
+  },
+  "fallback": {
+    "pid": 2019096,
+    "present": true,
+    "start_ticks": "364346317"
+  },
+  "selected_environment": {
+    "PORTAL_AUTH_DB": "/home/lailai/slurm-portal/portal_users.db",
+    "PORTAL_OUTPUT_ROOTS": "[\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1\",\"/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2\"]"
+  },
+  "source_hashes": {
+    "slurm_identity.py": "37f24fc6d04162493bb6caa7e8d639c614dfc1b1c0519a937bb7ab2125870744",
+    "job_output.py": "9a50e06b181ba40b8bc8eedc4beb5c6d8aa736938ec990a785e5b9f29b8b588b",
+    "auth.py": "cae1cf4875fe66d7f2bb23d75ddf61613954d56157e69c0e11bd6f12dfc945d4",
+    "app.py": "fed3c86942a9164fbaef3d284045a8c3ec97a9f6a62a4695d506c274bd2d4ea3"
+  },
+  "frontend_sha256": "02ca086d552862613f817b24f8818b344d848d545fb91f8ded5f66a89adb8f8e",
+  "accounting": {
+    "argv": [
+      "sacct",
+      "-nPX",
+      "-j",
+      "112,114,115,123,124,125,126,127,128,129,130,131",
+      "-S",
+      "2026-09-01",
+      "--format=JobIDRaw,User,Submit,Eligible,Start,End,ElapsedRaw,State,StdOut%1024,WorkDir%1024"
+    ],
+    "exit_code": 0,
+    "stdout": "112|mangkud|2026-10-22T04:57:51|2026-10-22T04:57:51|2026-10-22T04:57:51|2026-10-22T04:59:52|121|COMPLETED|slurm-%j.out|/tmp\n114|mangkud|2026-10-22T05:18:05|2026-10-22T05:18:05|None|2026-10-22T05:18:05|0|CANCELLED by 1001|slurm-%j.out|/tmp\n115|mangkud|2026-10-22T06:11:42|2026-10-22T06:13:43|2026-10-22T06:14:11|2026-10-22T06:16:11|120|COMPLETED|slurm-%j.out|/tmp\n123|lailai|2026-11-04T08:23:32|2026-11-04T08:23:32|2026-11-04T08:23:32|2026-11-04T08:24:13|41|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-%j.out|/home/lailai/ollama-test\n124|lailai|2026-11-04T08:24:16|2026-11-04T08:24:16|2026-11-04T08:24:16|2026-11-04T08:24:59|43|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-%j.out|/home/lailai/ollama-test\n125|lailai|2026-11-04T08:24:16|2026-11-04T08:24:16|2026-11-04T08:24:16|2026-11-04T08:24:59|43|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-%j.out|/home/lailai/ollama-test\n126|lailai|2026-11-04T08:25:02|2026-11-04T08:25:02|2026-11-04T08:25:02|2026-11-04T08:25:42|40|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-%j.out|/home/lailai/ollama-test\n127|lailai|2026-11-04T08:25:44|2026-11-04T08:25:44|2026-11-04T08:25:45|2026-11-04T08:26:27|42|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-%j.out|/home/lailai/ollama-test\n128|lailai|2026-11-04T08:25:44|2026-11-04T08:25:44|2026-11-04T08:25:45|2026-11-04T08:26:27|42|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-%j.out|/home/lailai/ollama-test\n129|lailai|2026-11-04T08:26:30|2026-11-04T08:26:30|2026-11-04T08:26:30|2026-11-04T08:27:11|41|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-%j.out|/home/lailai/ollama-test\n130|lailai|2026-11-04T08:27:14|2026-11-04T08:27:14|2026-11-04T08:27:14|2026-11-04T08:27:57|43|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-%j.out|/home/lailai/ollama-test\n131|lailai|2026-11-04T08:27:14|2026-11-04T08:27:14|2026-11-04T08:27:14|2026-11-04T08:27:57|43|COMPLETED|/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-%j.out|/home/lailai/ollama-test\n",
+    "stderr": ""
+  },
+  "accounting_timezone": "UTC via TZ environment",
+  "jobs": [
+    {
+      "job_id": "112",
+      "owner": "mangkud",
+      "submit_utc": "2026-10-22T04:57:51",
+      "eligible_utc": "2026-10-22T04:57:51",
+      "start_utc": "2026-10-22T04:57:51",
+      "end_utc": "2026-10-22T04:59:52",
+      "elapsed_seconds": "121",
+      "state": "COMPLETED",
+      "stdout_pattern": "slurm-%j.out",
+      "workdir": "/tmp",
+      "policy_resolution": {
+        "status": "allowed",
+        "path": "/tmp/slurm-112.out"
+      },
+      "metadata_path": "/tmp/slurm-112.out",
+      "file_metadata": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "uid": 1001,
+        "gid": 1001,
+        "size": 41,
+        "mode": "0o644",
+        "nlink": 1,
+        "content_read": false
+      },
+      "expected_owner_uid": 1001,
+      "parent_metadata": [
+        {
+          "path": "/tmp",
+          "uid": 0,
+          "mode": "0o1777",
+          "symlink": false
+        },
+        {
+          "path": "/",
+          "uid": 0,
+          "mode": "0o755",
+          "symlink": false
+        }
+      ]
+    },
+    {
+      "job_id": "114",
+      "owner": "mangkud",
+      "submit_utc": "2026-10-22T05:18:05",
+      "eligible_utc": "2026-10-22T05:18:05",
+      "start_utc": "None",
+      "end_utc": "2026-10-22T05:18:05",
+      "elapsed_seconds": "0",
+      "state": "CANCELLED by 1001",
+      "stdout_pattern": "slurm-%j.out",
+      "workdir": "/tmp",
+      "policy_resolution": {
+        "status": "allowed",
+        "path": "/tmp/slurm-114.out"
+      },
+      "metadata_path": "/tmp/slurm-114.out",
+      "file_metadata": {
+        "exists": false,
+        "content_read": false
+      }
+    },
+    {
+      "job_id": "115",
+      "owner": "mangkud",
+      "submit_utc": "2026-10-22T06:11:42",
+      "eligible_utc": "2026-10-22T06:13:43",
+      "start_utc": "2026-10-22T06:14:11",
+      "end_utc": "2026-10-22T06:16:11",
+      "elapsed_seconds": "120",
+      "state": "COMPLETED",
+      "stdout_pattern": "slurm-%j.out",
+      "workdir": "/tmp",
+      "policy_resolution": {
+        "status": "allowed",
+        "path": "/tmp/slurm-115.out"
+      },
+      "metadata_path": "/tmp/slurm-115.out",
+      "file_metadata": {
+        "exists": true,
+        "regular": true,
+        "symlink": false,
+        "uid": 1001,
+        "gid": 1001,
+        "size": 0,
+        "mode": "0o644",
+        "nlink": 1,
+        "content_read": false
+      },
+      "expected_owner_uid": 1001,
+      "parent_metadata": [
+        {
+          "path": "/tmp",
+          "uid": 0,
+          "mode": "0o1777",
+          "symlink": false
+        },
+        {
+          "path": "/",
+          "uid": 0,
+          "mode": "0o755",
+          "symlink": false
+        }
+      ]
+    },
+    {
+      "job_id": "123",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:23:32",
+      "eligible_utc": "2026-11-04T08:23:32",
+      "start_utc": "2026-11-04T08:23:32",
+      "end_utc": "2026-11-04T08:24:13",
+      "elapsed_seconds": "41",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "124",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:24:16",
+      "eligible_utc": "2026-11-04T08:24:16",
+      "start_utc": "2026-11-04T08:24:16",
+      "end_utc": "2026-11-04T08:24:59",
+      "elapsed_seconds": "43",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "125",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:24:16",
+      "eligible_utc": "2026-11-04T08:24:16",
+      "start_utc": "2026-11-04T08:24:16",
+      "end_utc": "2026-11-04T08:24:59",
+      "elapsed_seconds": "43",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "126",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:25:02",
+      "eligible_utc": "2026-11-04T08:25:02",
+      "start_utc": "2026-11-04T08:25:02",
+      "end_utc": "2026-11-04T08:25:42",
+      "elapsed_seconds": "40",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "127",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:25:44",
+      "eligible_utc": "2026-11-04T08:25:44",
+      "start_utc": "2026-11-04T08:25:45",
+      "end_utc": "2026-11-04T08:26:27",
+      "elapsed_seconds": "42",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "128",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:25:44",
+      "eligible_utc": "2026-11-04T08:25:44",
+      "start_utc": "2026-11-04T08:25:45",
+      "end_utc": "2026-11-04T08:26:27",
+      "elapsed_seconds": "42",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "129",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:26:30",
+      "eligible_utc": "2026-11-04T08:26:30",
+      "start_utc": "2026-11-04T08:26:30",
+      "end_utc": "2026-11-04T08:27:11",
+      "elapsed_seconds": "41",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "130",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:27:14",
+      "eligible_utc": "2026-11-04T08:27:14",
+      "start_utc": "2026-11-04T08:27:14",
+      "end_utc": "2026-11-04T08:27:57",
+      "elapsed_seconds": "43",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    },
+    {
+      "job_id": "131",
+      "owner": "lailai",
+      "submit_utc": "2026-11-04T08:27:14",
+      "eligible_utc": "2026-11-04T08:27:14",
+      "start_utc": "2026-11-04T08:27:14",
+      "end_utc": "2026-11-04T08:27:57",
+      "elapsed_seconds": "43",
+      "state": "COMPLETED",
+      "stdout_pattern": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-%j.out",
+      "workdir": "/home/lailai/ollama-test"
+    }
+  ],
+  "output_http_events": [
+    {
+      "job_id": 114,
+      "status": 404,
+      "pid": "2610502",
+      "timestamp_us": "1794199165447022"
+    },
+    {
+      "job_id": 115,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199167383606"
+    },
+    {
+      "job_id": 114,
+      "status": 404,
+      "pid": "2610502",
+      "timestamp_us": "1794199168816106"
+    },
+    {
+      "job_id": 112,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199169788570"
+    },
+    {
+      "job_id": 115,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199184878403"
+    },
+    {
+      "job_id": 114,
+      "status": 404,
+      "pid": "2610502",
+      "timestamp_us": "1794199186345743"
+    },
+    {
+      "job_id": 115,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199195033987"
+    },
+    {
+      "job_id": 114,
+      "status": 404,
+      "pid": "2610502",
+      "timestamp_us": "1794199209906016"
+    },
+    {
+      "job_id": 115,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199243064797"
+    },
+    {
+      "job_id": 114,
+      "status": 404,
+      "pid": "2610502",
+      "timestamp_us": "1794199245248353"
+    },
+    {
+      "job_id": 112,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199268139038"
+    },
+    {
+      "job_id": 112,
+      "status": 200,
+      "pid": "2610502",
+      "timestamp_us": "1794199289132566"
+    }
+  ],
+  "journal_exit": 0,
+  "user_reported_order": [
+    130,
+    131,
+    129,
+    127,
+    128,
+    126,
+    124,
+    125,
+    123
+  ],
+  "browser_output_observations": {
+    "provenance": "user reported authorized mangkud browser observations",
+    "115": "empty panel",
+    "114": "Job output not found",
+    "112": "successful output; private contents not independently read or retained"
+  },
+  "real_job_output_contents_read": false
+}

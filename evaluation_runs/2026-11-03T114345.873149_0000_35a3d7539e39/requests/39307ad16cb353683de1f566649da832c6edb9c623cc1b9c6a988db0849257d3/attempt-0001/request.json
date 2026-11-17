@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:1.7b",
+  "question_id": "R01",
+  "repetition": 1,
+  "prompt_sha256": "c0d2a7746e0047f95a5cc1f3c39af5b20d9ae51820c94e18bbf9511eb85dc6d8",
+  "payload": {
+    "model": "qwen3:1.7b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "A device has capacity 18 units. Instance A uses 4 units, B uses 6, and C uses 9. Choose exactly three instances, allowing repetition, maximizing usage without exceeding capacity. Return only a JSON object with exactly the keys A, B, C for their counts and total for total usage. All values must be integers."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "39307ad16cb353683de1f566649da832c6edb9c623cc1b9c6a988db0849257d3"
+}

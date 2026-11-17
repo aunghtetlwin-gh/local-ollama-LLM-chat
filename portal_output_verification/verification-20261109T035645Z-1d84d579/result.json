@@ -1,0 +1,35 @@
+{
+  "status": "FAILED",
+  "scope": "read-only automated verification; authenticated browser acceptance pending",
+  "expected_version": "portal-output-20261108T132323Z-eb2dad35",
+  "actual_release_directory": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release",
+  "expected_release_directory": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release",
+  "managed_pid": 1565020,
+  "port8001_operations": 16,
+  "port8002_operations": 16,
+  "checks_passed": 29,
+  "checks_failed": [
+    "reviewed_release_directory",
+    "all_deployed_sources_match",
+    "dropin_matches_reviewed_bytes",
+    "exact_nine_directory_policy",
+    "deployed_resolver_metadata_only_9_paths_4_denials"
+  ],
+  "rollback_backup": {
+    "path": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35-before-deploy",
+    "present": false,
+    "previous_override_present": false
+  },
+  "pending": [
+    "Resolve deployment discrepancy in the authorized operator SSH terminal; no automatic repair performed",
+    "Only after actual candidate activation: owner browser checks for 127/129, login/session/logout, authenticated CSRF and role checks, authorized standard-output check"
+  ],
+  "services_modified": false,
+  "production_accounts_or_records_modified": false,
+  "real_job_output_contents_read": false,
+  "timestamp": "2026-11-09T03:56:45.722026+00:00",
+  "evidence_directory": "/home/lailai/ollama-test/portal_output_verification/verification-20261109T035645Z-1d84d579",
+  "actual_version": "portal-security-v1-b893d3a5f7c1",
+  "expected_release_directory_present": false,
+  "initial_incomplete_attempt": "/home/lailai/ollama-test/portal_output_verification/verification-20261109T035604Z-b4e35b57"
+}

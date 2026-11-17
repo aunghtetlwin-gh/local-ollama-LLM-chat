@@ -1,0 +1,22 @@
+{
+  "consulted_utc": "2026-11-04T10:28:12.536232+00:00",
+  "sources": [
+    {
+      "title": "OWASP CSRF Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+    },
+    {
+      "title": "OWASP Session Management Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+    },
+    {
+      "title": "SchedMD cgroup.conf",
+      "url": "https://slurm.schedmd.com/cgroup.conf.html"
+    },
+    {
+      "title": "NVIDIA When to Use MPS",
+      "url": "https://docs.nvidia.com/deploy/mps/when-to-use-mps.html"
+    }
+  ],
+  "note": "Interpretive primary guidance, not evidence that this deployment passed a test"
+}

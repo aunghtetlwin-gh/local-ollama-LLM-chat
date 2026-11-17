@@ -1,0 +1,23 @@
+{
+  "REPORT.md": "d85e7c34742f819c9f59ebfce32627ea6f839ac5b346f3115f747a399b264054",
+  "acceptance.csv": "75f81f79149b18d96a6356972d6293b896d8956effa395205409a38abc390557",
+  "checks.json": "c8f491abac0d83ee789d55e248bbfa99d1dbb3c6fef4dbe15b2cfb6e55278a55",
+  "evidence/deployed-hashes.json": "6bcf540d4bb1e38bfde206715bcbca43e0ef6a5582b22627a536deb3d7f3ad65",
+  "evidence/deployed-path-resolution.json": "d7aaaffcf883d94080c1d28ebc25a729d8a4e16fa6981620cb96a798c3cb02da",
+  "evidence/fallback.json": "280508aacae212451a39289429e882cbd07a09c167774714645e2cf797b16702",
+  "evidence/fixture-provenance.json": "1575d906e89da737c7efd4000670d0567fd44a17e3e9916bddcc83e7900fec2b",
+  "evidence/fresh-synthetic-fixtures.json": "433127a22057803e9b0808903c5f22c50c6fa7ed682c9c180d7a001d98aead42",
+  "evidence/historical-file-metadata.json": "cfa8ccc1eea9ff05cfc357f355a9034394768f7af0a3bc857614caab32beaa4e",
+  "evidence/openapi8001.json": "5a1bf337cddf0f27b38ce65777377c623687bc620e9c0b5812d6fcc617e5d47e",
+  "evidence/policy-hashes.json": "3a77d6ed250df51b44110e88a254eb0a8fd5a575490c9e0e5802c6fde7f1fc3c",
+  "evidence/preserved-accounting-resolution.json": "b1805a3f9aaea80a5a81ce9dde628b028102628f77f02e8b6bd992f58249c6b4",
+  "evidence/rollback-backup.json": "6c90c6f3ee8966302162dc7f7d3bcfda35b6be21191658061f17dfb34c4e7bb2",
+  "evidence/rollback-source-checks.json": "bdfb737a2bfa0a7f69c8649f703504bdc5ed2150931a4d1f9e9bcd8f20609f1e",
+  "evidence/running-process.json": "3bbdb7cff498cb2c08f30946c4bd293676f64a78f09d4be484ebb6a5ce44a68b",
+  "evidence/startup-log-review.json": "c4f1d41cf7285097ea512500b3c2885e9461a3cdfc48841fffd48117287fa1fe",
+  "evidence/synthetic-command.json": "9d11a7ad84fd2edab113b724a885262a9783cb3f365aa0d4550e50546a7892ef",
+  "evidence/systemd.json": "689a8c8ccb7278fa467dd69daaec04b83064bae7a058517a5963a714360bfb0a",
+  "result.json": "8b7f6b7a7a460c34bfb5bf3e348cc91dfa074a92c0256d0fd1966b1e262387ba",
+  "synthetic_readonly.py": "7b7e166ebb6d7d2b31ef21eefb8a4d006abde437e28f912f5a0ee106fabb4a03",
+  "verify_readonly.py": "67b60aa9e1a44e022d184bc7dd0a844ca8df29842e2d3348c9658586fedaa5e0"
+}

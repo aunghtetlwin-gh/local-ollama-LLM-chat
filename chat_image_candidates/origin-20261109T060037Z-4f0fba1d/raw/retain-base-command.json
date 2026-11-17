@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "docker",
+    "tag",
+    "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+    "local-ollama-chat:pre-origin-20261109T060037Z-4f0fba1d"
+  ],
+  "exit_code": 0,
+  "started_or_recorded": "2026-11-09T06:08:31.344011+00:00"
+}

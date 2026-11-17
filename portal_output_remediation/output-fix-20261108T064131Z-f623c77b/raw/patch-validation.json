@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "patch",
+    "--batch",
+    "--forward",
+    "-p1",
+    "-i",
+    "/home/lailai/ollama-test/portal_output_remediation/output-fix-20261108T064131Z-f623c77b/patches/historical-output.patch"
+  ],
+  "scope": "temporary copy only",
+  "exit_code": 0,
+  "stdout": "patching file app.py\npatching file job_output.py\n",
+  "stderr": "",
+  "patched_files_match_candidate": {
+    "app.py": true,
+    "job_output.py": true
+  }
+}

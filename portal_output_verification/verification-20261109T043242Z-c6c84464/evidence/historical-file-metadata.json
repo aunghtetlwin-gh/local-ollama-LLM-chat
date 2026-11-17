@@ -1,0 +1,83 @@
+[
+  {
+    "job_id": 123,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-baseline-job1/slurm-123.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 124,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job1/slurm-124.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 125,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r1-concurrent-job2/slurm-125.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 126,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-baseline-job1/slurm-126.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 127,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job1/slurm-127.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 128,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r2-concurrent-job2/slurm-128.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 129,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-baseline-job1/slurm-129.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 130,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job1/slurm-130.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  },
+  {
+    "job_id": 131,
+    "path": "/home/lailai/slurm_contention_runs/mps-20261104T082034Z-cee9c5d4/jobs/r3-concurrent-job2/slurm-131.out",
+    "uid": 1000,
+    "size": 0,
+    "nlink": 1,
+    "regular": true,
+    "content_read": false
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "docker",
+    "image",
+    "inspect",
+    "local-ollama-chat:origin-20261109T060037Z-4f0fba1d"
+  ],
+  "exit_code": 0,
+  "started_or_recorded": "2026-11-09T06:08:32.240029+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "SUCCESS",
+  "scope": "read-only automated verification; authenticated browser acceptance pending",
+  "expected_version": "portal-output-20261108T132323Z-eb2dad35",
+  "actual_release_directory": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release",
+  "expected_release_directory": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35/portal-release",
+  "managed_pid": 2610502,
+  "port8001_operations": 16,
+  "port8002_operations": 16,
+  "checks_passed": 37,
+  "checks_failed": [],
+  "rollback_backup": {
+    "path": "/home/lailai/nectec-changes/portal-output-20261108T132323Z-eb2dad35-before-deploy",
+    "present": true,
+    "previous_override_present": true,
+    "previous_override_matches_predeploy": true,
+    "source_checks": {
+      "app.py": {
+        "present": true,
+        "matches": true
+      },
+      "auth.py": {
+        "present": true,
+        "matches": true
+      },
+      "slurm_identity.py": {
+        "present": true,
+        "matches": true
+      }
+    },
+    "base_unit_backup_present": true,
+    "directory_mode": "0o700"
+  },
+  "pending": [
+    "Owner lailai checks jobs 127/129: expect HTTP200 empty output if records/files remain current",
+    "Existing administrator/researcher login, controls, session/logout after deployment",
+    "Authenticated CSRF denial and researcher denial of administrator routes with approved non-job-mutating tests",
+    "Authorized existing standard-output job browser check if available"
+  ],
+  "services_modified": false,
+  "production_accounts_or_records_modified": false,
+  "real_job_output_contents_read": false,
+  "timestamp": "2026-11-09T04:32:42.764642+00:00",
+  "evidence_directory": "/home/lailai/ollama-test/portal_output_verification/verification-20261109T043242Z-c6c84464",
+  "fresh_synthetic_checks": 6,
+  "saved_accounting_paths_verified": [
+    127,
+    129
+  ],
+  "verification_completed_at": "2026-11-09T04:34:23.600517+00:00"
+}

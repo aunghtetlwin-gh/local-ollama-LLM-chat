@@ -1,0 +1,6 @@
+suite,passed,failures,errors,skipped,exit_code,junit_seconds,log,exact_command
+portal-host,96,0,0,0,0,16.082,raw/portal-host.log,raw/portal-host-command.json
+chat-host,35,0,0,0,0,1.1299999999999997,raw/chat-host.log,raw/chat-host-command.json
+postgres-host,11,0,0,0,0,1.2059999999999995,raw/postgres-host.log,raw/postgres-host-command.json
+portal-characterization-host,2,0,0,0,0,0.31299999999999994,raw/portal-characterization-host.log,raw/portal-characterization-host-command.json
+chat-characterization-host,2,0,0,0,0,0.098,raw/chat-characterization-host.log,raw/chat-characterization-host-command.json

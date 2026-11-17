@@ -1,0 +1,37 @@
+{
+  "argv": [
+    "/tmp/conversation-isolation-tools/bin/python",
+    "-c",
+    "from unittest.mock import patch; import pytest;\nwith patch('dotenv.load_dotenv',return_value=False):\n raise SystemExit(pytest.main(['-p', 'no:cacheprovider', '-vv', '--tb=short', '/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_security.py', '/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_characterization.py', '/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_remediations.py', '--junitxml=/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/raw/portal-1.xml']))"
+  ],
+  "cwd": "/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/portal",
+  "shell_command": "/tmp/conversation-isolation-tools/bin/python -c 'from unittest.mock import patch; import pytest;\nwith patch('\"'\"'dotenv.load_dotenv'\"'\"',return_value=False):\n raise SystemExit(pytest.main(['\"'\"'-p'\"'\"', '\"'\"'no:cacheprovider'\"'\"', '\"'\"'-vv'\"'\"', '\"'\"'--tb=short'\"'\"', '\"'\"'/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_security.py'\"'\"', '\"'\"'/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_characterization.py'\"'\"', '\"'\"'/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/tests/test_portal_remediations.py'\"'\"', '\"'\"'--junitxml=/home/lailai/ollama-test/security_remediation/remediation-20261104T111222Z-e4089eae/raw/portal-1.xml'\"'\"']))'",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "started_epoch": 1793791187.6840353,
+  "sources_sha256": {
+    "chat/auth.py": "640e7149c3804a8da4b6d6c4330236f73abd917029bd84af4c95f2cc872111f7",
+    "chat/database.py": "5f312dd7266f2b000a7b8a1bac37cbcb34e646dc1f5c6107b1b386f6361d971e",
+    "chat/integration_tests/test_postgres_isolation.py": "08b9620bc577570a2499b6cf983f41312e532bdb13c33f2db8cceef33618fac3",
+    "chat/migrate.py": "6aa86ebaa4f6152250dc720d41ba6cc8723b9f41396701080295b35cd097ad98",
+    "chat/server.py": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+    "chat/tests/conftest.py": "823e649f5f7b0e96e11e77bc7e351035714b9d4ac13876701900b4ad46fe0b4d",
+    "chat/tests/test_auth.py": "6bc8bec0c3d453973f0197e60c2e87b35b70faaab4d812455fbef57ca3aa0f3c",
+    "chat/tests/test_conversation_access.py": "aaa49a61fcb46c456758a59d495a4ac074425924a42c410d496ec40b825a5de3",
+    "chat/tests/test_migrations.py": "b5d6c951f9dee4e56539a2b35c3903001bf7dfe12d0615322148e9fc08f2a061",
+    "harness_check/test_expected_failure.py": "b716dcb7489a01a6dc17791cc4fc491cfd673736747c62d019a37a931778f996",
+    "portal/app.py": "2ae0f5197826872fd87f3fca922ba2354489855e78fe89b7ba05d780c3a58af1",
+    "portal/auth.py": "8f3d0fe261373222f7c64082d44b8b7b81ec5a3af73acdbd6221487a9d351cd6",
+    "portal/slurm_identity.py": "37f24fc6d04162493bb6caa7e8d639c614dfc1b1c0519a937bb7ab2125870744",
+    "run_tests.py": "2909092ce3895af3759a5a73b79f2f05943f1f2ec63d06d4e281bdbb6926b225",
+    "tests/test_chat_characterization.py": "5ef91b21fa34dab54c1d89b0e4090d70fe25610c925da5cf14b1911269bbd42e",
+    "tests/test_chat_origin.py": "cf62aa9d752946590ff8922b7b984f7774370edb605d821450c714e807a9858e",
+    "tests/test_portal_characterization.py": "8d85b9130db451229c8387704ed4657a1dae5b46875ef04a37a11aef40af3413",
+    "tests/test_portal_remediations.py": "78c8a04289a5ca1fe495e46cf2f399831a214143ad21d85dd326df239449fa1e",
+    "tests/test_portal_security.py": "5f6cf29d8cda395efde9bde912f0aae3065d89364851ffadd82461ececc1d54d"
+  },
+  "exit_code": 0,
+  "ended_epoch": 1793791205.8409178
+}

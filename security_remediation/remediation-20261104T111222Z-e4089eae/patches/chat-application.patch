@@ -1,0 +1,55 @@
+--- a/server.py
++++ b/server.py
+@@ -1,6 +1,7 @@
+ import json
+ import urllib.error
+ import urllib.request
++from urllib.parse import urlsplit
+ from pathlib import Path
+ 
+ import psycopg
+@@ -34,8 +35,44 @@
+     return await request_validation_exception_handler(request, error)
+ 
+ 
++def request_origin(value: str, *, referer: bool = False):
++    """Canonical HTTP(S) origin; reject ambiguous Origin values and credentials."""
++    try:
++        if not value or value != value.strip() or any(c.isspace() for c in value):
++            return None
++        parsed = urlsplit(value)
++        if parsed.scheme not in {"http", "https"} or not parsed.hostname:
++            return None
++        if parsed.username is not None or parsed.password is not None:
++            return None
++        if not referer and (parsed.path or "?" in value or "#" in value):
++            return None
++        if parsed.fragment:
++            return None
++        port = parsed.port if parsed.port is not None else (443 if parsed.scheme == "https" else 80)
++        if port <= 0:
++            return None
++        return parsed.scheme, parsed.hostname.lower(), port
++    except ValueError:
++        return None
++
++
+ @my_api.middleware("http")
+ async def private_responses(request: Request, call_next):
++    if request.method in {"POST", "PUT", "PATCH", "DELETE"}:
++        # Use the ASGI request origin; never trust X-Forwarded-Host here.
++        # Reverse proxies must preserve Host and supply scheme through trusted server config.
++        target = request_origin(f"{request.url.scheme}://{request.url.netloc}")
++        origins = request.headers.getlist("origin")
++        referers = request.headers.getlist("referer")
++        if origins:
++            source = request_origin(origins[0]) if len(origins) == 1 else None
++        else:
++            source = request_origin(referers[0], referer=True) if len(referers) == 1 else None
++        if target is None or source != target:
++            return JSONResponse(status_code=403,
++                                content={"detail": "Same-origin request required."},
++                                headers={"Cache-Control": "no-store"})
+     response = await call_next(request)
+     response.headers["Cache-Control"] = "no-store"
+     return response

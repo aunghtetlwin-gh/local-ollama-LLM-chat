@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/tmp/nectec_security_deployment.py"
+  ],
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "execution": "approved read-only host metadata capture outside sandbox",
+  "reproducible_source": "capture_deployment.py",
+  "individual_read_commands": "evidence/deployment_metadata.json: commands",
+  "note": "No application endpoint, production database, GPU API, workload or service control called."
+}

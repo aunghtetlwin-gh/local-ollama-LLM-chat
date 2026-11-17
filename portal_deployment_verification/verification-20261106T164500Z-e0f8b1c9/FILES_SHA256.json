@@ -1,0 +1,17 @@
+{
+  "REPORT.md": "dec5d0f8c4bbd9ad7607627783f6306139be6559e0b0c5d40286e32fa1a3eba6",
+  "acceptance.csv": "f378f05b40bb59685a7dd8a1ed4755e78111f5ee0e08c6dcd39a823660ef55a7",
+  "acceptance.json": "0efed411c04e50d38298492e427833e816d3d7ee3b521ab4f629c788b9c07091",
+  "evidence/deployed-source-hashes.json": "2ba4643fe2cd3ace7febf58642603e49e99d9821dad7707d8c01ae7e453b9468",
+  "evidence/fallback-process.json": "e91dd47804f06831574fef82142e321d09bc1c2ab465f0e595a574ac4a4f7777",
+  "evidence/openapi-8001.json": "5a1bf337cddf0f27b38ce65777377c623687bc620e9c0b5812d6fcc617e5d47e",
+  "evidence/openapi-8002.json": "3c5025bae58c6c18d458834402fa3a41f71d8c98be4d8e795176b1fa9fe216cf",
+  "evidence/running-process.json": "f0c199c57ea264c96ce0c30e6d742afc1cd9a8d601e8d809a83cafe45d6d814e",
+  "evidence/seal-verification.json": "2fcbecc645e0ab325a7ecc37cf5b222b0fc485ae7e93e9f6c8e67e50399f3d6c",
+  "evidence/startup-log-review.json": "bdc51859f2f4aaee6b4d52fa5e0ab1a467c506dffdb67b75ca81e2f3d8ab2bea",
+  "evidence/systemd-properties.json": "7d15b4f9fd7b10d8753f4e75129a707c3acd243e9ec7a9bd4c4c3764d3a78958",
+  "output_validation.json": "7d5ce6b319791338745d9b193e95e2444a5a60f87287caa423164acdbf635825",
+  "result.json": "eb368b13432854dc6fc471e3abfeb708f4c22b3867c77e2a89bcfef3210c4c24",
+  "verification-plan.json": "18f9901b7c706897f92b6c9386774e5cbed8866406e153a600a27b68cd853a83",
+  "verify_portal.py": "edc15c284a3c6100110a5537fc693dfe12a21372934e32f66f4956181794e8b7"
+}

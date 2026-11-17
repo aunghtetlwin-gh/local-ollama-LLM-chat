@@ -1,0 +1,261 @@
+[
+  {
+    "source_path": "/home/lailai/slurm-portal/app.py",
+    "snapshot_path": "evidence/source_snapshot/portal/app.py",
+    "bytes": 34251,
+    "sha256": "3d2ff18c2fd38aea30e648a901858e58a72bf2def8e877499ee6d88ff61d0105",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/auth.py",
+    "snapshot_path": "evidence/source_snapshot/portal/auth.py",
+    "bytes": 6537,
+    "sha256": "ccdc0c0282334a8e92bc5b37d5fab80520ae83268a7188c5b88ad44b4026f86f",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/slurm_identity.py",
+    "snapshot_path": "evidence/source_snapshot/portal/slurm_identity.py",
+    "bytes": 2270,
+    "sha256": "57b2c7a69a66c1da8e208de3ab320ca06004fb999ecb58640f391cd1d74717c1",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/frontend.html",
+    "snapshot_path": "evidence/source_snapshot/portal/frontend.html",
+    "bytes": 71812,
+    "sha256": "02ca086d552862613f817b24f8818b344d848d545fb91f8ded5f66a89adb8f8e",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/auth.py",
+    "snapshot_path": "evidence/source_snapshot/chat/auth.py",
+    "bytes": 6983,
+    "sha256": "640e7149c3804a8da4b6d6c4330236f73abd917029bd84af4c95f2cc872111f7",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/server.py",
+    "snapshot_path": "evidence/source_snapshot/chat/server.py",
+    "bytes": 17455,
+    "sha256": "19f4c324aeea22333412dc3c58b4d158881e70859dfca159498ad3777a203967",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/database.py",
+    "snapshot_path": "evidence/source_snapshot/chat/database.py",
+    "bytes": 512,
+    "sha256": "5f312dd7266f2b000a7b8a1bac37cbcb34e646dc1f5c6107b1b386f6361d971e",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/migrate.py",
+    "snapshot_path": "evidence/source_snapshot/chat/migrate.py",
+    "bytes": 2194,
+    "sha256": "6aa86ebaa4f6152250dc720d41ba6cc8723b9f41396701080295b35cd097ad98",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/index.html",
+    "snapshot_path": "evidence/source_snapshot/chat/index.html",
+    "bytes": 33782,
+    "sha256": "9bfa8401868067470af288265e159fec97d4ef47ac3c73bf00a17ce9dc736138",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/docker-compose.yml",
+    "snapshot_path": "evidence/source_snapshot/chat/docker-compose.yml",
+    "bytes": 997,
+    "sha256": "96b04f784cf443fedbf2b88f74476b2be533f386171aa84755f3fb83d0521e76",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/Dockerfile",
+    "snapshot_path": "evidence/source_snapshot/chat/Dockerfile",
+    "bytes": 380,
+    "sha256": "131531e0bc95802696d9741b82b6106dcfce29d66aa848e8a6976aa9d8269536",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/requirements.txt",
+    "snapshot_path": "evidence/source_snapshot/chat/requirements.txt",
+    "bytes": 78,
+    "sha256": "2af6a484f2ebe5a8d9b246325fe83343ccc72096bde992c1612502da9798eb0f",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/requirements-dev.txt",
+    "snapshot_path": "evidence/source_snapshot/chat/requirements-dev.txt",
+    "bytes": 49,
+    "sha256": "c23feb58b6f9cab899b3e457b6cad56158f5315b366cd0f7a210feef72af395b",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/tests/conftest.py",
+    "snapshot_path": "evidence/source_snapshot/chat/tests/conftest.py",
+    "bytes": 3785,
+    "sha256": "b44d397d487d87b184e1af57958a9f2d4b8899e6b9b058386711828f62ef6807",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/tests/test_auth.py",
+    "snapshot_path": "evidence/source_snapshot/chat/tests/test_auth.py",
+    "bytes": 6260,
+    "sha256": "6bc8bec0c3d453973f0197e60c2e87b35b70faaab4d812455fbef57ca3aa0f3c",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/tests/test_conversation_access.py",
+    "snapshot_path": "evidence/source_snapshot/chat/tests/test_conversation_access.py",
+    "bytes": 4133,
+    "sha256": "023569c631ecd934f59a0b9d14d8aa46a2d7738b8924938a6d81a540cd786e00",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/tests/test_migrations.py",
+    "snapshot_path": "evidence/source_snapshot/chat/tests/test_migrations.py",
+    "bytes": 3496,
+    "sha256": "b5d6c951f9dee4e56539a2b35c3903001bf7dfe12d0615322148e9fc08f2a061",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/integration_tests/ISOLATION_REPORT.md",
+    "snapshot_path": "evidence/source_snapshot/chat/integration_tests/ISOLATION_REPORT.md",
+    "bytes": 8044,
+    "sha256": "14bb6a99d707fb12102c8456ab3836da93d7d403c1cff5fa63fb123522ba148d",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/integration_tests/test_postgres_isolation.py",
+    "snapshot_path": "evidence/source_snapshot/chat/integration_tests/test_postgres_isolation.py",
+    "bytes": 8307,
+    "sha256": "7d59fc30fb05b181e02e18822390ad9374c0ecce931e05696ecb8a3e96a5f7e8",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/migrations/001_users_sessions.sql",
+    "snapshot_path": "evidence/source_snapshot/chat/migrations/001_users_sessions.sql",
+    "bytes": 823,
+    "sha256": "4f826d68c53e588c1588fa89dd76401fd6feb7b7caf32550ba6ed5db3adf7e55",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/ollama-test/migrations/002_conversation_ownership.sql",
+    "snapshot_path": "evidence/source_snapshot/chat/migrations/002_conversation_ownership.sql",
+    "bytes": 1426,
+    "sha256": "31d98abe670e4eb8f863e0ccf1eab31c74ffef749ea143306955f582d95ffba5",
+    "role": "checked-out source or existing test/report"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_admin_users.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_admin_users.py",
+    "bytes": 809,
+    "sha256": "ddb605c0c6c56b590878736c917a10dcbbbb8ce19d079028aea8e834f91970d1",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_auth_app.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_auth_app.py",
+    "bytes": 216,
+    "sha256": "969ab0d65bd119b9a5e59628ace3e0774ee707eb9f64b628cd46a32d8d21e5ad",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_cancel_authorization.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_cancel_authorization.py",
+    "bytes": 3820,
+    "sha256": "f6e753575cc90887cf87f1883cb756829964361146a4b8b5337e477ec1dcb3c1",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_existing_job_access.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_existing_job_access.py",
+    "bytes": 1814,
+    "sha256": "5497b0e969f9a4a33702f78874fb2a9789e6cb072629e0a0c4bcc182bfb9ee1c",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_history_visibility.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_history_visibility.py",
+    "bytes": 1997,
+    "sha256": "941fe07dcc7dcf65495c07274dc31aad40fb57e9eb431f1d857b361633ed215b",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_job_ownership.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_job_ownership.py",
+    "bytes": 3026,
+    "sha256": "553df29c5027a1f3b5bf15126f572c8ab640a1e2cc39459dbdd3d19a4825aa89",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_job_visibility.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_job_visibility.py",
+    "bytes": 1430,
+    "sha256": "afbb789f3250aec2ae87cbcfde5213243036b20a31e648c076a3bdfbb7a96b8c",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_management_ownership.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_management_ownership.py",
+    "bytes": 2857,
+    "sha256": "d484971554d8504b65777cd1e95a6af8a41a58e60b19b6aa7542a4c46a1d0a7a",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_multiuser_submit.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_multiuser_submit.py",
+    "bytes": 1427,
+    "sha256": "6f767e78cb3a37f80b9f4e400f119c9b234cd2822a3de03c1d4c5a353b1988a3",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_multiuser_visibility.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_multiuser_visibility.py",
+    "bytes": 2763,
+    "sha256": "60474a3b6975c65e45f6f7d77c3a8108fd31571b3c2688ecca97aa132b6eb425",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_output_access.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_output_access.py",
+    "bytes": 1731,
+    "sha256": "2eaa9541cb5064c4d30c4ee724e8ae851907ed0f62fd1dc9b8ccf2a3094361ed",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_rbac.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_rbac.py",
+    "bytes": 1793,
+    "sha256": "a44f7f78303b943803c525f19865a108389985207e7f613e9c93eb5de165bbe1",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_requeue.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_requeue.py",
+    "bytes": 2439,
+    "sha256": "b94b8c677a6b7d16bbe1a1ce725230c09cb410e03ca9a217e9ffb35e395a70b3",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/test_user_management.py",
+    "snapshot_path": "evidence/source_snapshot/portal/test_user_management.py",
+    "bytes": 5072,
+    "sha256": "a7b25f05524aa9db1c1f63c4098368db6c5d9bd240a9949acfe89129325a0263",
+    "role": "existing live integration script; inspected, NOT executed"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/logs/uvicorn-8002.log",
+    "snapshot_path": "evidence/source_snapshot/portal/logs/uvicorn-8002.log",
+    "bytes": 189542,
+    "sha256": "f874f4825b8b56f17245527aa6d4311499b18d56685102b5454e8d4e28c83c94",
+    "role": "historical access log; no complete assertion transcript"
+  },
+  {
+    "source_path": "/home/lailai/slurm-portal/logs/uvicorn-8003.log",
+    "snapshot_path": "evidence/source_snapshot/portal/logs/uvicorn-8003.log",
+    "bytes": 1530,
+    "sha256": "39a1fbc04aa13cba5307b96c5d10e0bf2bfed992d10325935f05809758433e39",
+    "role": "historical access log; no complete assertion transcript"
+  }
+]

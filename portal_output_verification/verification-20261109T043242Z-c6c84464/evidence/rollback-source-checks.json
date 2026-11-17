@@ -1,0 +1,9 @@
+{
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/app.py": true,
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/auth.py": true,
+  "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16/portal-release/slurm_identity.py": true,
+  "/home/lailai/slurm-portal/app.py": true,
+  "/home/lailai/slurm-portal/auth.py": true,
+  "/home/lailai/slurm-portal/slurm_identity.py": true,
+  "/home/lailai/slurm-portal/frontend.html": true
+}

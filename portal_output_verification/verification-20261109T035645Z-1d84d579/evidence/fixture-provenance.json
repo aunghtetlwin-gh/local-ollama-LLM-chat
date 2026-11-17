@@ -1,0 +1,6 @@
+{
+  "junit": "/home/lailai/ollama-test/portal_release_candidates/portal-output-20261108T132323Z-eb2dad35/raw/rerun-20261108T132602Z-c17eab/portal-tests.xml",
+  "rerun_now": false,
+  "scope": "sealed isolated candidate cases; not a fresh production test",
+  "deployed_sources_match_tested_candidate": false
+}

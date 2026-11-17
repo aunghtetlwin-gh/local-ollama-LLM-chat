@@ -1,0 +1,57 @@
+[
+  {
+    "suite": "portal-host",
+    "passed": 96,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "junit_seconds": 16.082,
+    "log": "raw/portal-host.log",
+    "exact_command": "raw/portal-host-command.json"
+  },
+  {
+    "suite": "chat-host",
+    "passed": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "junit_seconds": 1.1299999999999997,
+    "log": "raw/chat-host.log",
+    "exact_command": "raw/chat-host-command.json"
+  },
+  {
+    "suite": "postgres-host",
+    "passed": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "junit_seconds": 1.2059999999999995,
+    "log": "raw/postgres-host.log",
+    "exact_command": "raw/postgres-host-command.json"
+  },
+  {
+    "suite": "portal-characterization-host",
+    "passed": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "junit_seconds": 0.31299999999999994,
+    "log": "raw/portal-characterization-host.log",
+    "exact_command": "raw/portal-characterization-host-command.json"
+  },
+  {
+    "suite": "chat-characterization-host",
+    "passed": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "junit_seconds": 0.098,
+    "log": "raw/chat-characterization-host.log",
+    "exact_command": "raw/chat-characterization-host-command.json"
+  }
+]

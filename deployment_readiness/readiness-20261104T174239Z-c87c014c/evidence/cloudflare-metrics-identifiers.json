@@ -1,0 +1,6 @@
+{
+  "endpoint": "http://127.0.0.1:20241/metrics",
+  "status": "read-only metrics",
+  "identifiers": {},
+  "raw_metrics_saved": false
+}

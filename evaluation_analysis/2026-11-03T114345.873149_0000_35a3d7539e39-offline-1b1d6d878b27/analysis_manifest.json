@@ -1,0 +1,14 @@
+{
+  "input_manifest_sha256": "81aa6ab4517bd52c560e21b867c4151ec691fb7e9e8e242873b9d1f13c1b4ac3",
+  "plan_sha256": "02092cbc6676e45522a73df35682e50aa2c7e1211aefa40d79664498d56e2c14",
+  "reference_hashes": {
+    "internal_v2": "c1141a95943bae86c224d864a16018c5e9953a290b209b74988d4d7ac3d5088a",
+    "gsm8k_50_v1": "23d0ec7773d669bed9e720a1a49f563c42dc5736cf8e334dd0a5e46ef86d4a51"
+  },
+  "evaluator_hashes": {
+    "score_offline.py": "80effc68dd4f56b0023a5d30d16aa2b01288774daed6a106168b1aae33273b40",
+    "scoring.py": "725711e683440e6a3931b776523e061f6ff7b4d5109c62df11a5f3d8cc4b2207"
+  },
+  "rubric_sha256": "6512e2e97c031332fcc91947a5599cb484c98b487af0b8bdcee631c0ba569f14",
+  "note": "No generated code executed. No automatic semantic score for knowledge, summaries, or coding."
+}

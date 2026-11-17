@@ -1,0 +1,7 @@
+{
+  "started_epoch": 1793983500.2876565,
+  "prepared_release": "/home/lailai/nectec-changes/portal-security-20261106T125653Z-30beac16",
+  "version": "portal-security-v1-b893d3a5f7c1",
+  "scope": "read-only service/source metadata and unauthenticated/invalid-session API checks; no real credentials, account writes, jobs or inference",
+  "mutating_privileged_commands": []
+}

@@ -1,0 +1,4 @@
+port,pid,management,source_directory,version_evidence,operations,argv
+8001,3148336,slurm-portal.service,/home/lailai/slurm-portal,legacy API metadata; exact loaded source revision unknown,10,"[""/home/lailai/slurm-portal/.venv/bin/python3"", ""/home/lailai/slurm-portal/.venv/bin/uvicorn"", ""app:app"", ""--host"", ""127.0.0.1"", ""--port"", ""8001""]"
+8002,2019096,standalone Uvicorn,/home/lailai/slurm-portal,newer multi-user API metadata; current source directory mapped,16,"[""/home/lailai/slurm-portal/.venv/bin/python3"", "".venv/bin/uvicorn"", ""app:app"", ""--host"", ""127.0.0.1"", ""--port"", ""8002""]"
+8000,2536,Docker Compose ollama-test/app,/app in container; no source bind mount,sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae,13,"[""uvicorn"", ""server:my_api"", ""--host"", ""127.0.0.1"", ""--port"", ""8000""]"

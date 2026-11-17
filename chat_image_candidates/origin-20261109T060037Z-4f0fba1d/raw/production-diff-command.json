@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "docker",
+    "diff",
+    "local-ollama-chat"
+  ],
+  "exit_code": 0,
+  "started_or_recorded": "2026-11-09T06:08:29.243144+00:00"
+}

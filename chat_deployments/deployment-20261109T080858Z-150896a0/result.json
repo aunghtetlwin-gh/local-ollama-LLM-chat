@@ -1,0 +1,25 @@
+{
+  "status": "SUCCESS",
+  "timestamp": "2026-11-09T08:14:00.819848+00:00",
+  "activation_time": "2026-11-09T08:11:34.140377+00:00",
+  "pre_app_id": "a6526b0cbd1401c78416747f93a1f4e174e5e790b319a38cf1bb1653113aead6",
+  "post_app_id": "dbbb685f46aa0161f63023409b390421e50137d4cfa8292c7b4904528e6b8bd1",
+  "pre_image_id": "sha256:fb589d346de905895e8b3746a98735fd0001958899684a2223692977e866ddae",
+  "post_image_id": "sha256:7f6a70da03c092c12a2fa2b3c50e1765efd95f44cb99aba6cb839bdc77eb006d",
+  "patched_server_sha256": "3e8993bbbc0c0fea98224d568f5a4bd27704e5908b9e04723948484f0502bccc",
+  "checks_passed": 29,
+  "checks_failed": [],
+  "postgres_unchanged": true,
+  "rollbacks_available": true,
+  "real_credentials_used": false,
+  "real_cookies_used": false,
+  "conversation_contents_accessed": false,
+  "inference_executed": false,
+  "browser_url_shape_verified": "http://127.0.0.1:18000 using Host/Origin shape; real SSH/browser acceptance pending",
+  "pending_browser": [
+    "Existing authorized browser login/session continuity at http://127.0.0.1:18000",
+    "Owner-scoped conversation list/view by its authorized owner; no deletion of existing data",
+    "Normal logout then login, and expected authenticated Origin denial if approved without conversation mutation"
+  ],
+  "evidence_directory": "/home/lailai/ollama-test/chat_deployments/deployment-20261109T080858Z-150896a0"
+}

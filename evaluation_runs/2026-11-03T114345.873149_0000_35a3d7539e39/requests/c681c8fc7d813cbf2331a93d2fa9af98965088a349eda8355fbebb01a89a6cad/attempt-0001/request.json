@@ -1,0 +1,33 @@
+{
+  "model": "qwen3:8b",
+  "question_id": "I02",
+  "repetition": 1,
+  "prompt_sha256": "5282d72bed5c29743cd717af4ea115ad1c63d06b2d2f2a7c8d6d82995cc90820",
+  "payload": {
+    "model": "qwen3:8b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "From [9, 2, 8, 2, 5, 4], keep only even values, remove duplicates, and sort descending. Return only a JSON array of integers."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "c681c8fc7d813cbf2331a93d2fa9af98965088a349eda8355fbebb01a89a6cad"
+}

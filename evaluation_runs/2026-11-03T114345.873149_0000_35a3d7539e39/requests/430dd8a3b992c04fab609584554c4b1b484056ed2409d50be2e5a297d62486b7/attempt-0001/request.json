@@ -1,0 +1,33 @@
+{
+  "model": "gemma4:12b",
+  "question_id": "I04",
+  "repetition": 1,
+  "prompt_sha256": "59b7ec51904d4593307069b15aca7c42e5990742475e28cc3bb815d5336597bf",
+  "payload": {
+    "model": "gemma4:12b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Follow the user's task and output requirements. Do not use tools or external resources."
+      },
+      {
+        "role": "user",
+        "content": "Classify scores using these rules: score < 50 is LOW; 50 <= score < 80 is MID; score >= 80 is HIGH. Scores in order: 49, 50, 79, 80. Return exactly four lines, one label per line in input order, with no numbering, spaces, or blank lines."
+      }
+    ],
+    "stream": false,
+    "keep_alive": "30s",
+    "think": false,
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 4096,
+      "temperature": 0,
+      "seed": 42,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0
+    }
+  },
+  "request_id": "430dd8a3b992c04fab609584554c4b1b484056ed2409d50be2e5a297d62486b7"
+}
